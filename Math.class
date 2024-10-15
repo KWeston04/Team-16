@@ -30,3 +30,14 @@ public static int Max(int x, int y) {
         return y;
     }
 }
+
+
+
+/***************************
+Developer: Dahoon Kim
+University ID: 200210685
+Function: This function takes two integer as input, subtract the second input from first one and returns the result.
+***************************/
+public int Sub(int x, int y) {
+	return x-y;
+}
