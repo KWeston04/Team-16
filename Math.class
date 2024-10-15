@@ -11,3 +11,19 @@ public class Math {
 	
 	
 }
+
+/********************************
+Developer: San Fakhir
+University ID: 230074376
+Function: This function takes two inputs as integers and returns the maximum one
+********************************/
+public class Math {
+    // Max function: returns the greater of two integers
+    public static int Max(int x, int y) {
+        if (x > y) {
+            return x;
+        } else {
+            return y;
+        }
+    }
+}
