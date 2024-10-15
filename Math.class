@@ -2,8 +2,14 @@ public class Math {
 
 	//TODO: Implement Math Functions
 
-
-
+	/******
+	Developer: Kai Weston
+	University ID: 230148563
+	Function: This function takes in 2 numbers as integers and returns them added
+	******/
+	int Add(int x, int y){
+		return x+y;
+	}
 	
 	public static void main(String[] args) {
 
