@@ -30,3 +30,23 @@ public static int Max(int x, int y) {
         return y;
     }
 }
+
+
+/********************************
+Developer: Puran Kumar 
+University ID: 240037024
+Function :This function takes two integer as input, multiple both numbers and returns the result .
+
+public class Main {
+    public static int multiply(int num1, int num2) {
+        return num1 * num2;
+    }
+
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 5;
+        
+        int result = multiply(num1, num2);
+        System.out.println("Result: " + result);  
+    }
+}
