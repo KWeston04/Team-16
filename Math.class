@@ -16,7 +16,7 @@ public class Math {
 	}
 	
 	
-}
+
 
 /********************************
 Developer: San Fakhir
@@ -40,4 +40,20 @@ Function: This function takes two integer as input, subtract the second input fr
 ***************************/
 public int Sub(int x, int y) {
 	return x-y;
+}
+
+/***************************
+Developer: Talal Abdullah
+University ID: 230052042
+Function: This function takes two integer as input and returns the minimum one. 
+***************************/
+public static int Min(int x, int y) {
+    if (x < y) {
+        return x;
+    } else {
+        return y;
+    }
+}
+
+
 }
