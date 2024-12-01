@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASTONIC SPORTS CHECKOUT</title>
-    <link rel="stylesheet" href="{{ asset ('css/styles.css')}}"> 
+    <link rel="stylesheet" href="{{asset('css/cartandcheckout.css')}}"> 
 </head>
 
 <body>
@@ -12,7 +12,7 @@
         <nav class="navbar">
           <div class="logo">
             <a href="about_us.html">
-              <img src="images/Astonic Sports Logo.webp" alt="Home.html">
+              <img src="{{asset('images/Astonic Sports Logo.webp')}}" alt="Home.html">
             </a>
           </div>
           <ul class="nav-links">
@@ -71,7 +71,7 @@
         <!-- Bag Items -->
         <div class="bag-items">
         <div class="bag-item" data-price="50">
-            <img src="images/Football shirt white.webp" alt="White T-Shirt">
+            <img src="{{asset('images/Football shirt white.webp')}}" alt="White T-Shirt">
             <div class="bag-item-details">
                 <div class="item-name">Astonic FC</div>
                 <div class="bag-item-color-size">Color: White | Size: XL</div>
@@ -101,7 +101,7 @@
     </div>
 
     <div class="bag-item" data-price="120">
-        <img src="images/vortex shoes.webp" alt="Black T-Shirt">
+        <img src="{{asset('images/vortex shoes.webp')}}" alt="Black T-Shirt">
         <div class="bag-item-details">
             <div class="item-name">Vortex shoes</div>
             <div class="bag-item-color-size">Color: Black | Size: 10</div>
@@ -201,9 +201,9 @@
                 <p>FOLLOW US ON SOCIALS</p>
                 <br>
                 <div class="social-links">
-                    <a href="#"aria-label="Follow us on Facebook"></a><img src="images/facebook-logo.png" alt="Facebook"></a>
-                    <a href="#"aria-label="Follow us on Twitter"></a><img src="images/twitter-logo.png" alt="Twitter"></a>
-                    <a href="#"aria-label="Follow us on Instagram"></a><img src="images/instagram-logo.png" alt="Instagram"></a>
+                    <a href="#"aria-label="Follow us on Facebook"></a><img src="{{asset('images/facebook-logo.png')}}" alt="Facebook"></a>
+                    <a href="#"aria-label="Follow us on Twitter"></a><img src="{{asset('images/twitter-logo.png')}}" alt="Twitter"></a>
+                    <a href="#"aria-label="Follow us on Instagram"></a><img src="{{asset('images/instagram-logo.png')}}" alt="Instagram"></a>
                 </div>
             </div>
     
@@ -232,6 +232,6 @@
         </div>
     </footer>
 
-    <script src="cartandcheckout.js"></script>
+    <script src="{{asset('cartandcheckout.js')}}"></script>
 </body>
 </html>

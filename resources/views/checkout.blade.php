@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - Astonic Sports</title>
-    <link rel="stylesheet" href="{{ asset ('css/styles.css')}}"> 
+    <link rel="stylesheet" href="{{ asset('css/cartandcheckout.css')}}"> 
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="Home.html"><img src="images/Astonic Sports Logo.webp" alt="Astonic Sports Logo"></a>
+                <a href="Home.html"><img src="{{asset('images/Astonic Sports Logo.webp')" alt="Astonic Sports Logo"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="Home.html">Home</a></li>
@@ -154,9 +154,9 @@
                 <p>FOLLOW US ON SOCIALS</p>
                 <br>
                 <div class="social-links">
-                    <a href="#"aria-label="Follow us on Facebook"></a><img src="images/facebook-logo.png" alt="Facebook"></a>
-                    <a href="#"aria-label="Follow us on Twitter"></a><img src="images/twitter-logo.png" alt="Twitter"></a>
-                    <a href="#"aria-label="Follow us on Instagram"></a><img src="images/instagram-logo.png" alt="Instagram"></a>
+                    <a href="#"aria-label="Follow us on Facebook"></a><img src="{{asset('images/facebook-logo.png')}}" alt="Facebook"></a>
+                    <a href="#"aria-label="Follow us on Twitter"></a><img src="{{asset('images/twitter-logo.png')}}" alt="Twitter"></a>
+                    <a href="#"aria-label="Follow us on Instagram"></a><img src="{{asset('images/instagram-logo.png')}}" alt="Instagram"></a>
                 </div>
             </div>
     
@@ -185,6 +185,6 @@
         </div>
     </footer>
 
-    <script src="cartandcheckout.js"></script>
+    <script src="{{asset('cartandcheckout.js')}}"></script>
 </body>
 </html>
