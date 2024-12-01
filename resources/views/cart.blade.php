@@ -232,6 +232,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="cartandcheckout.js"></script>
 </body>
 </html>
