@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Search Results</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{asset('css/shopping.css')}}">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
         <div id="results-container" class="best-sellers-grid"></div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="{{asset('js/shopping.js')}}"></script>
 </body>
 
 </html>
