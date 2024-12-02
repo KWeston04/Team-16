@@ -10,7 +10,7 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="About.html">
-                    <img src= "{{ asset('images/example.jpg') }}"  alt ="Astonic Sports Logo">
+                    <img src= "{{ asset('images/Astonic Sports Logo.webp') }}"  alt ="Astonic Sports Logo">
                     
                 </a>
             </div>
@@ -71,9 +71,9 @@
                 <p>FOLLOW US ON SOCIALS</p>
                 <br>
                 <div class="social-links">
-                    <a href="#"aria-label="Follow us on Facebook"></a><img src="{{ asset('images/example.jpg') }}"  alt="Facebook"></a>
-                    <a href="#"aria-label="Follow us on Twitter"></a><img src="{{ asset('images/example.jpg') }}"  alt="Twitter"></a>
-                    <a href="#"aria-label="Follow us on Instagram"></a><img src="{{ asset('images/example.jpg') }}"  alt="Instagram"></a>
+                    <a href="#"aria-label="Follow us on Facebook"></a><img src="{{ asset('images/facebook-logo.png') }}"  alt="Facebook"></a>
+                    <a href="#"aria-label="Follow us on Twitter"></a><img src="{{ asset('images/twitter-logo.png') }}"  alt="Twitter"></a>
+                    <a href="#"aria-label="Follow us on Instagram"></a><img src="{{ asset('images/instagram-logo.png') }}"  alt="Instagram"></a>
                 </div>
             </div>
     
