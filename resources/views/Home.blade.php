@@ -16,9 +16,9 @@
         </a>
       </div>
       <ul class="nav-links">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="about_us.html">About Us</a></li>
-        <li><a href="contact_us.html">Contact Us</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact Us</a></li>
         <li><a href="product_listing.html">Shop</a></li>
         <li class="dropdown">
           <a href="#" class="dropbtn">Account</a>

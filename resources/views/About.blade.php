@@ -15,9 +15,9 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="">Home</a></li>
-                <li><a href="About.html">About Us</a></li>
-                <li><a href="Contact.html">Contact Us</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
                 <li><a href="">Shop</a></li>
                 <li><a href="">Account</a></li>
                 <li><a href="">Cart</a></li>
