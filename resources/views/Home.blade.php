@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astonic Sports</title>
-  <link rel="stylesheet" href="Style_AstonicSports_Home_JB.css">
+  <link rel="stylesheet" href="{{asset('css/Style_AstonicSports_Home_JB.css')}}">
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -12,7 +12,7 @@
     <nav class="navbar">
       <div class="logo">
         <a href="about_us.html">
-          <img src="astonic sports logo.png" alt="Astonic Sports Logo">
+          <img src="{{asset('images/astonic sports logo.png')}}" alt="Astonic Sports Logo">
         </a>
       </div>
       <ul class="nav-links">
@@ -80,9 +80,9 @@
     <div class="footer-container">
       <div class="socials">
         <p>Follow Us</p>
-        <a href="#"><img src="facebook-logo.png" alt="Facebook"></a>
-        <a href="#"><img src="twitter-logo.png" alt="Twitter"></a>
-        <a href="#"><img src="instagram-logo.png" alt="Instagram"></a>
+        <a href="#"><img src="{{asset('images/facebook-logo.png')}}" alt="Facebook"></a>
+        <a href="#"><img src="{{asset('images/twitter-logo.png')}}" alt="Twitter"></a>
+        <a href="#"><img src="{{asset('images/instagram-logo.png')}}" alt="Instagram"></a>
       </div>
       <div class="newsletter">
         <h4>Sign Up for Updates</h4>
