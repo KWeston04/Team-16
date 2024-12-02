@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Astonic Sports</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{asset('css/shopping.css')}}">
 </head>
 
 <body>
@@ -192,7 +192,7 @@
 </footer>
 
 <!--******************-->
-    <script src="script.js"></script>
+    <script src="{{asset('js/shopping.js')}}"></script>
 </body>
 
 </html>
