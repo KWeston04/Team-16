@@ -9,7 +9,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="About.html">
+                <a href="/about">
                     <img src= "{{ asset('images/Astonic Sports Logo.webp') }}"  alt ="Astonic Sports Logo">
                     
                 </a>
@@ -18,9 +18,9 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/contact">Contact Us</a></li>
-                <li><a href="">Shop</a></li>
+                <li><a href="/shop">Shop</a></li>
                 <li><a href="">Account</a></li>
-                <li><a href="">Cart</a></li>
+                <li><a href="/cart">Cart</a></li>
             </ul>
         </nav>
     </header> 
@@ -91,12 +91,12 @@
             <!--Nav Section-->
         <div class="footer-nav">
             <ul>
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="About.html">About Us</a></li>
-                <li><a href="Contact.html">Contact Us</a></li>
-                <li><a href="product_listing.html">Shop</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/shop">Shop</a></li>
                 <li><a href="login.html">Account</a></li>
-                <li><a href="index.html">Cart</a></li>
+                <li><a href="/cart">Cart</a></li>
             </ul>
         </div>
         </div>

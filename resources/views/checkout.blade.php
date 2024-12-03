@@ -174,12 +174,12 @@
     
         <div class="footer-nav">
             <ul>
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li>
-                <li><a href="product_listing.html">Shop</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/shop">Shop</a></li>
                 <li><a href="login.html">Account</a></li>
-                <li><a href="index.html">Cart</a></li>
+                <li><a href="/cart">Cart</a></li>
             </ul>
         </div>
         </div>
