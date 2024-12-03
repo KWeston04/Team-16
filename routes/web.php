@@ -14,5 +14,6 @@ Route::get('/cart', [HomeController::class, 'cart']);
 
 Route::get('/login',[UserController::class, 'showLoginForm']);
 Route::get('/register',[UserController::class, 'showRegisterForm']);
+Route::post('/register', [UserController::class, 'register']);
 Route::get('/password/reset',[UserController::class, 'resetPasswordForm']);
 
