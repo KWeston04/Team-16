@@ -81,7 +81,7 @@
   <div class="content-container">
     <h1>Contact Us</h1>
     <p>Here is a link that takes you to the Contact Us page which will help deal with any enquires:</p>
-    <a href="contact_us.html">Contact Us</a>
+    <a href="/contact">Contact Us</a>
     <br><p>Please dont be afraid to reach out if you are having problems or enquires. 
         <br>Our team is always here to provide support to our customers.</p>
     
