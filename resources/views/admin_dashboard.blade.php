@@ -6,6 +6,7 @@ cd<!DOCTYPE html>
   <title>Astonic Sports - Admin Dashboard</title>
   <link rel="stylesheet" href="{{asset('css/admin_style.css')}}">
   <style>
+    
     * {
       margin: 0;
       padding: 0;
