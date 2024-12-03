@@ -185,6 +185,6 @@
         </div>
     </footer>
 
-    <script src="{{asset('cartandcheckout.js')}}"></script>
+    <script src="{{asset('js/cartandcheckout.js')}}"></script>
 </body>
 </html>
