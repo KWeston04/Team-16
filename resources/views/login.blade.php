@@ -113,9 +113,11 @@ background-color:#1a1a2e ;
         <div class="big-container">
         <div class="login-container">
         <h1>Login</h1>
-        <form id="loginSection">
-            <label for="Email">Email:</label>
-            <input type="text" id="Email" name="Email" required><br>
+        <form id="loginSection" action="/login" method="POST">
+          @csrf <!-- CSRF protection -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            
             <br> <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br>
             <br> <button type="submit">Login</button>

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astonic Sports</title>
   <link rel="stylesheet" href="{{asset('css/Style_AstonicSports_Home_JB.css')}}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -21,17 +23,42 @@
         <li><a href="/contact">Contact Us</a></li>
         <li><a href="/shop">Shop</a></li>
         <li class="dropdown">
-          <a href="#" class="dropbtn">Account</a>
-          <div class="dropdown-content">
-            <a href="#">Login</a>
-            <a href="#">Register</a>
-            <a href="admin_dashboard.html">Admin Dashboard</a>
-          </div>
+          @if (Auth::check())
+            <!-- If user is logged in -->
+            <a href="#" class="dropbtn">{{ Auth::user()->first_name }}'s Account</a>
+            <div class="dropdown-content">
+                <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+                <a href="admin_dashboard.html">Admin Dashboard</a>
+            </div>
+          @else
+            <!-- If user is not logged in -->
+            <a href="#" class="dropbtn">Account</a>
+            <div class="dropdown-content">
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </div>
+          @endif
         </li>
         <li><a href="/cart">Cart</a></li>
       </ul>
     </nav>
   </header>
+
+  @if (session('success'))
+    <div class="alert alert-success text-center">
+        {{ session('success') }}
+    </div>
+  @endif
+
+  @if (session('failure'))
+    <div class="alert alert-danger text-center">
+        {{ session('failure') }}
+    </div>
+  @endif
+
 
   <!-- Hero Section -->
   <section class="hero-section">

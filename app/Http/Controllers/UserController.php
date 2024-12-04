@@ -4,17 +4,48 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     //
+    // display the login form
     public function showLoginForm(){
         return view('login');
     }
+    //this is for handling login requests
+    public function login(Request $request){
+        //validating the login credentials
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8|max:40',
+
+        ]);
+
+        //authentication attempt:
+        if (Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
+            $request->session()->regenerate();
+            return redirect('/')->with('success', 'You have successfully logged in.');
+
+        }
+        // this is to go back if the authentication process fails
+        return back()->withErrors(['email' => 'Invalid credentials.'])->onlyInput('email');
+    }
+
+    //this is the user logout feature:
+    public function logout(Request $request)
+    {
+        Auth::logout(); // loging the user our
+        $request->session()->invalidate(); // terminating the sessions
+        $request->session()->regenerateToken(); // generating csrf token again
+        return redirect('/')->with('success', 'You have successfully logged out.');
+    }
+    //displaying the create account form
     public function showRegisterForm(){
         return view('createaccount');
     }
+    //displaying the password reset form
     public function resetPasswordForm(){
         return view('resetpassword');
     }
@@ -36,7 +67,7 @@ class UserController extends Controller
         // this is for creating a new user and storing it in database
         $user = User::create([
             'username' => $validated['email'],
-            'password_hash' => Hash::make($validated['password']),
+            'password' => Hash::make($validated['password']),
             'email' => $validated['email'],
             'first_name' => $validated['first_name'],
             'last_name' => $validated['last_name'],

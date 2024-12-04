@@ -12,7 +12,9 @@ Route::get('/cart', [HomeController::class, 'cart']);
 
 
 
-Route::get('/login',[UserController::class, 'showLoginForm']);
+Route::get('/login',[UserController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [UserController::class, 'login']);
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/register',[UserController::class, 'showRegisterForm']);
 Route::post('/register', [UserController::class, 'register']);
 Route::get('/password/reset',[UserController::class, 'resetPasswordForm']);
