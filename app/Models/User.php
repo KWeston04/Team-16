@@ -17,7 +17,7 @@ class User extends Authenticatable
     protected $keyType = 'int';
 
     const UPDATED_AT = null; // disabling the updated_at column as not being used right now
-
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -25,7 +25,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'username',
-        'password_hash',
+        'password',
         'email',
         'first_name',
         'last_name',
