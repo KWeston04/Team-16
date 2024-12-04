@@ -72,9 +72,9 @@
     <div class="footer-container">
       <div class="socials">
         <p>Follow Us</p>
-        <a href="#"><img src="{{ asset('images/facebook-logo.png') }}" alt="Facebook"></a>
-        <a href="#"><img src="{{ asset('images/twitter-logo.png') }}" alt="Twitter"></a>
-        <a href="#"><img src="{{ asset('images/instagram-logo.png') }}" alt="Instagram"></a>
+        <a href="#"><img src="{{asset('images/facebook.png')}}" alt="Facebook"></a>
+        <a href="#"><img src="{{asset('images/twitter-logo.png')}}" alt="Twitter"></a>
+        <a href="#"><img src="{{asset('images/instagram.png')}}" alt="Instagram"></a>
       </div>
       <div class="newsletter">
         <h4>Sign Up for Updates</h4>
