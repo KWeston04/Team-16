@@ -22,4 +22,10 @@ class HomeController extends Controller
     public function cart(){
         return view('cart');
     }
+
+    public function vortex_runner(){ // MVP demo
+        return view('vortex_runner');
+    }
+
+
 }

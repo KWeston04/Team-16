@@ -13,15 +13,15 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="Home.html"><img src="{{asset('images/Astonic Sports Logo.webp')" alt="Astonic Sports Logo"></a>
+                <a href="/"><img src="{{asset('images/Astonic Sports Logo.webp')}}" alt="Astonic Sports Logo"></a>
             </div>
             <ul class="nav-links">
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li>
-                <li><a href="product_listing.html">Shop</a></li>
-                <li><a href="login.html">Account</a></li>
-                <li><a href="index.html">Cart</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/login">Account</a></li>
+                <li><a href="/cart">Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -178,7 +178,7 @@
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/contact">Contact Us</a></li>
                 <li><a href="/shop">Shop</a></li>
-                <li><a href="login.html">Account</a></li>
+                <li><a href="/login">Account</a></li>
                 <li><a href="/cart">Cart</a></li>
             </ul>
         </div>

@@ -20,7 +20,7 @@
             <li><a href="/about">About Us</a></li>
             <li><a href="/contact">Contact Us</a></li>
             <li><a href="/shop">Shop</a></li>
-            <li><a href="login.html">Account</a></li>
+            <li><a href="/login">Account</a></li>
             <li><a href="/cart">Cart</a></li>
           
         </nav>
@@ -146,7 +146,7 @@
                 <span>£<span id="total">0.00</span></span>
             </div>
 
-            <a href="checkout.blade.php" class="checkout-button" id="checkout-button" style="pointer-events: none;">CHECKOUT</a>
+            <a href="/checkout" class="checkout-button" id="checkout-button" style="pointer-events: none;">CHECKOUT</a>
             <br>
         </div>
     </div>

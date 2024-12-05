@@ -49,7 +49,7 @@ document.querySelector('.checkout-button').addEventListener('click', function (e
         return;
     }
     alert('Proceeding to checkout!');
-    window.location.href = 'checkout.blade.php'; 
+    window.location.href = '/checkout'; 
 });
 
 updateTotals();
