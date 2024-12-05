@@ -28,7 +28,14 @@
         <h1>Contact Us</h1>
         <div id="main">
             <h4 class="uppercase">Get in touch with us regarding any inquiries</h4>
-            <form action="index.html" method="post" id="contacts">
+
+            @if (session('success'))
+            <div class="alert alert-success">
+                    {{ session('success') }}
+            </div>
+            @endif
+            <form action="{{route('contact.store')}}" method="POST" id="contacts">
+                @csrf
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required placeholder="Enter your name">
@@ -49,6 +56,9 @@
             </form>
         </div>
     </main>
+
+
+
 
     <footer>
         <!-- Footer made by ibraheem -->
