@@ -26,6 +26,7 @@
     </header> 
 
     <main>
+        <div class="about-us">
         <h1>About us</h1>
         <p>Welcome to Astonic Sports here we aim to provide the highest quality mens sportswear at the best and most affordable prices. We aim to become the leading mens sportwear company in the world and help people reach their health and fitness goals, unleashing their potential whilst also wearing high quality, comfortable sportswear. We are dedicated to creating the best quality sportswear by optimising the use of cutting-edge technology, enabling our customers to exercise in comfort and style. </p>
 
@@ -46,11 +47,13 @@
 
         <h3>Our Product Line</h3>
         <p>Our range includes high-performance athletic wear for all types of training, from breathable tops and shorts for intense workouts to versatile, stylish activewear that easily transitions from gym to street. Our collection features:</p>
-        <ul>
+        <ul class="reasons">
+            
             <li>Performance Tops and Bottoms: Designed for optimal comfort, flexibility, and breathability</li>
             <li>Compression Gear: Enhances circulation, reducing muscle fatigue</li>
             <li>Outerwear: Weather-resistant jackets and hoodies for any season</li>
             <li>Accessories: From gym bags to training essentials, we’ve got you covered</li>
+            
         </ul>
 
         <h3>Join Us</h3>
@@ -60,6 +63,7 @@
         <p>Follow us on social media for updates on new products, fitness advice, and community stories. Let’s redefine the possibilities in sportswear and celebrate every achievement along the way.</p>
 
         <p>Astonic Sports – Empower Your Potential</p>
+        </div>
     </main>
 
     <footer>
@@ -248,7 +252,77 @@ transform: scale(1.2);
     margin: auto;
     transition: width 0.5s ease;
   }
-    </style>
 
+
+.about-us h1, h2, h3 {
+  color: #1a1a2e;  
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.about-us h1 {
+  font-size: 3rem;
+  color: #1a1a2e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+
+.about-us h2 {
+  font-size: 2.5rem;
+  color: #3e3e57;  
+  margin-bottom: 20px;
+}
+
+
+.about-us h3 {
+  font-size: 2rem;
+  color: #9191c4;  
+  margin-bottom: 10px;
+}
+
+
+.about-us p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  color: #555;  
+}
+
+.reasons {
+  list-style: none;  
+  padding: 0;
+  margin: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reasons li::before {
+  content: "•";  
+  position: absolute;
+  left: 0;
+  color: #000000;  
+  font-size: 1.5rem;
+  top: 0;
+  font-weight: bold;
+}
+
+.reasons li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;  
+}
+
+
+</style>
 </body>
 </html>
