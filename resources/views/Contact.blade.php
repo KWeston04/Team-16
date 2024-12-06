@@ -69,9 +69,9 @@
                 <p>FOLLOW US ON SOCIALS</p>
                 <br>
                 <div class="social-links">
-                    <a href="#"aria-label="Follow us on Facebook"></a><img src="{{ asset('images/facebook-logo.jpg') }}"  alt="Facebook"></a>
-                    <a href="#"aria-label="Follow us on Twitter"></a><img src="{{ asset('images/twitter-logo.jpg') }}"  alt="Twitter"></a>
-                    <a href="#"aria-label="Follow us on Instagram"></a><img src="{{ asset('images/instagram-logo.jpg') }}"  alt="Instagram"></a>
+                    <a href="#"aria-label="Follow us on Facebook"></a><img src="{{ asset('images/facebook-logo.png') }}"  alt="Facebook"></a>
+                    <a href="#"aria-label="Follow us on Twitter"></a><img src="{{ asset('images/twitter-logo.png') }}"  alt="Twitter"></a>
+                    <a href="#"aria-label="Follow us on Instagram"></a><img src="{{ asset('images/instagram-logo.png') }}"  alt="Instagram"></a>
                 </div>
             </div>
     
@@ -113,6 +113,11 @@ body {
   color: #e0e1dd; / Light gray text */
   line-height: 1.6;
 }
+
+h1 {
+    text-align: center;
+}
+
 
 .navbar {
   position: sticky;
