@@ -6,8 +6,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
+use Filament\Models\Contracts\HasName;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser, HasName
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -17,7 +20,7 @@ class User extends Authenticatable
     protected $keyType = 'int';
 
     const UPDATED_AT = null; // disabling the updated_at column as not being used right now
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -31,6 +34,7 @@ class User extends Authenticatable
         'last_name',
         'phone_number',
         'address',
+        'user_type'
     ];
 
     /**
@@ -55,4 +59,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->user_type === 'admin';
+    }
+
+    public function getFilamentName(): string
+    {
+        return $this->getAttributeValue('username');
+    }
+
 }
