@@ -25,7 +25,7 @@
         <li class="dropdown">
           @if (Auth::check())
             <!-- If user is logged in -->
-            <a href="#" class="dropbtn">{{ Auth::user()->first_name }}'s Account</a>
+            <a href="/profile" class="dropbtn">{{ Auth::user()->first_name }}'s Account</a>
             <div class="dropdown-content">
                 <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -47,17 +47,7 @@
     </nav>
   </header>
 
-  @if (session('success'))
-    <div class="alert alert-success text-center">
-        {{ session('success') }}
-    </div>
-  @endif
 
-  @if (session('failure'))
-    <div class="alert alert-danger text-center">
-        {{ session('failure') }}
-    </div>
-  @endif
 
 
   <!-- Hero Section -->

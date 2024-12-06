@@ -11,11 +11,13 @@ class UserController extends Controller
 {
     //
     // display the login form
-    public function showLoginForm(){
+    public function showLoginForm()
+    {
         return view('login');
     }
     //this is for handling login requests
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         //validating the login credentials
         $credentials = $request->validate([
             'email' => 'required|email',
@@ -26,8 +28,7 @@ class UserController extends Controller
         //authentication attempt:
         if (Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
             $request->session()->regenerate();
-            return redirect('/')->with('success', 'You have successfully logged in.');
-
+            return redirect()->route('profile')->with('success', 'You have successfully logged in.');
         }
         // this is to go back if the authentication process fails
         return back()->withErrors(['email' => 'Invalid credentials.'])->onlyInput('email');
@@ -42,14 +43,16 @@ class UserController extends Controller
         return redirect('/')->with('success', 'You have successfully logged out.');
     }
     //displaying the create account form
-    public function showRegisterForm(){
+    public function showRegisterForm()
+    {
         return view('createaccount');
     }
     //displaying the password reset form
-    public function resetPasswordForm(){
+    public function resetPasswordForm()
+    {
         return view('resetpassword');
     }
-    
+
     /**
      * This is the function for registering a user
      */
@@ -78,6 +81,39 @@ class UserController extends Controller
         auth()->login($user);
         $request->session()->regenerate();
         // this redirects to the homepage with a success message
-        return redirect('/')->with('success', 'Welcome to Astonic Sports!');
+        return redirect()->route('profile')->with('success', 'Welcome to Astonic Sports!');
+    }
+    //showing the profile dashboard
+    public function showProfile()
+    {
+        return view('profile');
+    }
+    public function personalDetails()
+    {
+        return view('personaldetails');
+    }
+    public function orderHistory()
+    {
+        return view('orderhistory');
+    }
+    public function changePassword()
+    {
+        return view('changepassword');
+    }
+    public function paymentMethod()
+    {
+        return view('paymentmethod');
+    }
+    public function contactPreferences()
+    {
+        return view('contactpreferences');
+    }
+    public function contactUs()
+    {
+        return view('contactus');
+    }
+    public function wishlist()
+    {
+        return view('wishlist');
     }
 }
