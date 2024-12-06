@@ -15,12 +15,12 @@ Route::get('/cart', [HomeController::class, 'cart']);
 
 
 
-Route::get('/login',[UserController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-Route::get('/register',[UserController::class, 'showRegisterForm']);
+Route::get('/register', [UserController::class, 'showRegisterForm']);
 Route::post('/register', [UserController::class, 'register']);
-Route::get('/password/reset',[UserController::class, 'resetPasswordForm']);
+Route::get('/password/reset', [UserController::class, 'resetPasswordForm']);
 
 
 //used specifically for when we do a contact request.
@@ -31,3 +31,15 @@ Route::post('/contact', [ContactRequestController::class, 'store'])->name('conta
 //used for when we do a checkout.
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
 Route::post('/checkout', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder')->middleware('auth');
+
+//routes for profile dashboard and its connected pages
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [UserController::class, 'showProfile'])->name('profile');
+    Route::get('/profile/personal-details', [UserController::class, 'personalDetails'])->name('profile.personal.details');
+    Route::get('/profile/order-history', [UserController::class, 'orderHistory'])->name('profile.order.history');
+    Route::get('/profile/change-password', [UserController::class, 'changePassword'])->name('profile.change.password');
+    Route::get('/profile/payment-method', [UserController::class, 'paymentMethod'])->name('profile.payment.method');
+    Route::get('/profile/contact-preferences', [UserController::class, 'contactPreferences'])->name('profile.contact.preferences');
+    Route::get('/profile/contact-us', [UserController::class, 'contactUs'])->name('profile.contact.us');
+    Route::get('/profile/wishlist', [UserController::class, 'wishlist'])->name('profile.wishlist');
+});

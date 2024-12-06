@@ -123,12 +123,12 @@ background-color:#1a1a2e ;
             <br> <button type="submit">Login</button>
         </form>
     <div class="rp">
-        <a href="resetpassword.html">Forgot Password?</a><br>
+        <a href=>Forgot Password?</a><br>
         <h2>
          ----create an account----
         </h2>
     <div>
-      <button> <a href="createaccount.html">Create an account</a> </button> 
+      <button> <a href="/register">Create an account</a> </button> 
     </div>
     </div>
 </div>
