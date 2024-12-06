@@ -68,7 +68,13 @@
 <div class="content-wrapper">
     <main class="checkout-container">
         <h1>Checkout</h1>
-        <form id="checkout-form" action="confirmation.html">
+        @if (session('success'))
+        <div class="alert alert-success">
+        {{ session('success') }}
+        </div>
+    @endif
+        <form id="checkout-form" action="{{route('checkout.placeOrder')}}" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required>
@@ -101,6 +107,9 @@
                     <option value="paypal">PayPal</option>
                 </select>
             </div>
+
+            <input type="hidden" name="user_id" value="{{ auth()->user()->user_id }}"> <!-- Assuming user is authenticated -->
+
             <br><br><br>
             <div class="form-group">
                 <button type="submit" class="place-order-button">PLACE ORDER</button>

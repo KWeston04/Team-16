@@ -27,4 +27,7 @@ Route::get('/password/reset',[UserController::class, 'resetPasswordForm']);
 Route::get('/contact', [ContactRequestController::class, 'contact']);
 Route::post('/contact', [ContactRequestController::class, 'store'])->name('contact.store');
 
+
+//used for when we do a checkout.
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
+Route::post('/checkout', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder')->middleware('auth');
