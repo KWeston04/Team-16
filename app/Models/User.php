@@ -16,6 +16,7 @@ class User extends Authenticatable implements FilamentUser, HasName
     use HasFactory, Notifiable;
 
     protected $primaryKey = 'user_id'; // i had to define the primary key for the users table
+    public $timestamps = false; // Disable default timestamps
     public $incrementing = true; // just confirming that it will increment
     protected $keyType = 'int';
 
@@ -68,6 +69,14 @@ class User extends Authenticatable implements FilamentUser, HasName
     public function getFilamentName(): string
     {
         return $this->getAttributeValue('username');
+    }
+
+    /**
+     * User has many orders.
+     */
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'user_id', 'user_id');
     }
 
 }
