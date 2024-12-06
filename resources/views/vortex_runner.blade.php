@@ -5,24 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vortex Runner - Astonic Sports</title>
-    <link rel="stylesheet" href="{{asset(css/shopping.css)}}">
+    <link rel="stylesheet" href="{{asset('css/shopping.css')}}">
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="Home.html">
-                    <img src="Astonic Sports.webp" alt="Astonic Sports Logo">
+                <a href="/">
+                    <img src="{{asset('images/Astonic Sports.webp')}}" alt="Astonic Sports Logo">
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li>
-                <li><a href="product_listing.html">Shop</a></li>
-                <li><a href="login.html">Account</a></li>
-                <li><a href="cart.html">Cart</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/login">Account</a></li>
+                <li><a href="/cart">Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -30,7 +30,7 @@
     <main>
         <section class="product-detail">
             <div class="product-image">
-                <img src="Astonic Vortex Runner.webp" alt="Vortex Runner">
+                <img src="{{asset('images/vortex shoes.webp')}}" alt="Vortex Runner"> <!-- {{asset('images/Astonic Vortex Runner.webp')}} -->
             </div>
             <div class="product-info">
                 <h1>Vortex Runner</h1>
@@ -70,10 +70,10 @@
         <div class="footer-container">
             <div class="footer-nav">
                 <ul>
-                    <li><a href="Home.html">Home</a></li>
-                    <li><a href="about_us.html">About Us</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
-                    <li><a href="product_listing.html">Shop</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/shop">Shop</a></li>
                 </ul>
             </div>
             <p>&copy; 2024 Astonic Sports. All Rights Reserved.</p>

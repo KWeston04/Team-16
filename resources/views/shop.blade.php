@@ -112,7 +112,7 @@
                 <h3>Vortex Runner</h3>
                 <p class="price">£120.00</p>
                 <!-- <button class="buy-btn">View</button> -->
-                <button class="buy-btn" onclick="location.href='vortex_runner.html'">View</button>
+                <button class="buy-btn" onclick="location.href='/vortex_runner'">View</button>
 
             </div>
             <div class="product-card">
