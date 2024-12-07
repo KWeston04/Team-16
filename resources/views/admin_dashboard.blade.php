@@ -1,12 +1,11 @@
-cd<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astonic Sports - Admin Dashboard</title>
-  <link rel="stylesheet" href="{{asset('css/admin_style.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/admin_style.css') }}">
   <style>
-    
     * {
       margin: 0;
       padding: 0;
@@ -146,6 +145,19 @@ cd<!DOCTYPE html>
       font-weight: bold;
     }
 
+    .graph-card {
+      background-color: #ecf0f1;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
     .toggle-btn {
       display: none;
       background-color: #34495e;
@@ -179,7 +191,7 @@ cd<!DOCTYPE html>
     <!-- Sidebar -->
     <nav class="sidebar" id="sidebar">
       <div class="logo">
-        <img src="{{asset('images/astonic_sports_logo.png')}}" alt="Astonic Sports Logo" class="brand-logo">
+        <img src="{{ asset('images/astonic_sports_logo.png') }}" alt="Astonic Sports Logo" class="brand-logo">
         <h1>Astonic Sports</h1>
       </div>
       <ul>
@@ -215,6 +227,12 @@ cd<!DOCTYPE html>
             <p id="products-stock">567</p>
           </div>
         </div>
+
+        <!-- Sales Graph -->
+        <div class="graph-card">
+          <h3>Sales Overview</h3>
+          <canvas id="salesChart"></canvas>
+        </div>
       </section>
 
       <!-- User Management -->
@@ -243,6 +261,7 @@ cd<!DOCTYPE html>
     </div>
   </div>
 
-  <script src="admin_script.js"></script>
+  
+  <script src="{{ asset('js/admin_java.js') }}"></script>
 </body>
 </html>
