@@ -4,34 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astonic Sports</title>
-  <link rel="stylesheet" href="{{ asset('css/HomepageStyle.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/Style_AstonicSports_Home_JB.css') }}">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="{{ route('about_us') }}">
-          <img src="{{ asset('images/astonic-sports-logo.png') }}" alt="Astonic Sports Logo" style="height: 50px; width: auto;">
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="{{ route('home') }}">Home</a></li>
-        <li><a href="{{ route('about_us') }}">About Us</a></li>
-        <li><a href="{{ route('contact_us') }}">Contact Us</a></li>
-        <li><a href="{{ route('product_listing') }}">Shop</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Account</a>
-          <div class="dropdown-content">
-            <a href="{{ route('login') }}">Login</a>
-            <a href="{{ route('register') }}">Register</a>
-            <a href="{{ route('admin_dashboard') }}">Admin Dashboard</a>
-          </div>
-        </li>
-        <li><a href="{{ route('cart') }}">Cart</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- Navigation Bar -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="{{ route('home') }}">
+        <img src="{{ asset('images/astonic-sports-logo.png') }}" alt="Astonic Sports Logo" style="height: 50px; width: auto;">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <!-- Updated Navigation Links -->
+      <li><a href="{{ route('about') }}">About Us</a></li>
+      <li><a href="{{ route('contact') }}">Contact Us</a></li>
+      <li><a href="{{ route('shop') }}">Shop</a></li>
+
+      <!-- Account Dropdown -->
+      <li class="dropdown">
+        <a href="{{ route('profile') }}" class="dropbtn">Account</a>
+        <div class="dropdown-content">
+          <a href="{{ route('login') }}">Login</a>
+          <a href="{{ route('admin_dashboard') }}">Admin</a>
+        </div>
+      </li>
+
+      <!-- Cart Icon -->
+      <li>
+        <a href="{{ route('cart') }}" class="cart-link" style="font-size: 20px;">🛒</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Discount Banner by ibraheem-->
+<div class="discount">
+    <div class="text-container">
+        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT!</span>
+        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT!</span>
+        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT!</span>
+        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT!</span>
+        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT!</span>
+    </div>
+</div>
+
+
 
   <!-- Hero Section -->
   <div class="hero-section">
