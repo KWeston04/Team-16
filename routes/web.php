@@ -42,4 +42,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/contact-preferences', [UserController::class, 'contactPreferences'])->name('profile.contact.preferences');
     Route::get('/profile/contact-us', [UserController::class, 'contactUs'])->name('profile.contact.us');
     Route::get('/profile/wishlist', [UserController::class, 'wishlist'])->name('profile.wishlist');
+
+});
+Route::get('/api/sales-data', function () {
+    return response()->json([
+        ['month' => 'January', 'sales' => 180],
+        ['month' => 'February', 'sales' => 220],
+        ['month' => 'March', 'sales' => 250],
+        ['month' => 'April', 'sales' => 320],
+        ['month' => 'May', 'sales' => 400]
+    ]);
 });
