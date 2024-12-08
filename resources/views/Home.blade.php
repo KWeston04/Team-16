@@ -13,7 +13,7 @@
     <nav class="navbar">
       <div class="logo">
         <a href="/">
-          <img src="{{ asset('images/Astonic Sports logo.png') }}" alt="Astonic Sports Logo" style="height: 50px; width: auto;">
+          <img src="{{ asset('images/Astonic sports logo.png') }}" alt="Astonic Sports Logo" style="height: 50px; width: auto;">
         </a>
 </div>
       <ul class="nav-links">
@@ -65,7 +65,7 @@
         <a href="/shop" class="cta-button">Shop Now</a>
       </div>
     </div>
-    <img src="{{ asset('images/hero-image.png') }}" alt="Hero Image" style="width: 100%; height: auto;">
+    <img src="{{ asset('images/Hero-image.png') }}" alt="Hero Image" style="width: 100%; height: auto;">
   </section>
 
   <!-- Collections Section -->
