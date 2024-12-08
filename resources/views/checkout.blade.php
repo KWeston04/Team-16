@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Astonic Sports</title>
-    <link rel="stylesheet" href="{{ asset('css/cartandcheckout.css')}}"> 
+    <title>ASTONIC SPORTS CHECKOUT</title>
+    <link rel="stylesheet" href="{{asset('css/cartandcheckout.css')}}"> 
 </head>
 
 <body>
-
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <a href="Home.html"><img src="{{asset('images/Astonic Sports Logo.webp')" alt="Astonic Sports Logo"></a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li>
-                <li><a href="product_listing.html">Shop</a></li>
-                <li><a href="login.html">Account</a></li>
-                <li><a href="index.html">Cart</a></li>
-            </ul>
+          <div class="logo">
+            <a href="about_us.html">
+              <img src="{{asset('images/LOGO ASTONIC.png')}}" alt="Home.html">
+            </a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="product_listing.html">Shop</a></li>
+            <li><a href="login.html">Account</a></li>
+            <li><a href="cart.html" class="active">Cart</a></li>
+          
         </nav>
     </header>
 
@@ -148,6 +148,13 @@
 
     <footer>
         <!-- Footer made by ibraheem -->
+        <br>
+        <label class="switch">
+        <div class="dark-mode-toggle">
+            <label for="darkModeSwitch">Dark Mode</label>
+            <input type="checkbox" id="darkModeSwitch">
+        </label>
+        </div>
         <div class="footer-container">
             <!-- Social Media Links Section -->
             <div class="socials">
