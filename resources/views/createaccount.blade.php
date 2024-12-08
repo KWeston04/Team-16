@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Astonic sports</title>
+        <title>Astonic sports - Register</title>
     </head>
     <body>
         <header>
@@ -26,7 +26,7 @@
                 </ul>
               </nav>
         </header>
-        <h1>Register</h1>
+        
    <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,13 +35,31 @@
         }
         h1{
             color: #e0e1dd;
-        }
-        .register-container {
-            background-color: whitesmoke;
-            padding: 20px;
-            border-radius: 10px;
             text-align: center;
-            margin-left: 20px;
+        }
+        .hero-section {
+                background: url('main_image.webp');
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                text-align: center;
+            }
+
+        .register-container {
+             background-color: white;
+                padding: 40px;
+                border-radius: 10px;
+                text-align: center;
+                color: #333;
+                width: 80%;
+                max-width: 500px;
+                box-sizing: border-box;
+                z-index: 2;
         }
         .navbar {
   position: sticky;
@@ -75,10 +93,21 @@
 
 .nav-links a:hover,.nav-links a:focus {
   color: #5dade2; }
+
+  .footer{
+padding: 10px;
+text-align: center;
+color: white;
+background-color:#1a1a2e ;
+}
         </style>
+        <div class="header-section">
+          <h1>Join Astonic Sports Today!</h1>
+      </div>
+      <div class="hero-section">
         <div class="register-container">
             <form id="registerSection">
-                <label for="Title">Title:</label>
+                <label for="Title">Title</label>
                 <select type="text" id="Title" name="Title" required>
                     <option value="" disabled selected>Select your title</option>
                     <option value="Mr">Mr</option>
@@ -86,26 +115,37 @@
                     <option value="Mrs">Mrs</option>
                     <option value="Mrs">Miss</option>
                 </select> <br>
-                <br> <label for="First Name">First Name :</label>
-                <input type="First Name" id="First Name" name="First Name" required><br>
-               <br> <label for="Last Name">Last Name:</label>
-                <input type="text" id="Last Name" name="Last Name" required><br>
+                <br> <label for="FirstName">First Name </label>
+                <input type="text" id="FirstName" name="FirstName" required><br>
 
-                <br> <label for="Email Address">Email Address:</label>
-                <input type="text" id="Email" name="Email Address" required><br>
-                <br><label for="Mobile Number">Mobile Number :</label>
-                <input type="text" id="Mobile Number" name="Mobile Number" required><br>
-                <br><p> Please enter atleast 8 characters which should include atleast one capital letter, one lowercase letter, one numbers and one symbols(!"£$%^&*")</p>
-                <br> <label for="password">Password:</label>
+               <br> <label for="LastName">Last Name</label>
+                <input type="text" id="LastName" name="LastName" required><br>
+
+                <br> <label for="Email">Email Address</label>
+                <input type="email" id="Email" name="Email" required><br>
+
+                <br><label for="MobileNumber">Mobile Number</label>
+                <input type="tel" id="MobileNumber" name="MobileNumber" required><br>
+
+                <br> <label for="password">Password</label>
                 <input type="password" id="password" name="password" required><br>
-                <br> <label for="Confirmpassword">Confirm Password:</label>
-                <input type="Confirm password" id="Confirm password" name="Confirm password" required><br>
-                <br> <label for="country">Country:</label>
+
+                <br> <label for="Confirmpassword">Confirm Password</label>
+                <input type="password" id="Confirmpassword" name="Confirmpassword" required><br>
+
+                <br> <label for="country">Country</label>
                 <input type="country" id="country" name="country" required><br>
-                <br> <label for="Address">Address:</label>
+
+                <br> <label for="Address">Address</label>
                 <input type="Address" id="Address" name="Address" required><br>
+
                 <br> <button type="Register">Register</button>
             </form>
     </div>
+  </div>
+    <footer class="footer">
+      <br> &copy; 2024 Astonic Sports. All Rights Reserved.
+   </footer> 
+    <script src="register.js"></script>
 </body>
 </html>

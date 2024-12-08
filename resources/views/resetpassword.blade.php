@@ -5,13 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Reset Password</title>
         <style>
-          body{
+         body{
             font-family: Arial, sans-serif;
             background-color: #1a1a2e;
             margin: 0;
             display: flex;
             flex-direction: column;
             color: #e0e1dd;
+            min-height: 100vh;
+          }
+          .main{
+            flex: 1;
           }
    .navbar {
   position: sticky;
@@ -67,14 +71,20 @@
                 </ul>
               </nav>
         </header>
+        <main class ="main">
         <h1>Reset Password</h1>
      <p> To reset your password please enter your email address below.</p>
-     <form id="email">
+     <form id="resetpasswordsection">
         <label for="Email">Email:</label>
         <input type="text" id="Email" name="Email" required><br>
        <br> <button type="Reset password">Reset password</button>
      </form>
+    </main>
+     <footer class="footer">
+      <br> &copy; 2024 Astonic Sports. All Rights Reserved.
+   </footer> 
     </body>
+    <script src="forgotten password.js"></script>
 </html>
 
 
