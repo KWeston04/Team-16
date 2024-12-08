@@ -72,6 +72,21 @@ body {
     z-index: 100;
 }
 
+.home-button {
+    display: block;
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #1b263b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+.home-button:hover{
+    background-color: #2e4a73;
+}
 .main-content {
     flex: 1;
     padding: 20px;

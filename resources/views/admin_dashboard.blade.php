@@ -200,6 +200,7 @@
         <li><a href="#" onclick="showSection('productManagement')">Product Management</a></li>
         <li><a href="#" onclick="showSection('orders')">Orders</a></li>
         <li><a href="#" onclick="showSection('inventory')">Inventory</a></li>
+        <button onclick ="window.location.href='home.blade.php'" class="home-button">Homepage</button>
       </ul>
     </nav>
 
