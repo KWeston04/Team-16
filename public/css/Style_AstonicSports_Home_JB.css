@@ -315,3 +315,17 @@ footer {
   }
 }
 
+.notice{
+  display: flex;
+  justify-content: center;   
+  height: 5vh; 
+  background-color: #ffe5e5;
+  box-sizing: border-box;
+
+}
+
+.notice p {
+  margin: 0; 
+  color: #574747;
+  font-size: 1.5vw; 
+}
