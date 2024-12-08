@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #00274d; /* dark blue */
+  background-color: #1a1a2e; /* dark blue */
   padding: 15px 50px;
   z-index: 1000;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Modern Shadow */
@@ -37,7 +37,7 @@ body {
 }
 
 .nav-links a {
-  color: #333333; /* Dark grey */
+  color: #e0e1dd;
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
