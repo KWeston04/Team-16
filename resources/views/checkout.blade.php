@@ -72,7 +72,7 @@
         <div class="alert alert-success">
         {{ session('success') }}
         </div>
-    @endif
+        @endif
         <form id="checkout-form" action="{{route('checkout.placeOrder')}}" method="POST">
             @csrf
             <div class="form-group">
@@ -108,7 +108,14 @@
                 </select>
             </div>
 
-            <input type="hidden" name="user_id" value="{{ auth()->user()->user_id }}"> <!-- Assuming user is authenticated -->
+            @if(auth()->check())
+            <input type="hidden" name="user_id" value="{{ auth()->user()->user_id }}">
+            @else
+            <script>
+                alert("You must be logged in to place an order.");
+                window.location.href = "{{ route('login') }}";
+            </script>
+            @endif
 
             <br><br><br>
             <div class="form-group">

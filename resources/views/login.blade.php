@@ -97,16 +97,16 @@ background-color:#1a1a2e ;
                 <div class="logo">
                   <a href="about_us.html">
                     <!--<img src="Astonic logo.webp" alt="Astonic Sports Logo"> -->
-                   <img src="{{ asset('images/Astonic logo.webp') }}" alt="Astonic Sports Logo">
+                   <img src="{{ asset('images/Astonic Sports logo.webp') }}" alt="Astonic Sports Logo">
                   </a>
                 </div>
                 <ul class="nav-links">
-                  <li><a href="Home.html">Home</a></li>
-                  <li><a href="about_us.html">About Us</a></li>
-                  <li><a href="contact_us.html">Contact Us</a></li>
-                  <li><a href="product_listing.html">Shop</a></li>
-                  <li><a href="login.html">Account</a></li>
-                  <li><a href="cart.html">Cart</a></li>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about">About Us</a></li>
+                  <li><a href="/contact">Contact Us</a></li>
+                  <li><a href="/shop">Shop</a></li>
+                  <li><a href="/login">Account</a></li>
+                  <li><a href="/cart">Cart</a></li>
                 </ul>
               </nav>
         </header>

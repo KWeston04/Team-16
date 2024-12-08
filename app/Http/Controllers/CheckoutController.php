@@ -16,7 +16,10 @@ class CheckoutController extends Controller
 
     public function placeOrder(Request $request) // place order
     {
-        
+        // check if the user is logged in, if not they must be fed an error to prevent a laravel error.
+        if (!Auth::check()) { // technically redundant, but just in case they somehow get past the first check they cannot get past this.
+            return redirect()->route('login')->with('error', 'You must be logged in to place an order.');
+         }   
 
         
         $request->validate([
