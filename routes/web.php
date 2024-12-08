@@ -53,3 +53,8 @@ Route::get('/api/sales-data', function () {
         ['month' => 'May', 'sales' => 400]
     ]);
 });
+
+// Admin Dashboard route
+Route::get('/admin_dashboard', function () {
+    return view('admin_dashboard');
+})->name('admin_dashboard');

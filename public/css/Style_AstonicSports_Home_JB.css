@@ -1,4 +1,3 @@
-/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +10,6 @@ body {
   color: #000;
   line-height: 1.6;
 }
-
 /* Navbar Styles */
 .navbar {
   position: sticky;
@@ -19,12 +17,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f4f4f4; /* Light grey */
+  background-color: #1a1a2e; /* dark blue */
   padding: 15px 50px;
   z-index: 1000;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border-bottom: 2px solid #dceeff; /* Light blue underline */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Modern Shadow */
+  border-bottom: 2px solid #dceeff; /* Lighter border for modern design */
 }
+
 
 .logo img {
   height: 50px;
@@ -38,7 +37,7 @@ body {
 }
 
 .nav-links a {
-  color: #333333; /* Dark grey */
+  color: #e0e1dd;
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
@@ -172,22 +171,22 @@ body {
 
 /* Footer */
 footer {
-  background: #00274d; /* Deep blue */
-  color: #ffffff;
+  background: #333; /* Deep blue */
+  color: #fff;
   text-align: center;
   padding: 20px 10px;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 20px;
 }
 
 .socials, .newsletter, .footer-nav {
   flex: 1 1 200px;
-  margin: 10px;
+  margin: auto;
   max-width: 100%;
 }
 
@@ -228,7 +227,7 @@ footer {
 }
 
 .newsletter button:hover {
-  background: #0056b3;
+  background: #ff5733;
 }
 
 .footer-nav ul {
@@ -275,3 +274,44 @@ footer {
     align-items: center;
   }
 }
+
+/* discount by ibraheem*/
+.highlight {
+  color: #FF5733; 
+  font-weight: bold; 
+}
+
+
+.discount {
+  width: 100%;
+  overflow: hidden; 
+  background-color: #dedfdf; 
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+.text-container {
+  display: flex;
+  gap: 100px; 
+  animation: scroll 30s linear infinite; 
+}
+
+.text-container span {
+  font-size: 18px;
+  white-space: nowrap; 
+  color: #000;
+}
+
+@keyframes scroll {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
+
