@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Filament\Models\Contracts\HasName;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\AdminAction;
 
 class User extends Authenticatable implements FilamentUser, HasName
 {
@@ -77,6 +79,16 @@ class User extends Authenticatable implements FilamentUser, HasName
     public function orders()
     {
         return $this->hasMany(Order::class, 'user_id', 'user_id');
+    }
+
+    public function adminActions(): HasMany
+    {
+        return $this->hasMany(AdminAction::class, 'admin_id');
+    }
+
+    public function userActions(): HasMany
+    {
+        return $this->hasMany(AdminAction::class, 'user_id');
     }
 
 }

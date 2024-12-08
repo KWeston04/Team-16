@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\AdminAction;
 
 class Product extends Model
 {
@@ -29,6 +31,11 @@ class Product extends Model
         return $this->belongsToMany(Order::class, 'order_product', 'product_id', 'order_id')
             ->withPivot('quantity', 'subtotal')
             ->withTimestamps();
+    }
+
+    public function adminActions(): HasMany
+    {
+        return $this->hasMany(AdminAction::class);
     }
 
 }
