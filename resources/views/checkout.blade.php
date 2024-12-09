@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Astonic Sports</title>
-    <link rel="stylesheet" href="{{ asset('css/cartandcheckout.css')}}"> 
+    <title>ASTONIC SPORTS CHECKOUT</title>
+    <link rel="stylesheet" href="{{asset('css/cartandcheckout.css')}}"> 
 </head>
 
 <body>
-
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="/"><img src="{{asset('images/Astonic Sports Logo.webp')}}" alt="Astonic Sports Logo"></a>
+                <a href="/about"><img src="{{asset('images/LOGO ASTONIC.png')}}" alt="Astonic Sports Logo"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
@@ -164,6 +162,13 @@
 
     <footer>
         <!-- Footer made by ibraheem -->
+        <br>
+        <label class="switch">
+        <div class="dark-mode-toggle">
+            <label for="darkModeSwitch">Dark Mode</label>
+            <input type="checkbox" id="darkModeSwitch">
+        </label>
+        </div>
         <div class="footer-container">
             <!-- Social Media Links Section -->
             <div class="socials">
