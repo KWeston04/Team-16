@@ -97,36 +97,38 @@ background-color:#1a1a2e ;
                 <div class="logo">
                   <a href="about_us.html">
                     <!--<img src="Astonic logo.webp" alt="Astonic Sports Logo"> -->
-                   <img src="{{ asset('images/Astonic logo.webp') }}" alt="Astonic Sports Logo">
+                   <img src="{{ asset('images/Astonic Sports logo.webp') }}" alt="Astonic Sports Logo">
                   </a>
                 </div>
                 <ul class="nav-links">
-                  <li><a href="Home.html">Home</a></li>
-                  <li><a href="about_us.html">About Us</a></li>
-                  <li><a href="contact_us.html">Contact Us</a></li>
-                  <li><a href="product_listing.html">Shop</a></li>
-                  <li><a href="login.html">Account</a></li>
-                  <li><a href="cart.html">Cart</a></li>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about">About Us</a></li>
+                  <li><a href="/contact">Contact Us</a></li>
+                  <li><a href="/shop">Shop</a></li>
+                  <li><a href="/login">Account</a></li>
+                  <li><a href="/cart">Cart</a></li>
                 </ul>
               </nav>
         </header>
         <div class="big-container">
         <div class="login-container">
         <h1>Login</h1>
-        <form id="loginSection">
-            <label for="Email">Email:</label>
-            <input type="text" id="Email" name="Email" required><br>
+        <form id="loginSection" action="/login" method="POST">
+          @csrf <!-- CSRF protection -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            
             <br> <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br>
             <br> <button type="submit">Login</button>
         </form>
     <div class="rp">
-        <a href="resetpassword.html">Forgot Password?</a><br>
+        <a href=>Forgot Password?</a><br>
         <h2>
          ----create an account----
         </h2>
     <div>
-      <button> <a href="createaccount.html">Create an account</a> </button> 
+      <button> <a href="/register">Create an account</a> </button> 
     </div>
     </div>
 </div>
