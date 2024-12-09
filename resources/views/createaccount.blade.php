@@ -107,40 +107,30 @@ background-color:#1a1a2e ;
       <div class="hero-section">
         <div class="register-container">
             <form id="registerSection">
-                <label for="Title">Title</label>
-                <select type="text" id="Title" name="Title" required>
-                    <option value="" disabled selected>Select your title</option>
-                    <option value="Mr">Mr</option>
-                    <option value="Ms">Ms</option>
-                    <option value="Mrs">Mrs</option>
-                    <option value="Mrs">Miss</option>
-                </select> <br>
-                <br> <label for="FirstName">First Name </label>
-                <input type="text" id="FirstName" name="FirstName" required><br>
-
-               <br> <label for="LastName">Last Name</label>
-                <input type="text" id="LastName" name="LastName" required><br>
-
-                <br> <label for="Email">Email Address</label>
-                <input type="email" id="Email" name="Email" required><br>
-
-                <br><label for="MobileNumber">Mobile Number</label>
-                <input type="tel" id="MobileNumber" name="MobileNumber" required><br>
-
-                <br> <label for="password">Password</label>
-                <input type="password" id="password" name="password" required><br>
-
-                <br> <label for="Confirmpassword">Confirm Password</label>
-                <input type="password" id="Confirmpassword" name="Confirmpassword" required><br>
-
-                <br> <label for="country">Country</label>
-                <input type="country" id="country" name="country" required><br>
-
-                <br> <label for="Address">Address</label>
-                <input type="Address" id="Address" name="Address" required><br>
-
-                <br> <button type="Register">Register</button>
-            </form>
+            <br> <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required><br>
+            
+            <br> <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required><br>
+        
+            <br> <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required><br>
+            
+            <br> <label for="phone_number">Mobile Number:</label>
+            <input type="text" id="phone_number" name="phone_number" required><br>
+            
+            <br><p>Please enter at least 8 characters which should include at least one capital letter, one lowercase letter, one number, and one symbol (!"£$%^&*").</p>
+            <br> <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            
+            <br> <label for="password_confirmation">Confirm Password:</label>
+            <input type="password" id="password_confirmation" name="password_confirmation" required><br>
+            
+            <br> <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br>
+            
+            <br> <button type="submit">Register</button>
+        </form>
     </div>
   </div>
     <footer class="footer">
