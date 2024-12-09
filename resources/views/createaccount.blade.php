@@ -13,7 +13,7 @@
                 <div class="logo">
                   <a href="about_us.html">
                     <!--<img src="Astonic logo.webp" alt="Astonic Sports Logo"> -->
-                   <img src="{{ asset('images/astonic sports logo.png') }}" alt="Astonic Sports Logo">
+                   <img src="{{ asset('images/Astonic Sports Logo.png') }}" alt="Astonic Sports Logo">
                   </a>
                 </div>
                 <ul class="nav-links">

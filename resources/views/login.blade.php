@@ -97,7 +97,7 @@ background-color:#1a1a2e ;
                 <div class="logo">
                   <a href="about_us.html">
                     <!--<img src="Astonic logo.webp" alt="Astonic Sports Logo"> -->
-                   <img src="{{ asset('images/Astonic Sports logo.webp') }}" alt="Astonic Sports Logo">
+                   <img src="{{ asset('images/Astonic Sports Logo.webp') }}" alt="Astonic Sports Logo">
                   </a>
                 </div>
                 <ul class="nav-links">
