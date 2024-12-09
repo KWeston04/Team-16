@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Astonic sports</title>
+        <title>Astonic sports - Register</title>
     </head>
     <body>
         <header>
@@ -13,7 +13,7 @@
                 <div class="logo">
                   <a href="about_us.html">
                     <!--<img src="Astonic logo.webp" alt="Astonic Sports Logo"> -->
-                   <img src="{{ asset('images/Astonic logo.webp') }}" alt="Astonic Sports Logo">
+                   <img src="{{ asset('images/astonic sports logo.png') }}" alt="Astonic Sports Logo">
                   </a>
                 </div>
                 <ul class="nav-links">
@@ -26,7 +26,7 @@
                 </ul>
               </nav>
         </header>
-        <h1>Register</h1>
+        
    <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,13 +35,31 @@
         }
         h1{
             color: #e0e1dd;
-        }
-        .register-container {
-            background-color: whitesmoke;
-            padding: 20px;
-            border-radius: 10px;
             text-align: center;
-            margin-left: 20px;
+        }
+        .hero-section {
+                background: url('main_image.webp');
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                text-align: center;
+            }
+
+        .register-container {
+             background-color: white;
+                padding: 40px;
+                border-radius: 10px;
+                text-align: center;
+                color: #333;
+                width: 80%;
+                max-width: 500px;
+                box-sizing: border-box;
+                z-index: 2;
         }
         .navbar {
   position: sticky;
@@ -75,7 +93,18 @@
 
 .nav-links a:hover,.nav-links a:focus {
   color: #5dade2; }
+
+  .footer{
+padding: 10px;
+text-align: center;
+color: white;
+background-color:#1a1a2e ;
+}
         </style>
+        <div class="header-section">
+          <h1>Join Astonic Sports Today!</h1>
+      </div>
+      <div class="hero-section">
         <div class="register-container">
           <form id="registerSection" action="/register" method="POST">
             @csrf <!-- i have added a CSRF token for form security -->
@@ -105,5 +134,10 @@
         </form>
         
     </div>
+  </div>
+    <footer class="footer">
+      <br> &copy; 2024 Astonic Sports. All Rights Reserved.
+   </footer> 
+    <script src="register.js"></script>
 </body>
 </html>

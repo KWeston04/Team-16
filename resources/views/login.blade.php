@@ -136,18 +136,18 @@ background-color:#1a1a2e ;
 <form id="Benefits">
     <h3> Benefits of registering with Astonic sports </h3>
     <p> 
-      <br>1. Benefit one <br>
-      <br>2. Benefit two <br>
-     <br> 3. Benefit three <br>
-     <br> 4. Benefit four <br>
-     <br> 5. Benefit five<br>
+    <br>1. Receive special offers <br>
+      <br>2. Manage your orders and preferences<br>
+     <br> 3. Access your saved items<br>
+     <br> 4. Instant access to your account <br>
+     <br> 5. Speed your way to the checkout<br>
     </p>
-
 </form>
 </div>
 </div> 
   <footer class="footer">
    <br> &copy; 2024 Astonic Sports. All Rights Reserved.
 </footer> 
+<script src="Login section.js"></script>
     </body>
     </html>
