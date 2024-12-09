@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orderitems', function (Blueprint $table) {
+        Schema::create('order_items', function (Blueprint $table) {
             $table->id('order_item_id'); // Order item ID (primary key) 
             $table->foreignId('order_id')->constrained('orders','order_id')->onDelete('cascade');  // this depends on the foreign key order_id from orders,
             // if that is deleted this goes too (there will be potentially many order items to one order_id)
