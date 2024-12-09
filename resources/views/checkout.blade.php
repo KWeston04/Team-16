@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="/about"><img src="{{asset('images/LOGO ASTONIC.png')}}" alt="Astonic Sports Logo"></a>
+                <a href="/about"><img src="{{asset('images/LOGO ASTONIC.PNG')}}" alt="Astonic Sports Logo"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>

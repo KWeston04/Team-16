@@ -12,7 +12,7 @@
         <nav class="navbar">
           <div class="logo">
             <a href="about_us.html">
-              <img src="{{asset('images/LOGO ASTONIC.png')}}" alt="Home.html">
+              <img src="{{asset('images/LOGO ASTONIC.PNG')}}" alt="Home.html">
             </a>
           </div>
           <ul class="nav-links">
