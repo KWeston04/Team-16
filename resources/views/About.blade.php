@@ -99,7 +99,7 @@
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/contact">Contact Us</a></li>
                 <li><a href="/shop">Shop</a></li>
-                <li><a href="login.html">Account</a></li>
+                <li><a href="/login">Account</a></li>
                 <li><a href="/cart">Cart</a></li>
             </ul>
         </div>
