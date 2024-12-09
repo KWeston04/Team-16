@@ -16,12 +16,12 @@
             </a>
           </div>
           <ul class="nav-links">
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="about_us.html">About Us</a></li>
-            <li><a href="contact_us.html">Contact Us</a></li>
-            <li><a href="product_listing.html">Shop</a></li>
-            <li><a href="login.html">Account</a></li>
-            <li><a href="cart.html" class="active">Cart</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/login">Account</a></li>
+            <li><a href="/cart">Cart</a></li>
           
         </nav>
     </header>
@@ -70,7 +70,7 @@
         <!-- Bag Items -->
         <div class="bag-items">
         <div class="bag-item" data-price="50">
-            <img src= <img src="{{asset('images/compression top.png')}}" alt="Compression shirt">
+            <img src="{{asset('images/compression top.png')}}" alt="Compression shirt">
             <div class="bag-item-details">
                 <div class="item-name">Astonic FC</div>
                 <div class="bag-item-color-size">Color: Black | Size: XL</div>
@@ -100,7 +100,7 @@
     </div>
 
     <div class="bag-item" data-price="135">
-        <img src="{{asset('images/vortex-shoes.webp')}}" alt="Vortex shoes">
+        <img src="{{asset('images/vortex shoes.webp')}}" alt="Vortex shoes">
         <div class="bag-item-details">
             <div class="item-name">Vortex shoes</div>
             <div class="bag-item-color-size">Color: Black | Size: 10</div>
@@ -206,11 +206,10 @@
         <span>£<span id="total">0.00</span></span>
         <br>
 
-    <a href="checkout.blade.php" class="checkout-button" id="checkout-button" style="pointer-events: none;">CHECKOUT</a>
+    <a href="/checkout" class="checkout-button" id="checkout-button" style="pointer-events: none;">CHECKOUT</a>
     <br><br><br>
 </div>
 
-<br><br><br>
 
 <div class="featured-products">
     <div class="featured-title">
@@ -318,12 +317,12 @@
     
         <div class="footer-nav">
             <ul>
-                <li><a href="Home.blade.php">Home</a></li>
-                <li><a href="about_us.blade.php">About Us</a></li>
-                <li><a href="contact_us.blade.php">Contact Us</a></li>
-                <li><a href="product_listing.blade.php">Shop</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/shop">Shop</a></li>
                 <li><a href="login.blade.php">Account</a></li>
-                <li><a href="cart.blade.php">Cart</a></li>
+                <li><a href="/cart">Cart</a></li>
             </ul>
         </div>
         </div>

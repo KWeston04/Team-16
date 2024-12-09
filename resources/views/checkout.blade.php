@@ -10,19 +10,17 @@
 <body>
     <header>
         <nav class="navbar">
-          <div class="logo">
-            <a href="about_us.html">
-              <img src="{{asset('images/LOGO ASTONIC.png')}}" alt="Home.html">
-            </a>
-          </div>
-          <ul class="nav-links">
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="about_us.html">About Us</a></li>
-            <li><a href="contact_us.html">Contact Us</a></li>
-            <li><a href="product_listing.html">Shop</a></li>
-            <li><a href="login.html">Account</a></li>
-            <li><a href="cart.html" class="active">Cart</a></li>
-          
+            <div class="logo">
+                <a href="/about"><img src="{{asset('images/LOGO ASTONIC.png')}}" alt="Astonic Sports Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/login">Account</a></li>
+                <li><a href="/cart">Cart</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -68,7 +66,13 @@
 <div class="content-wrapper">
     <main class="checkout-container">
         <h1>Checkout</h1>
-        <form id="checkout-form" action="confirmation.html">
+        @if (session('success'))
+        <div class="alert alert-success">
+        {{ session('success') }}
+        </div>
+        @endif
+        <form id="checkout-form" action="{{route('checkout.placeOrder')}}" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required>
@@ -101,6 +105,16 @@
                     <option value="paypal">PayPal</option>
                 </select>
             </div>
+
+            @if(auth()->check())
+            <input type="hidden" name="user_id" value="{{ auth()->user()->user_id }}">
+            @else
+            <script>
+                alert("You must be logged in to place an order.");
+                window.location.href = "{{ route('login') }}";
+            </script>
+            @endif
+
             <br><br><br>
             <div class="form-group">
                 <button type="submit" class="place-order-button">PLACE ORDER</button>
@@ -181,12 +195,12 @@
     
         <div class="footer-nav">
             <ul>
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li>
-                <li><a href="product_listing.html">Shop</a></li>
-                <li><a href="login.html">Account</a></li>
-                <li><a href="index.html">Cart</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/login">Account</a></li>
+                <li><a href="/cart">Cart</a></li>
             </ul>
         </div>
         </div>

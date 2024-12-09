@@ -12,15 +12,25 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    protected $primaryKey = 'user_id'; // i had to define the primary key for the users table
+    public $incrementing = true; // just confirming that it will increment
+    protected $keyType = 'int';
+
+    const UPDATED_AT = null; // disabling the updated_at column as not being used right now
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'username',
         'password',
+        'email',
+        'first_name',
+        'last_name',
+        'phone_number',
+        'address',
     ];
 
     /**
@@ -29,7 +39,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'password_hash',
         'remember_token',
     ];
 
