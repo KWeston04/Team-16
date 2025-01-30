@@ -5,6 +5,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\ProductController;
+
 
 
 Route::get('/', [HomeController::class, 'home']);
@@ -58,3 +63,9 @@ Route::get('/api/sales-data', function () {
 Route::get('/admin_dashboard', function () {
     return view('admin_dashboard');
 })->name('admin_dashboard');
+
+// Routes for products, categories, and inventory
+Route::resource('products', ProductController::class);
+Route::resource('categories', CategoryController::class);
+Route::resource('inventory', InventoryController::class);
+Route::get('/shop-data', [ProductController::class, 'getShopData']);
