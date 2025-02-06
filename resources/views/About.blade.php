@@ -26,7 +26,9 @@
     </header> 
 
     <main>
-        <h1>About us</h1>
+    <div class="center-text">
+
+        <h1>About Us</h1>
         <p>Welcome to Astonic Sports here we aim to provide the highest quality mens sportswear at the best and most affordable prices. We aim to become the leading mens sportwear company in the world and help people reach their health and fitness goals, unleashing their potential whilst also wearing high quality, comfortable sportswear. We are dedicated to creating the best quality sportswear by optimising the use of cutting-edge technology, enabling our customers to exercise in comfort and style. </p>
 
         <h2>Welcome to Astonic Sports</h2>
@@ -60,6 +62,7 @@
         <p>Follow us on social media for updates on new products, fitness advice, and community stories. Let’s redefine the possibilities in sportswear and celebrate every achievement along the way.</p>
 
         <p>Astonic Sports – Empower Your Potential</p>
+</div>
     </main>
 
     <footer>
@@ -111,11 +114,50 @@
 }
 
 body {
-  background: #f7f7f7; /* White background /
-  color: #e0e1dd; / Light gray text */
-  line-height: 1.6;
-}
+            background: url('images/background.png') center/cover no-repeat fixed;
+            background-color: #383844;
+            color: #e0e1dd;
+            line-height: 1.6;
+            position: relative;
+        }
 
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(7, 7, 7, 0.7);
+            z-index: -1;
+        }
+
+        main {
+            .center-text {
+    text-align: center;
+}
+            padding: 60px 30px;
+            max-width: 1200px;
+            margin: 50px auto;
+            background: rgba(232, 226, 226, 0.05);
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
 .navbar {
   position: sticky;
   top: 0;
