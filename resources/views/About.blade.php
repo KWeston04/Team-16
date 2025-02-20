@@ -2,7 +2,7 @@
 <head> 
     <meta charset="UTF-8">
     <title>Astonic Sports</title>
-    <link href="" rel="stylesheet"> <!-- Added rel attribute for correct linking -->
+    <link href="" rel="stylesheet"> 
 </head>
 
 <body> 
@@ -31,11 +31,17 @@
         <h1>About Us</h1>
         <p>Welcome to Astonic Sports here we aim to provide the highest quality mens sportswear at the best and most affordable prices. We aim to become the leading mens sportwear company in the world and help people reach their health and fitness goals, unleashing their potential whilst also wearing high quality, comfortable sportswear. We are dedicated to creating the best quality sportswear by optimising the use of cutting-edge technology, enabling our customers to exercise in comfort and style. </p>
 
+        <img src="Headquarters.png" alt="Headquarters Image" width="550" height="300">
+
         <h2>Welcome to Astonic Sports</h2>
         <p>Where innovation, style, and performance come together to support men in their fitness journeys. We believe in the transformative power of movement, the strength found in community, and the relentless pursuit of excellence—all reflected in our sportswear.</p>
 
         <h3>Our Story</h3>
         <p>Astonic Sports was founded with a vision: to blend high-performance functionality with style, creating athletic wear that active men can rely on to meet their goals. We know peak performance demands confidence, and our mission is to provide gear that supports you through every stride, lift, and sprint.</p>
+      
+        <video width="600" height="350" autoplay loop muted controls>
+            <source src="Headquarters-video.mp4" type="video/mp4">
+        </video>
 
         <h3>Our Mission</h3>
         <p>We aim to inspire and empower men to realize their athletic potential. By bridging the latest in fabric technology with effortless style, Astonic Sports delivers apparel that meets the rigorous demands of intense workouts while staying comfortable for everyday wear. Our gear embodies the motivation, resilience, and discipline needed to reach new levels of personal excellence.</p>
@@ -57,6 +63,10 @@
 
         <h3>Join Us</h3>
         <p>Astonic Sports is more than a brand—it’s a call to action. We’re here to inspire, equip, and support men at every stage of their fitness journey. Whether you're a newcomer or a seasoned athlete, join our community and discover gear that keeps up with you.</p>
+
+        <video width="600" height="350" autoplay loop muted controls>
+            <source src="Customers-video.mp4" type="video/mp4">
+        </video>
 
         <h3>Stay Connected</h3>
         <p>Follow us on social media for updates on new products, fitness advice, and community stories. Let’s redefine the possibilities in sportswear and celebrate every achievement along the way.</p>
