@@ -8,9 +8,9 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('category')->paginate(10); // Fetch products with their categories
+        $products = Product::with(['category', 'inventory'])->paginate(10);
         return view('products.index', compact('products'));
-    }
+    }    
 
     public function create()
     {
@@ -62,5 +62,16 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('products.index')->with('success', 'Product deleted successfully!');
+    }
+
+    public function getShopData()
+    {
+        $products = Product::with(['category', 'inventory'])->get();
+        $categories = Category::all();
+
+        return response()->json([
+            'products' => $products,
+            'categories' => $categories
+        ]);
     }
 }
