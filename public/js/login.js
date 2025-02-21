@@ -3,7 +3,7 @@ document.getElementById("loginSection").addEventListener("submit", function(even
     event.preventDefault();
 
     const password = document.getElementById("password").value;
-    const email = document.getElementById("Email").value;
+    const email = document.getElementById("email").value;
 
     if (!email.includes("@") || (!email.includes("."))){
      alert("please enter Email must be valid");

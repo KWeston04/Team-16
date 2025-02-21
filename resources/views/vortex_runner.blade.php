@@ -1,36 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vortex Runner - Astonic Sports</title>
-    <link rel="stylesheet" href="{{asset('css/shopping.css')}}">
-</head>
+@section('title', 'Vortex Runner')
 
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="/">
-                    <img src="{{asset('images/Astonic Sports Logo.webp')}}" alt="Astonic Sports Logo">
-                </a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-                <li><a href="/shop">Shop</a></li>
-                <li><a href="/login">Account</a></li>
-                <li><a href="/cart">Cart</a></li>
-            </ul>
-        </nav>
-    </header>
+@section('page-specific-css')
+    <link rel="stylesheet" href="{{ asset('css/shopping.css') }}">
+@endsection
 
+@section('content')
     <main>
         <section class="product-detail">
             <div class="product-image">
-                <img src="{{asset('images/vortex shoes.webp')}}" alt="Vortex Runner"> <!-- {{asset('images/Astonic Vortex Runner.webp')}} -->
+                <img src="{{ asset('images/vortex shoes.webp') }}" alt="Vortex Runner">
             </div>
             <div class="product-info">
                 <h1>Vortex Runner</h1>
@@ -65,20 +45,4 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-nav">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/contact">Contact Us</a></li>
-                    <li><a href="/shop">Shop</a></li>
-                </ul>
-            </div>
-            <p>&copy; 2024 Astonic Sports. All Rights Reserved.</p>
-        </div>
-    </footer>
-</body>
-
-</html>
+@endsection
