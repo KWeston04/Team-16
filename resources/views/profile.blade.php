@@ -1,79 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <title>Astonic Sports Profile</title>
-  <style>
- 
+@extends('layouts.master')
+@section('title', 'Profile')
 
-    body {
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      padding: 20px;
-    }
-    .main-container {
-    display: flex;
-    min-height: 100vh; /* Ensure it takes the full viewport height */
-    }
+@section('page-specific-css')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/profile.css')}}">
+@endsection
 
-    .nav-container {
-      width: 200px;
-      background-color: #1a1a2e;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-      margin-right: 20px;
-    }
-
-    .nav-container h2 {
-      text-align: center;
-      color: whitesmoke;
-      margin-bottom: 20px;
-    }
-
-    .nav-link {
-      display: block;
-      padding: 10px;
-      margin: 10px 0;
-      text-decoration: none;
-      color: #1a1a2e;
-      background-color:whitesmoke;
-      border-radius: 5px;
-      text-align: center;
-    }
-
-    .nav-link:hover {
-      background-color: #E9edf6;
-    }
-
-    /* Right Container - Content */
-    .content-container {
-      flex: 1;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-    }
-
-    .content-container h1 {
-      color: #1a1a2e;
-      margin-bottom: 20px;
-    }
-
-    .content-container p {
-      color: #1a1a2e;
-      margin-bottom: 20px;
-    }
-
-    
-  </style>
-</head>
-
-
-<body>
+@section('content')
 
   @if (session('success'))
   <div class="alert alert-success text-center mb-4" role="alert">
@@ -106,7 +39,5 @@
     </div>
   </div>
 
-</body>
-</html>
-
+@endsection
 

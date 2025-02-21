@@ -1,0 +1,28 @@
+.main-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.order1 {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    min-height: 300px;
+}
+
+.clothing {
+    display: flex;
+    justify-content: left;
+}
+
+.clothing img {
+    height: 190px;
+    width: auto;
+    display: block;
+}

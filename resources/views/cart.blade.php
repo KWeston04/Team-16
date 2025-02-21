@@ -1,30 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASTONIC SPORTS CHECKOUT</title>
-    <link rel="stylesheet" href="{{asset('css/cartandcheckout.css')}}"> 
-</head>
+@extends('layouts.master')
+@section('title', 'Cart')
 
-<body>
-    <header>
-        <nav class="navbar">
-          <div class="logo">
-            <a href="/about">
-              <img src="{{asset('images/LOGO ASTONIC.PNG')}}" alt="Astonic Sports Logo">
-            </a>
-          </div>
-          <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/login">Account</a></li>
-            <li><a href="/cart">Cart</a></li>
-          
-        </nav>
-    </header>
+@section('page-specific-css')
+    <link rel="stylesheet" href="{{asset('css/cartandcheckout.css')}}"> 
+@endsection
+
+@section('content')
 
 <div class="discount">
     <div class="text-container">
@@ -282,52 +263,7 @@
     </div>
 </div>
 
-    <footer>
-        <!-- Footer made by ibraheem -->
-        <br>
-        <label class="switch">
-        <div class="dark-mode-toggle">
-            <label for="darkModeSwitch">Dark Mode</label>
-            <input type="checkbox" id="darkModeSwitch">
-        </label>
-        </div>
-        <div class="footer-container">
-            <!-- Social Media Links Section -->
-            <div class="socials">
-                <p>FOLLOW US ON SOCIALS</p>
-                <br>
-                <div class="social-links">
-                    <a href="#"aria-label="Follow us on Facebook"></a><img src="{{asset('images/facebook-logo.png')}}" alt="Facebook"></a>
-                    <a href="#"aria-label="Follow us on Twitter"></a><img src="{{asset('images/twitter-logo.png')}}" alt="Twitter"></a>
-                    <a href="#"aria-label="Follow us on Instagram"></a><img src="{{asset('images/instagram-logo.png')}}" alt="Instagram"></a>
-                </div>
-            </div>
-    
-            <!-- Newsletter Signup Section -->
-            <div class="newsletter">
-                <h4>SIGN UP TO OUR NEWSLETTER</h4>
-                <p>Sign up for the latest updates on product releases &amp; discounts!</p>
-                <form action="email">
-                    <input value="" name="EMAIL" class="email" id="footer-EMAIL" placeholder="Enter Email Address" required="" type="email">
-                   <br><br>
-                    <input value="Join" class="button" type="submit">
-                </form>
-                <p>&copy; 2024 Astonic Sports. All Rights Reserved.</p>
-            </div>
-    
-        <div class="footer-nav">
-            <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-                <li><a href="/shop">Shop</a></li>
-                <li><a href="/login">Account</a></li>
-                <li><a href="/cart">Cart</a></li>
-            </ul>
-        </div>
-        </div>
-    </footer>
-
+@endsection
+@section('page-specific-js')
     <script src="{{asset('js/cartandcheckout.js')}}"></script>
-</body>
-</html>
+@endsection

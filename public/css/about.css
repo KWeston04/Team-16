@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    line-height: 1.6;
+}
+
+.about-us h1, h2, h3 {
+    color: #1a1a2e;  
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about-us h1 {
+    font-size: 3rem;
+    color: #1a1a2e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    color: #3e3e57;  
+    margin-bottom: 20px;
+}
+
+.about-us h3 {
+    font-size: 2rem;
+    color: #9191c4;  
+    margin-bottom: 10px;
+}
+
+.about-us p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    color: #555;  
+}
+
+.reasons {
+    list-style: none;  
+    padding: 0;
+    margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reasons li::before {
+    content: "•";  
+    position: absolute;
+    left: 0;
+    color: #000000;  
+    font-size: 1.5rem;
+    top: 0;
+    font-weight: bold;
+}
+
+.reasons li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;  
+}

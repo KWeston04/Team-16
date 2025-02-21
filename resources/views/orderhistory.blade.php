@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
-@section('title', 'Payment Method')
+@section('title', 'Order History')
 
 @section('page-specific-css')
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/orderhistory.css') }}">
 @endsection
 
 @section('content')
@@ -21,22 +21,24 @@
     </div>
 
     <div class="content-container">
-        <h1>Payment Method</h1>
-        <form id="payment-method-form">
-            <br> 
-            <a href="{{ route('profile.add.card') }}" class="button-link">Add New Card</a>  
-            <br><br>
-            
-            <b><p>Card Details:</p></b>
-            <b><p>Card Number (only last 4 digits shown):</p></b>
-            <p>**** **** **** 1234</p>
+        <h1>Orders</h1>
+        <div class="order1">
+            <div class="clothing">
+                <img src="{{ asset('images/wind_breaker.png') }}" alt="Wind Breaker">
+            </div>
 
-            <b><p>Name on Card:</p></b>
-            <p>John Smith</p>
+            <b><p>Order Date:</p></b>
+            <p>19/11/2029</p>
 
-            <b><p>Expiry Date:</p></b>
-            <p>12/25</p>
-        </form>
+            <b><p>Order Total:</p></b>
+            <p>£100</p>
+
+            <b><p>Dispatched Date:</p></b>
+            <p>20/11/2029</p>
+
+            <b><p>Delivered Date:</p></b>
+            <p>21/11/2029</p>
+        </div>
     </div>
 </div>
 @endsection
