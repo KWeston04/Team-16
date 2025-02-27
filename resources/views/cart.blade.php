@@ -45,223 +45,200 @@
     </div>
  </div>
 
-<div class="content-wrapper">
-<div class="container">
-    <div class="bag-container">
-        <!-- Bag Items -->
-        <div class="bag-items">
-        <div class="bag-item" data-price="50">
-            <img src="{{asset('images/compression top.png')}}" alt="Compression shirt">
-            <div class="bag-item-details">
-                <div class="item-name">Astonic FC</div>
-                <div class="bag-item-color-size">Color: Black | Size: XL</div>
-                <BR>
-                <div class="bag-item-quantity">
-                <label for="quantity" class="highlight">Quantity:</label>
-                <br><br>
-                <div class="item-form">
-                    <select id="quantity" name="quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>             
-                </div>
-                </div>
-
-            <div class="bag-item-price">£<span class="item-price">50.00</span></div>
-            <button class="remove-item">REMOVE</button>
-        </div>
-    </div>
-
-    <div class="bag-item" data-price="135">
-        <img src="{{asset('images/vortex shoes.webp')}}" alt="Vortex shoes">
-        <div class="bag-item-details">
-            <div class="item-name">Vortex shoes</div>
-            <div class="bag-item-color-size">Color: Black | Size: 10</div>
-            <BR>
-            <div class="bag-item-quantity">
-                <label for="quantity" class="highlight">Quantity:</label>
-                <br><br>
-                <div class="item-form">
-                <select id="quantity" name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>             
-            </div>
-            </div>
-            <div class="bag-item-price">£<span class="item-price">135.00</span></div>
-            <button class="remove-item">REMOVE</button>
-        </div>
-    </div>
-    <div class="bag-item" data-price="90">
-        <img src="{{asset('images/wind_breaker.png')}}" alt="wind_breaker">
-        <div class="bag-item-details">
-            <div class="item-name">WindBreaker</div>
-            <div class="bag-item-color-size">Color: Black | Size: 10</div>
-            <BR>
-            <div class="bag-item-quantity">
-                <label for="quantity" class="highlight">Quantity:</label>
-                <br><br>
-                <div class="item-form">
-                <select id="quantity" name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>             
-            </div>
-            </div>
-            <div class="bag-item-price">£<span class="item-price">90.00</span></div>
-            <button class="remove-item">REMOVE</button>
-        </div>
-    </div>
-    <div class="bag-item" data-price="50">
-        <img src="{{asset('images/hoodie.png')}}" alt="Astonic hoodie">
-        <div class="bag-item-details">
-            <div class="item-name">Astonic Hoodie</div>
-            <div class="bag-item-color-size">Color: Black | Size: XL</div>
-            <BR>
-            <div class="bag-item-quantity">
-            <label for="quantity" class="highlight">Quantity:</label>
-            <br><br>
-            <div class="item-form">
-                <select id="quantity" name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>             
-            </div>
-            <br><br>
-        <div class="bag-item-price">£<span class="item-price">50.00</span></div>
-        <button class="remove-item">REMOVE</button>
-            </div>
-        </div>
-    </div>
-    </div>
-        </div>
-    </div>
-</div>
-</div>
-        <!-- Bag Summary -->
-<div class="bag-summary">
-    <div class="bag-summary-title">TOTAL</div>
-    </div>
-    <div class="bag-summary-item">
-        <span class="highlight">Subtotal ‎ </span>
-        <span>£<span id="subtotal">0.00</span></span>
-    </div>
-    <div class="bag-summary-item">
-        <span class="highlight">Delivery ‎ </span>
-        <span>£<span id="delivery">4.50</span></span>
-    </div>
-    <div class="bag-summary-itemm">
-        <span class="highlight">Total ‎ </span>
-        <span>£<span id="total">0.00</span></span>
-        <br>
-
-    <a href="/checkout" class="checkout-button" id="checkout-button" style="pointer-events: none;">CHECKOUT</a>
-    <br><br><br>
-</div>
-
-
-<div class="featured-products">
-    <div class="featured-title">
-        <h2>Featured Products</h2>
-        <br>
-    </div>
-<div class="product-list">
-    <div class="product">
-        <img src="{{asset('images/vortex shoes.webp')}}" alt="Vortex 2 Shoes">
-        <h3>Vortex 2 Shoes</h3>
-        <p>£140.00</p>
-    </div>
-    <div class="product">
-        <img src="{{asset('images/flask.webp')}}" alt="Astonic Flask">
-        <h3>Astonic Flask</h3>
-        <p>£10.00</p>
-    </div>
-    <div class="product">
-        <img src="{{asset('images/edge pro.webp')}}" alt="Vortex Hat">
-        <h3>Vortex Hat</h3>
-        <p>£20.00</p>
-    </div>
-    <div class="product">
-        <img src="{{asset('images/hat.png')}}" alt="Edge Pro Running Shoes">
-        <h3>Edge Pro</h3>
-        <p>£90.00</p>
-    </div>
-    <div class="product">
-        <img src="{{asset('images/Football shirt white.webp')}}" alt="Football Shirt">
-        <h3>Football Shirt</h3>
-        <p>£40.00</p>
-    </div>
-</div>
-</div>
+    <main>
+        <div class="cart-container">
+            <h2>CART</h2><br><br>
+            <div class="cart-items">
+                <!-- First Item -->
+                <div class="cart-item" data-price="50">
+    <img src="{{ asset('images/compression top.png') }}" alt="Compression shirt">
     
-<div class="faq-section">
-    <!-- FAQ Dropdown -->
-    <div class="faq-dropdown">
-        <input type="checkbox" id="faq-toggle">
-        <label for="faq-toggle" class="faq-main">Frequently Asked Questions</label>
+    <div class="item-details">
+        <p class="item-name">Astonic FC</p>
+        <span class="item-size">XL</span>  ‎ ‎ 
+        <span class="item-color">Black</span>
+    </div>
+    
+    <div class="item-quantity">
+        <select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    
+    <div class="bag-item-price">£<span class="item-price">50.00</span></div>
+    
+    <button class="remove-item">✖</button>
+</div>
         
-        <div class="faq-items">
-            <!-- Question 1 -->
-            <div class="faq-item">
-                <input type="checkbox" id="faq1">
-                <label for="faq1" class="faq-question">What is your return policy?</label>
-                <div class="faq-answer">
-                    Items can be refunded or exchanged within 30 days of purchase. Please keep the order number and receipt.
-                </div>
-            </div>
+<!-- Second Item -->
+<div class="cart-item" data-price="135">
+    <img src="{{ asset('images/vortex-shoe.webp') }}" alt="Vortex Shoes">
+    
+    <div class="item-details">
+        <p class="item-name">Vortex Shoes</p>
+        <span class="item-size">10</span>  ‎ ‎ 
+        <span class="item-color">Black</span> 
+    </div>
+    
+    <div class="item-quantity">
+        <select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    
+    <div class="bag-item-price">£<span class="item-price">135.00</span></div>
+    
+    <button class="remove-item">✖</button>
+</div>
+<!-- Third Item -->
+<div class="cart-item" data-price="60">
+    <img src="{{ asset('images/hoodie.png') }}" alt="Astonic Hoodie">
+    
+    <div class="item-details">
+        <p class="item-name">Astonic Hoodie</p>
+        <span class="item-size">S</span> ‎ ‎  
+        <span class="item-color">Black</span>
+    </div>
+    
+    <div class="item-quantity">
+        <select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    
+    <div class="bag-item-price">£<span class="item-price">60.00</span></div>
+    
+    <button class="remove-item">✖</button>
+</div>
 
-            <!-- Question 2 -->
-            <div class="faq-item">
-                <input type="checkbox" id="faq2">
-                <label for="faq2" class="faq-question">Do you offer free shipping?</label>
-                <div class="faq-answer">
-                    Yes, we offer free shipping on orders over £100
-                </div>
-            </div>
+<!-- Fourth Item -->
+<div class="cart-item" data-price="90">
+    <img src="{{ asset('images/wind_breaker.png') }}" alt="Wind Breaker">
+    
+    <div class="item-details">
+        <p class="item-name">Windbreaker</p>
+        <span class="item-size">M</span> ‎ ‎ 
+        <span class="item-color">Black</span>
+    </div>
+    
+    <div class="item-quantity">
+        <select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    
+    <div class="bag-item-price">£<span class="item-price">90.00</span></div>
+    
+    <button class="remove-item">✖</button>
+</div>
+        
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <div class="coupon-section">
+                    <input type="text" placeholder="Coupon Code">
+                    <button class="apply-btn">Apply Promo Code</button>
+                </div><br>
+                
+                <div class="cart-prices">
+                    <p>Subtotal: <span class="highlight" id="subtotal">£0.00</span></p>
+                    <p>Shipping: <span class="highlight" id="delivery">£4.50</span></p>
+                    <p class="Total">Total: <span class="highlight" id="total">£0.00</span></p>
 
-            <!-- Question 3 -->
-            <div class="faq-item">
-                <input type="checkbox" id="faq3">
-                <label for="faq3" class="faq-question">How can I contact customer support?</label>
-                <div class="faq-answer">
-                    You can contact us via social media or by email at contact@Astonic.com
+        
+                <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+            </div>
+        </div>
+        </div>
+        </div>
+    <br><br><br>
+
+    <div class="featured-products">
+        <div class="featured-title">
+            <h2>Featured Products</h2>
+            <br>
+        </div>
+    <div class="product-list">
+        <div class="product">
+            <img src="images/vortex shoes.webp" alt="Vortex 2 Shoes">
+            <h3>Vortex 2 Shoes</h3>
+            <p>£140.00</p>
+        </div>
+        <div class="product">
+            <img src="images/flask.webp" alt="Astonic Flask">
+            <h3>Astonic Flask</h3>
+            <p>£10.00</p>
+        </div>
+        <div class="product">
+            <img src="images/hat.png" alt="Vortex Hat">
+            <h3>Vortex Hat</h3>
+            <p>£20.00</p>
+        </div>
+        <div class="product">
+            <img src="images/edge pro.webp" alt="Edge Pro Running Shoes">
+            <h3>Edge Pro</h3>
+            <p>£90.00</p>
+        </div>
+        <div class="product">
+            <img src="images/Football shirt white.webp" alt="Football Shirt">
+            <h3>Football Shirt</h3>
+            <p>£40.00</p>
+        </div>
+    </div>
+    </div>
+
+        <div class="faq-section">
+            <!-- FAQ Dropdown -->
+            <div class="faq-dropdown">
+                <input type="checkbox" id="faq-toggle">
+                <label for="faq-toggle" class="faq-main">Frequently Asked Questions</label>
+                
+                <div class="faq-items">
+                    <!-- Question 1 -->
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq1">
+                        <label for="faq1" class="faq-question">What is your return policy?</label>
+                        <div class="faq-answer">
+                            Items can be refunded or exchanged within 30 days of purchase. Please keep the order number and receipt.
+                        </div>
+                    </div>
+        
+                    <!-- Question 2 -->
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq2">
+                        <label for="faq2" class="faq-question">Do you offer free shipping?</label>
+                        <div class="faq-answer">
+                            Yes, we offer free shipping on orders over £100
+                        </div>
+                    </div>
+        
+                    <!-- Question 3 -->
+                    <div class="faq-item">
+                        <input type="checkbox" id="faq3">
+                        <label for="faq3" class="faq-question">How can I contact customer support?</label>
+                        <div class="faq-answer">
+                            You can contact us via social media or by email at contact@Astonic.com
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </main>
 
 @endsection
 @section('page-specific-js')

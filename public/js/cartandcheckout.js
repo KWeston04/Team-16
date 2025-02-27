@@ -1,55 +1,103 @@
-function updateTotals() {
-    let subtotal = 0;
-    const items = document.querySelectorAll('.bag-item');
+document.addEventListener("DOMContentLoaded", () => {
+    const qtyButtons = document.querySelectorAll(".qty-btn");
+    const removeButtons = document.querySelectorAll(".remove-item");
+    const checkoutButton = document.querySelector(".checkout-btn");
+    const darkModeSwitch = document.getElementById("darkModeSwitch");
 
-    items.forEach(item => {
-        const price = parseFloat(item.getAttribute('data-price')); 
-        const quantity = parseInt(item.querySelector('select[name="quantity"]').value); // Get selected quantity
-        subtotal += price * quantity; 
+
+    const applyBtn = document.querySelector(".apply-btn");
+    const promoInput = document.querySelector(".coupon-section input");
+    let discount = 0;
+
+    // Promo Code 
+    applyBtn.addEventListener("click", () => {
+        const promoCode = promoInput.value.trim().toUpperCase();
+        if (promoCode === "ASTONIC24") {
+            discount = 0.05; // 5% discount
+            alert("Promo code applied! You get 5% off.");
+        } else {
+            discount = 0;
+            alert("Invalid promo code.");
+        }
+        updateTotals();
+        promoInput.value = '';
     });
 
-    const delivery = subtotal > 100 ? 0 : subtotal === 0 ? 0 : 4.50;
-    const total = subtotal + delivery;
+    // Update Totals
 
-    document.getElementById('subtotal').textContent = subtotal.toFixed(2);
-    document.getElementById('delivery').textContent = delivery.toFixed(2);
-    document.getElementById('total').textContent = total.toFixed(2);
+    function updateTotals() {
+        let subtotal = 0;
+        const cartItems = document.querySelectorAll(".cart-item");
 
-    const checkoutButton = document.querySelector('.checkout-button');
-    if (subtotal === 0) {
-        checkoutButton.style.pointerEvents = 'none'; 
-        checkoutButton.style.opacity = '0.5';
-        checkoutButton.textContent = "CANNOT CHECKOUT"; 
-    } else {
-        checkoutButton.style.pointerEvents = 'auto'; 
-        checkoutButton.style.opacity = '1'; 
-        checkoutButton.textContent = "CHECKOUT";
+        cartItems.forEach(item => {
+            const price = parseFloat(item.getAttribute("data-price"));
+            const quantity = parseInt(item.querySelector("select[name='quantity']").value);
+            subtotal += price * quantity;
+        });
+
+        const delivery = subtotal > 100 ? 0 : subtotal === 0 ? 0 : 4.50;
+        const discountAmount = subtotal * discount;
+        const total = subtotal - discountAmount + delivery;
+
+        document.getElementById("subtotal").textContent = "£" + subtotal.toFixed(2);
+        document.getElementById("delivery").textContent = "£" + delivery.toFixed(2);
+        document.getElementById("total").textContent = "£" + total.toFixed(2);
+
+        if (subtotal === 0) {
+            checkoutButton.style.pointerEvents = "none";
+            checkoutButton.style.opacity = "0.5";
+            checkoutButton.textContent = "CANNOT CHECKOUT";
+        } else {
+            checkoutButton.style.pointerEvents = "auto";
+            checkoutButton.style.opacity = "1";
+            checkoutButton.textContent = "PROCEED TO CHECKOUT";
+        }
     }
-}
 
+    // Quantity Button
 
-document.addEventListener('change', function (event) {
-    if (event.target.name === 'quantity') {
-        updateTotals(); 
-    }
+    qtyButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            let input = button.parentNode.querySelector("select[name='quantity']");
+            let value = parseInt(input.value);
+
+            if (button.classList.contains("plus")) {
+                input.value = value + 1;
+            } else if (button.classList.contains("minus") && value > 1) {
+                input.value = value - 1;
+            }
+            updateTotals();
+        });
+    });
+
+    // Quantity Change
+
+    document.addEventListener("change", event => {
+        if (event.target.name === "quantity") {
+            updateTotals();
+        }
+    });
+
+    // Remove Item Button
+
+    removeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            button.closest(".cart-item").remove();
+            updateTotals();
+        });
+    });
+
+    // Checkout Button
+
+    checkoutButton.addEventListener("click", event => {
+        event.preventDefault();
+        if (parseFloat(document.getElementById("subtotal").textContent.replace("£", "")) === 0) {
+            alert("You cannot proceed to checkout with an empty cart!");
+            return;
+        }
+        alert("Proceeding to checkout!");
+        window.location.href = '/checkout'; 
+    });
+
+    updateTotals();
 });
-
-
-document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('remove-item')) {
-        event.target.closest('.bag-item').remove();
-        updateTotals(); 
-    }
-});
-
-document.querySelector('.checkout-button').addEventListener('click', function (event) {
-    event.preventDefault();
-    if (parseFloat(document.getElementById('subtotal').textContent) === 0) {
-        alert('You cannot proceed to checkout with an empty cart!');
-        return;
-    }
-    alert('Proceeding to checkout!');
-    window.location.href = '/checkout'; 
-});
-
-updateTotals();
