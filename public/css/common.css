@@ -94,6 +94,7 @@ footer {
   background-color: #FF5733;
   color: white;
   border: none;
+  width: 70%;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
