@@ -36,100 +36,93 @@
     color: #007bff;
   }
   
-  /* Footer */
-  footer {
-    background: #333; 
-    color: #fff;
-    text-align: center;
-    padding: 20px 10px;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-  
-  .socials, .newsletter, .footer-nav {
-    flex: 1 1 200px;
-    margin: auto;
-    max-width: 100%;
-  }
-  
-  .socials p {
-    font-weight: bold;
-  }
-  
-  .socials img {
-    width: 30px;
-    margin: 0 10px;
-    transition: transform 0.3s;
-  }
-  
-  .socials img:hover {
-    transform: scale(1.1);
-  }
-  
-  .newsletter h4 {
-    font-weight: bold;
-  }
-  
-  .newsletter input {
-    padding: 10px;
-    margin-right: 10px;
-    width: 70%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .newsletter button {
-    padding: 10px 15px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-  }
-  
-  .newsletter button:hover {
-    background: #ff5733;
-  }
-  
-  .footer-nav ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-  }
-  
-  .footer-nav li {
-    margin: 10px 0;
-  }
-  
-  .footer-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .footer-nav a:hover {
-    color: #5dade2;
-  }
-  
-  .footer-nav a::after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 0;
-    margin: auto;
-    background: #ffffff;
-    transition: width 0.3s;
-  }
-  
-  .footer-nav a:hover::after {
-    width: 50%;
-  }
+  /* FOOTER mohammed ibraheem*/
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding-top: 20px 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.socials, .newsletter, .footer-nav {
+  flex: 1 1 200px;
+  margin: auto;
+  max-width: 100%;
+}
+
+.socials p, .newsletter h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.newsletter h3 {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size:xx-large;
+  color: #fff;
+}
+
+.social-links img {
+  height: 40px;
+  margin: 0 5px;
+  transition: transform 0.7s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.2);
+}
+
+.newsletter input[type="email"] {
+  padding: 10px 15px;
+  width: 65%;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+}
+
+.newsletter input[type="submit"] {
+  padding: 8px 15px;
+  background-color: #FF5733;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.newsletter input[type="submit"]:hover {
+  background-color: #b23f26;
+}
+
+.footer-nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.footer-nav li {
+  margin: 10px 0;
+}
+
+.footer-nav a {
+  font-weight: bold;
+  color: #e0e1dd;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-nav a:hover {
+  color: #5dade2;
+}
   
   @media (max-width: 768px) {
     .footer-container {

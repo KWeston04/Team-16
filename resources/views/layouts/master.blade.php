@@ -56,29 +56,43 @@
 
     <!-- Footer -->
     <footer>
+        <!-- Footer made by ibraheem -->
         <div class="footer-container">
+            <!-- Social Media Links Section -->
             <div class="socials">
-                <p>Follow Us</p>
-                <a href="#"><img src="{{ asset('images/facebook.png') }}" alt="Facebook"></a>
-                <a href="#"><img src="{{ asset('images/twitter-logo.png') }}" alt="Twitter"></a>
-                <a href="#"><img src="{{ asset('images/instagram.png') }}" alt="Instagram"></a>
+                <p>FOLLOW US ON SOCIALS</p>
+                <br>
+                <div class="social-links">
+                    <a href="#"aria-label="Follow us on Facebook"></a><img src="{{ asset('images/facebook.png') }}" alt="Facebook"></a>
+                    <a href="#"aria-label="Follow us on Twitter"></a><img src="{{ asset('images/twitter-logo.png') }}" alt="Twitter"></a>
+                    <a href="#"aria-label="Follow us on Instagram"></a><img src="{{ asset('images/instagram.png') }}" alt="Instagram"></a>
+                </div>
             </div>
+            <!-- Newsletter Signup Section -->
             <div class="newsletter">
-                <h4>Sign Up for Updates</h4>
-                <form action="#">
-                    <input type="email" placeholder="Enter your email">
-                    <button type="submit">Subscribe</button>
+                <h3>ASTONIC SPORTS</h3>
+                <h4>SIGN UP TO OUR NEWSLETTER</h4>
+                <p>Sign up for the latest updates on product releases &amp; discounts!</p>
+                <br>
+                <form action="email">
+                    <input value="" name="EMAIL" class="email" id="footer-EMAIL" placeholder="Enter Email Address" required="" type="email">
+                   <br><br>
+                    <input value="Join" class="button" type="submit">
                 </form>
-                <p>&copy; 2024 Astonic Sports.</p>
+                <br>
+                <p>&copy; 2024 Astonic Sports. All Rights Reserved.</p>
             </div>
-            <div class="footer-nav">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/contact">Contact Us</a></li>
-                    <li><a href="/shop">Shop</a></li>
-                </ul>
-            </div>
+    
+        <div class="footer-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/profile">Account</a></li>
+                <li><a href="/cart">Cart</a></li>
+            </ul>
+        </div>
         </div>
     </footer>
 
