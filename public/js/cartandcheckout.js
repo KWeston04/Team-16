@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const promoInput = document.querySelector(".coupon-section input");
     let discount = 0;
 
-    // Promo Code 
+    // Promo 
+
     applyBtn.addEventListener("click", () => {
         const promoCode = promoInput.value.trim().toUpperCase();
         if (promoCode === "ASTONIC24") {
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             discount = 0;
             alert("Invalid promo code.");
         }
+
         updateTotals();
         promoInput.value = '';
     });
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateTotals() {
         let subtotal = 0;
         const cartItems = document.querySelectorAll(".cart-item");
+        const shippingSection = document.querySelector(".shipping-method");
 
         cartItems.forEach(item => {
             const price = parseFloat(item.getAttribute("data-price"));
@@ -35,7 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
             subtotal += price * quantity;
         });
 
-        const delivery = subtotal > 100 ? 0 : subtotal === 0 ? 0 : 4.50;
+    // shipping value
+    const shippingOption = document.querySelector('input[name="shipping"]:checked');
+    const delivery = shippingOption ? parseFloat(shippingOption.value) : 0;
+
+    // Shipping Option 
+    document.querySelectorAll('input[name="shipping"]').forEach(option => {
+        option.addEventListener('change', () => {
+        updateTotals();
+    });
+});
+
         const discountAmount = subtotal * discount;
         const total = subtotal - discountAmount + delivery;
 
@@ -44,10 +57,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("total").textContent = "£" + total.toFixed(2);
 
         if (subtotal === 0) {
+            shippingSection.style.display = "none";
             checkoutButton.style.pointerEvents = "none";
             checkoutButton.style.opacity = "0.5";
             checkoutButton.textContent = "CANNOT CHECKOUT";
         } else {
+            shippingSection.style.display = "block";
             checkoutButton.style.pointerEvents = "auto";
             checkoutButton.style.opacity = "1";
             checkoutButton.textContent = "PROCEED TO CHECKOUT";
@@ -85,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
             button.closest(".cart-item").remove();
             updateTotals();
         });
-    });
+    });  
 
     // Checkout Button
 

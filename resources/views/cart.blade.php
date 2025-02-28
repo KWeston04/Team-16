@@ -147,60 +147,86 @@
     
     <button class="remove-item">✖</button>
 </div>
-        
-            <!-- Cart Summary -->
-            <div class="cart-summary">
-                <div class="coupon-section">
-                    <input type="text" placeholder="Coupon Code">
-                    <button class="apply-btn">Apply Promo Code</button>
-                </div><br>
-                
-                <div class="cart-prices">
-                    <p>Subtotal: <span class="highlight" id="subtotal">£0.00</span></p>
-                    <p>Shipping: <span class="highlight" id="delivery">£4.50</span></p>
-                    <p class="Total">Total: <span class="highlight" id="total">£0.00</span></p>
 
-        
-                <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+<div class="shipping-method">
+    <h3>Shipping Method</h3>
+    <div class="shipping-options">
+        <label class="shipping-option">
+            <input type="radio" name="shipping" value="4.50" checked> 
+            <span>Standard 2-3 Day Delivery - <span class="shipping-cost">£4.50</span></span>
+        </label>
+        <label class="shipping-option">
+            <input type="radio" name="shipping" value="10.00"> 
+                <span>Express Next Day Delivery - <span class="shipping-cost">£10.00</span></span>
+            </label>
+        </div>
+    </div>
+    
+        <!-- Cart Summary -->
+        <div class="cart-summary">               
+            <div class="cart-prices">
+                <p>Subtotal: <span class="highlight" id="subtotal">£0.00</span></p>
+                <p>Shipping: <span class="highlight" id="delivery">£4.50</span></p>
+                <p class="Total">Total: <span class="highlight" id="total">£0.00</span></p><br>
+                    <div class="coupon-section">
+                <input type="text" placeholder="Coupon Code">
+                <button class="apply-btn">Apply Promo Code</button>
             </div>
+            <button class="checkout-btn">PROCEED TO CHECKOUT</button>
         </div>
-        </div>
-        </div>
-    <br><br><br>
+    </div>
+</div>
+</div><br><br><br>
 
-    <div class="featured-products">
-        <div class="featured-title">
-            <h2>Featured Products</h2>
-            <br>
-        </div>
+<div class="featured-products">
+    <div class="featured-title">
+        <h2>Featured Products</h2>
+        <br>
+    </div>
     <div class="product-list">
+
+        <!-- Product 1 -->
         <div class="product">
             <img src="images/vortex shoes.webp" alt="Vortex 2 Shoes">
             <h3>Vortex 2 Shoes</h3>
-            <p>£140.00</p>
+            <p>£140.00</p><br>
+            <button class="add-to-cart">+</button>
         </div>
+
+        <!-- Product 2 -->
         <div class="product">
             <img src="images/flask.webp" alt="Astonic Flask">
             <h3>Astonic Flask</h3>
-            <p>£10.00</p>
+            <p>£10.00</p><br>
+            <button class="add-to-cart">+</button>
         </div>
-        <div class="product">
+
+        <!-- Product 3 -->
+        <div class="product" >
             <img src="images/hat.png" alt="Vortex Hat">
             <h3>Vortex Hat</h3>
-            <p>£20.00</p>
+            <p>£20.00</p><br>
+            <button class="add-to-cart">+</button>
         </div>
+
+        <!-- Product 4 -->
         <div class="product">
             <img src="images/edge pro.webp" alt="Edge Pro Running Shoes">
             <h3>Edge Pro</h3>
-            <p>£90.00</p>
+            <p>£90.00</p><br>
+            <button class="add-to-cart">+</button>
         </div>
+
+        <!-- Product 5 -->
         <div class="product">
             <img src="images/Football shirt white.webp" alt="Football Shirt">
             <h3>Football Shirt</h3>
-            <p>£40.00</p>
+            <p>£40.00</p><br>
+            <button class="add-to-cart">+</button>
         </div>
     </div>
-    </div>
+
+
 
         <div class="faq-section">
             <!-- FAQ Dropdown -->
