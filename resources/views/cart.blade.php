@@ -47,7 +47,7 @@
 
     <main>
         <div class="cart-container">
-            <h2>CART</h2><br><br>
+            <h2>Cart</h2><br><br>
             <div class="cart-items">
                 <!-- First Item -->
                 <div class="cart-item" data-price="50">
@@ -172,6 +172,15 @@
                 <input type="text" placeholder="Coupon Code">
                 <button class="apply-btn">Apply Promo Code</button>
             </div>
+            <div class="savings-meter">
+    <h3>Your Savings</h3>
+    <div class="savings-progress">
+        <div class="savings-bar" id="savingsBar"></div>
+    </div>
+    <p>‎ ‎  <span id="savingsAmount">0.00</span></p>
+ <p>Spend £<span id="nextTier">0.00</span> ‎ more to reach the next discount tier!</p>
+</div>
+
             <button class="checkout-btn">PROCEED TO CHECKOUT</button>
         </div>
     </div>

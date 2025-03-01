@@ -22,13 +22,13 @@
 /*BODY*/
 
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
 
 html, body {
+    margin: 0;
     height: 100vh;
     background: #555555;
     display: flex;
@@ -37,10 +37,20 @@ html, body {
 
 /* Discount Banner */
 
+.discount .text-container .highlight {
+    color: #FF5733;
+
+}
+
+
+
+
 .discount {
+    border-top: 2px solid #dceeff; 
+    border-bottom: 2px solid #dceeff; 
     width: 100%;
     overflow: hidden;
-    background-color: #dedfdf; 
+    background-color: #000; 
     padding: 10px 0;
     display: flex;
     align-items: center;
@@ -48,12 +58,13 @@ html, body {
 
 .text-container {
     display: flex;
-    gap: 100px; 
+    gap: 150px; 
     animation: scroll 100s linear infinite; 
 }
 
 .text-container span {
     font-size: 18px;
+    color: #fff;
     white-space: nowrap; 
 }
 
@@ -73,7 +84,7 @@ main {
 
 .cart-container {
     width: 50%;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 150px auto;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -84,8 +95,8 @@ main {
 /* Cart Items */
 .cart-items {
     border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .cart-item {
@@ -93,7 +104,7 @@ main {
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid #f0f0f0;
-    padding: 15px 0;
+    padding: 10px 0;
     gap: 10px;
 }
 
@@ -101,6 +112,7 @@ main {
     
 .cart-container{
     width: 90%;}
+
 }
 
 @media (min-width: 992px){
@@ -108,8 +120,6 @@ main {
 .coupon-section input {
     width: 70%;
 }
-
-
 }
 
 .cart-item img {
@@ -132,6 +142,7 @@ main {
 .item-size, .item-color, .item-price, .item-total, .bag-item-price {
     flex: 1;
     font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
 }
 
@@ -153,24 +164,26 @@ main {
 .item-quantity {
     padding-left: 39%;
     position: absolute;
-    display: inline-block;
+    display: flex;
     
 }
 
 .remove-item {
-    background-color: #FF5733;
+    background-color: #000;
     color: white;
     font-size: 20px;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     margin-left: 150px;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: background-color 0.5s ease;
+    transition: border-radius 0.3s ease-in-out;
 }
 
 .remove-item:hover {
-    background-color: #b23f26;
+    background-color: #FF5733;
+    border-radius: 50px;
 }
 
 .item-quantity select:hover,
@@ -196,27 +209,28 @@ main {
 }
 
 .shipping-method h3 {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .shipping-options {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .shipping-option {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 12px;
-    color: #333;
+    transition: background-color 0.3s;
+    font-size: 13px;
+    color: #000;
 }
 
 .shipping-option:hover {
@@ -230,11 +244,12 @@ main {
 
 .shipping-option span {
     flex: 1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .shipping-cost {
-    color: #FF5733;
-    font-weight: bold;
+    color: #000;
+    font-size: 13px;
 }
 
 
@@ -253,18 +268,19 @@ main {
 }
 
 .coupon-section input {
-
     min-width: 60%;
     border: none;
     flex: 1;
     padding: 14px;
     margin-right: 31px;
     font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .apply-btn {
     background: #f9f9f9;
     font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border: none;
     padding: 15px 15px;
     cursor: pointer;
@@ -276,12 +292,13 @@ main {
 
 .cart-prices {
     font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .bag-item-price {
-    color: #FF5733;
-    font-weight: bold;
+    color: #000;
     margin-left: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .bag-summary {
@@ -294,11 +311,13 @@ main {
 }
 
 .bag-summary-title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 30px;
     font-weight: bold;
 }
 
 .cart-prices p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     justify-content: space-between;
     font-weight: bold;
@@ -306,9 +325,56 @@ main {
     margin: 10px 0;
 }
 
-.checkout-btn {
+/* Savings Meter */
+.savings-meter {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.savings-meter h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.savings-progress {
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 25px;
     width: 100%;
-    background: #007bff;
+    margin: 10px auto;
+    position: relative;
+}
+
+.savings-bar {
+    background: #28a745;
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 20px;
+}
+
+.savings-meter p {
+    justify-content: center;
+    color: #555;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.savings-meter p span {
+    font-weight: bold;
+    color: #28a745;
+}
+
+
+.checkout-btn {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    background: #000;
     color: #fff;
     border: none;
     padding: 15px;
@@ -328,25 +394,25 @@ main {
 .featured-products {
     text-align: center;
     width: 100%;
-    padding: 20px;
+    padding: 5px;
     background-color: #f9f9f9; 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
     box-sizing: border-box;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 .featured-title h2 {
-    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
     color: black;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .product-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
-    gap: 20px;
-    justify-items: center; 
+    gap: 10px;
+    justify-items: stretch; 
     width: 100%;
     box-sizing: border-box;
     padding-bottom: 2%;
@@ -354,11 +420,10 @@ main {
 
 .product {
     background-color: #1a1a2e;
-    padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px;
+    padding: 15px;
     text-align: center;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -372,19 +437,21 @@ main {
 
 .product img {
     max-width: 100%;
-    height: 200px;
+    height: 70%;
     object-fit: cover;
     margin-bottom: 10px;
 }
 
 .product h3 {
-    font-size: 18px;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #fff;
     margin-bottom: 10px;
 }
 
 .product p {
-    font-size: 18px;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #FF5733;
     font-weight: bold;
 }
@@ -427,7 +494,7 @@ main {
 /*FAQ*/
 
 .faq-section {
-    border-radius: 10PX;
+    border-radius: 5px 5px 0 0;
     padding: 5px;
     width: 100%;
     background-color: #1a1a2e;
@@ -440,8 +507,9 @@ main {
 .faq-main {
     display: block;
     text-align: center;
-    font-size: 25PX;
+    font-size: 20PX;
     font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #fff;
     padding: 20px;
     cursor: pointer;
@@ -450,14 +518,14 @@ main {
 }
 
 .faq-main:hover, .faq-question:hover {
-    background-color: #5dade2;
-    border-radius: 10px;
+    background: #394061;
+    border-radius: 5px 5px 0 0;
 }
 
 .faq-items {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.7s ease;
     text-align: center;
 }
 
@@ -470,6 +538,7 @@ main {
     padding: 15px;
     font-size: 1.2rem;
     font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
     background-color:#1a1a2e;
     color: white;
@@ -477,12 +546,14 @@ main {
 }
 
 .faq-answer {
+    transition: 0.2s ease;
     max-height: 0;
     overflow: hidden;
     padding: 0 15px;
     font-size: 15px;
-    background-color: #1a1a2e;
-    background-color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #fff;
+    border-radius: 0 0 5px 5px;
 }
 
 .faq-item input:checked ~ .faq-answer {
@@ -560,74 +631,14 @@ input:valid, select:valid {
     border: 3px solid green;
 }
 
-/*darkmode*/
-
-.dark-mode .bag-summary-item {
-    background-color: #1e1e1e;
-    color: #ffffff;}
-
-.dark-mode .bag-summary-itemm {
-    background-color: #1e1e1e;
-    color: #ffffff;}
-
-.dark-mode .bag-summary {
-    background-color: #555555;
-    color: #ffffff;}
-
-.dark-mode .navbar {
-    background-color: #1e1e1e;
-    color: #ffffff;}
-
-.dark-mode .faq-answer, footer {
-    background-color: #1e1e1e;
-    color: #ffffff;}
-
-.dark-mode .faq-main{
-    background-color: #555555;
-    color: #ffffff;}
-
-.dark-mode .faq-section{
-    background-color: #555555;
-    color: #ffffff;}
-
-.dark-mode .faq-question:hover {
-    background-color: #1e1e1e;
-    color: #ffffff;}
-
-.dark-mode .faq-main:hover{
-    background-color: #e0e1dd29;
-    color: #ffffff;}
-
-.dark-mode .faq-question {
-    background-color: #555555;
-    color: #ffffff;}
-
-.dark-mode .bag-item {
-    background-color: #555555;
-    color: #ffffff;}
-
-body.dark-mode {
-    background-image: url('images/background-dark.JPG');}
-
-.dark-mode .featured-products{
-    background-color: #1e1e1e;
-}
-.dark-mode .featured-title h2 {
-    color: #fff;
-}
-
-.dark-mode .product {
-    background-color: #555555;
-}
-
 select {
     color: white; 
     appearance: none;
     background-color: transparent;
-  }
+}
 
 
 select option {
-    color: #fff; 
-    background-color: #000; 
-  }
+    color: #000; 
+    background-color: #fff; 
+}
