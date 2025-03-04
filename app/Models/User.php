@@ -68,4 +68,22 @@ class User extends Authenticatable implements FilamentUser, HasName
     {
         return $this->getAttributeValue('username');
     }
+
+    /**
+     * User has many orders.
+     */
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'user_id', 'user_id');
+    }
+
+    public function adminActions(): HasMany
+    {
+        return $this->hasMany(AdminAction::class, 'admin_id');
+    }
+
+    public function userActions(): HasMany
+    {
+        return $this->hasMany(AdminAction::class, 'user_id');
+    }
 }
