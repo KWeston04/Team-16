@@ -10,6 +10,8 @@ class OrderItem extends Model
     //
     use HasFactory;
 
+    protected $table = 'orderitems';
+
     protected $guarded = [];
 
 }
