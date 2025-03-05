@@ -8,7 +8,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InventoryController;
-use App\Http\Controllers\ProductController;
+
 
 
 
@@ -48,7 +48,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/contact-preferences', [UserController::class, 'contactPreferences'])->name('profile.contact.preferences');
     Route::get('/profile/contact-us', [UserController::class, 'contactUs'])->name('profile.contact.us');
     Route::get('/profile/wishlist', [UserController::class, 'wishlist'])->name('profile.wishlist');
-
 });
 Route::get('/api/sales-data', function () {
     return response()->json([
