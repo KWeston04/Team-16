@@ -26,7 +26,6 @@
     <body style="background-image: url('backround-2.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     </body>
     <main>
-        <h1>Contact Us</h1>
         <div id="main">
             <h4 class="uppercase">Get in touch with us regarding any inquiries</h4>
             <form action="index.html" method="post" id="contacts">
