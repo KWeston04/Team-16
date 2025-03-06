@@ -23,7 +23,8 @@
             </ul>
         </nav>
     </header> 
-
+    <body style="background-image: url('backround-2.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    </body>
     <main>
         <h1>Contact Us</h1>
         <div id="main">
