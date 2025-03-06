@@ -43,6 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/personal-details', [UserController::class, 'personalDetails'])->name('profile.personal.details');
     Route::get('/profile/order-history', [UserController::class, 'orderHistory'])->name('profile.order.history');
     Route::get('/profile/change-password', [UserController::class, 'changePassword'])->name('profile.change.password');
+    Route::post('/profile/change-password', [UserController::class, 'updatePassword'])->name('profile.update.password');
     Route::get('/profile/payment-method', [UserController::class, 'paymentMethod'])->name('profile.payment.method');
     Route::get('/profile/add-card', [UserController::class, 'addCard'])->name('profile.add.card');
     Route::get('/profile/contact-preferences', [UserController::class, 'contactPreferences'])->name('profile.contact.preferences');
