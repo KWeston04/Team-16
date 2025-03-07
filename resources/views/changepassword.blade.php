@@ -21,7 +21,15 @@
 
         <div class="content-container">
             <h1>Change Password</h1>
-            <form id="change-password-form">
+            <form id="change-password-form" action="{{ route('profile.update.password') }}" method="POST">
+                @csrf
+
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger text-center mb-4" role="alert">
+                        {{ $error }}
+                    </div>
+                @endforeach
+
                 <label for="OldPassword">Old Password</label>
                 <input type="password" id="OldPassword" name="OldPassword" required>
 
