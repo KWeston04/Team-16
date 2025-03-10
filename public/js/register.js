@@ -2,10 +2,10 @@ document.getElementById("registerSection").addEventListener("submit", function(e
     
     event.preventDefault();
     
-    const Email = document.getElementById("Email").value;
+    const Email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    const Confirmpassword = document.getElementById("Confirmpassword").value;
-    const MobileNumber = document.getElementById("MobileNumber").value;
+    const Confirmpassword = document.getElementById("password_confirmation").value;
+    const MobileNumber = document.getElementById("phone_number").value;
 
     if (!Email.includes("@") || (!Email.includes("."))){
      alert("please enter Email must be valid");

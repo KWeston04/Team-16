@@ -116,4 +116,8 @@ class UserController extends Controller
     {
         return view('wishlist');
     }
+    public function addCard()
+    {
+        return view('add-card');
+    }
 }

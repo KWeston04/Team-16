@@ -1,0 +1,184 @@
+/* Navbar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e;
+    padding: 15px 50px;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .logo img {
+    height: 50px;
+    width: auto;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links a {
+    color: #e0e1dd;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: #007bff;
+  }
+  
+  /* FOOTER mohammed ibraheem*/
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding-top: 20px 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.socials, .newsletter, .footer-nav {
+  flex: 1 1 200px;
+  margin: auto;
+  max-width: 100%;
+}
+
+.socials p, .newsletter h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.newsletter h3 {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size:xx-large;
+  color: #fff;
+}
+
+.social-links img {
+  height: 40px;
+  margin: 0 5px;
+  transition: transform 0.7s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.2);
+}
+
+.newsletter input[type="email"] {
+  padding: 10px 15px;
+  width: 65%;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+}
+
+.newsletter input[type="submit"] {
+  padding: 8px 15px;
+  background-color: #FF5733;
+  color: white;
+  border: none;
+  width: 70%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.newsletter input[type="submit"]:hover {
+  background-color: #b23f26;
+}
+
+.footer-nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.footer-nav li {
+  margin: 10px 0;
+}
+
+.footer-nav a {
+  font-weight: bold;
+  color: #e0e1dd;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-nav a:hover {
+  color: #5dade2;
+}
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* discount by ibraheem*/
+  .highlight {
+    color: #FF5733; 
+    font-weight: bold; 
+  }
+  
+  .discount {
+    width: 100%;
+    overflow: hidden; 
+    background-color: #dedfdf; 
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .text-container {
+    display: flex;
+    gap: 100px; 
+    animation: scroll 30s linear infinite; 
+  }
+  
+  .text-container span {
+    font-size: 18px;
+    white-space: nowrap; 
+    color: #000;
+  }
+  
+  @keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+  }
+  
+  .notice{
+    display: flex;
+    justify-content: center;   
+    height: 5vh; 
+    background-color: #ffe5e5;
+    box-sizing: border-box;
+  }
+  
+  .notice p {
+    margin: 0; 
+    color: #574747;
+    font-size: 1.5vw; 
+  }

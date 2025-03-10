@@ -44,10 +44,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/order-history', [UserController::class, 'orderHistory'])->name('profile.order.history');
     Route::get('/profile/change-password', [UserController::class, 'changePassword'])->name('profile.change.password');
     Route::get('/profile/payment-method', [UserController::class, 'paymentMethod'])->name('profile.payment.method');
+    Route::get('/profile/add-card', [UserController::class, 'addCard'])->name('profile.add.card');
     Route::get('/profile/contact-preferences', [UserController::class, 'contactPreferences'])->name('profile.contact.preferences');
     Route::get('/profile/contact-us', [UserController::class, 'contactUs'])->name('profile.contact.us');
     Route::get('/profile/wishlist', [UserController::class, 'wishlist'])->name('profile.wishlist');
-
 });
 Route::get('/api/sales-data', function () {
     return response()->json([

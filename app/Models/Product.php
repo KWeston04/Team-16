@@ -20,7 +20,9 @@ class Product extends Model
         'image_url',
         'category_id',
         'stock_status',
-        'discounted'
+        'discounted',
+        'quantity',
+        'low_stock_threshold'
     ];
 
     protected $casts = [
@@ -49,9 +51,20 @@ class Product extends Model
     {
         return $this->hasMany(AdminAction::class);
     }
+    
+    public function isLowStock(): bool
+    {
+        return $this->quantity <= $this->low_stock_threshold;
+    }
 
+    public function isOutOfStock(): bool
+    {
+        return $this->quantity <= 0;
+    }
+    
     public function getIsInStockAttribute()
     {
         return $this->stock_status === 'in_stock';
     }
 }
+

@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:  #1a1a2e;
+    margin: 0;
+}
+h1{
+    color: #e0e1dd;
+    text-align: center;
+}
+.hero-section {
+        background: url('main_image.webp');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        text-align: center;
+    }
+
+.register-container {
+     background-color: white;
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+        color: #333;
+        width: 80%;
+        max-width: 500px;
+        box-sizing: border-box;
+        z-index: 2;
+}
+.navbar {
+position: sticky;
+top: 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #1a1a2e;
+padding: 15px 50px;
+z-index: 1000;
+}
+
+.logo img {
+height: 50px;
+width: auto;
+display: block;
+}
+
+.nav-links {
+list-style: none;
+display: flex;
+gap: 30px;
+}
+
+.nav-links a {
+color: #e0e1dd; 
+text-decoration: none;
+font-size: 16px;
+font-weight: 600;
+}
+
+.nav-links a:hover,.nav-links a:focus {
+color: #5dade2; }
