@@ -1,33 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- resources/views/shop.blade.php -->
+@extends('layouts.master')
 
-<head>
-    <meta charset="UTF-8">
-    <title>Astonic Sports</title>
+@section('title', 'Shop - Astonic Sports')
+
+@section('page-specific-css')
     <link rel="stylesheet" href="{{asset('css/shopping.css')}}">
-</head>
+@endsection
 
-<body>
-    <!--Jack's-->
-    <!--*****************-->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="about_us.html">
-                    <img src="{{asset('images/Astonic Sports.webp')}}" alt="Astonic Sports Logo">
-                </a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li>
-                <li><a href="product_listing.html">Shop</a></li>
-                <li><a href="login.html">Account</a></li>
-                <li><a href="cart.html">Cart</a></li>
-            </ul>
-        </nav>
-    </header>
-
+@section('content')
     <!--*****************-->
     <header class="header">
         <div class="logo">Astonic Sports</div>
@@ -50,9 +30,8 @@
         <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT!</span>
          <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT!</span>
         <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT!</span>
-
     </div>
- </div>
+    </div>
     <!--**********-->
     </header>
 
@@ -67,7 +46,6 @@
         </form>
     </section>
     
-
     <section class="categories">
         <button class="category-btn" onclick="showSubcategories('sales')">sales</button>
         <button class="category-btn" onclick="showSubcategories('mens')">mens</button>
@@ -112,8 +90,7 @@
                 <h3>Vortex Runner</h3>
                 <p class="price">£120.00</p>
                 <!-- <button class="buy-btn">View</button> -->
-                <button class="buy-btn" onclick="location.href='vortex_runner.html'">View</button>
-
+                <button class="buy-btn" onclick="location.href='/vortex_runner'">View</button>
             </div>
             <div class="product-card">
                 <img src="{{asset('images/Astonic Hoodie.webp')}}" alt="Sweat Hoodie Mens">
@@ -147,52 +124,9 @@
             </div>
         </div>
     </section>
-    
+@endsection
 
-
-    
-    <!-- Footer made by ibraheem -->
-    <footer>
-        <div class="footer-container">
-
-        <!--Social Links-->
-        <div class="socials">
-            <p>FOLLOW US ON SOCIALS</p>
-            <br>
-            <div class="social-links">
-                <a href="#"aria-label="Follow us on Facebook"></a><img src="{{asset('images/facebook-logo.png')}}" alt="Facebook"></a>
-                <a href="#"aria-label="Follow us on Twitter"></a><img src="{{asset('images/twitter-logo.png')}}" alt="Twitter"></a>
-                <a href="#"aria-label="Follow us on Instagram"></a><img src="{{asset('images/instagram-logo.png')}}" alt="Instagram"></a>
-            </div>
-        </div>
-
-        <!--Newsletter Signup-->
-        <div class="newsletter">
-            <h4>SIGN UP TO OUR NEWSLETTER</h4>
-            <p>Sign up for the latest updates on product releases &amp; discounts!</p>
-            <form action="email">
-                <input value="" name="EMAIL" class="email" id="footer-EMAIL" placeholder="Enter Email Address" required="" type="email">
-               <br><br>
-                <input value="Join" class="button" type="submit">
-            </form>
-            <p>&copy; 2024 Astonic Sports. All Rights Reserved.</p>
-        </div>
-        <!--Nav Section-->
-    <div class="footer-nav">
-        <ul>
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="about_us.html">About Us</a></li>
-            <li><a href="contact_us.html">Contact Us</a></li>
-            <li><a href="product_listing.html">Shop</a></li>
-            <li><a href="login.html">Account</a></li>
-            <li><a href="index.html">Cart</a></li>
-        </ul>
-    </div>
-    </div>
-</footer>
-
-<!--******************-->
+@section('page-specific-js')
+    <!--******************-->
     <script src="{{asset('js/shopping.js')}}"></script>
-</body>
-
-</html>
+@endsection

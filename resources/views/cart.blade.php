@@ -1,169 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASTONIC SPORTS CHECKOUT</title>
-    <link rel="stylesheet" href="{{asset('css/cartandcheckout.css')}}"> 
-</head>
+@extends('layouts.master')
+@section('title', 'Cart')
 
-<body>
-    <header>
-        <nav class="navbar">
-          <div class="logo">
-            <a href="about_us.html">
-              <img src="{{asset('images/Astonic Sports Logo.webp')}}" alt="Home.html">
-            </a>
-          </div>
-          <ul class="nav-links">
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="about_us.html">About Us</a></li>
-            <li><a href="contact_us.html">Contact Us</a></li>
-            <li><a href="product_listing.html">Shop</a></li>
-            <li><a href="login.html">Account</a></li>
-            <li><a href="cart.html">Cart</a></li>
-          
-        </nav>
-    </header>
+@section('page-specific-css')
+    <link rel="stylesheet" href="{{ asset('css/cartandcheckout.css') }}"> 
+@endsection
+
+@section('content')
 
 <div class="discount">
     <div class="text-container">
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100</span>
-         <span>ORDER BY<span class="highlight"> 7:30 </span>FOR NEXT DAY SHIPPING</span>
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100</span>
-         <span>ORDER BY<span class="highlight"> 7:30 </span>FOR NEXT DAY SHIPPING</span>
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100</span>
-         <span>ORDER BY<span class="highlight"> 7:30 </span>FOR NEXT DAY SHIPPING</span>
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100</span>
-         <span>ORDER BY<span class="highlight"> 7:30 </span>FOR NEXT DAY SHIPPING</span>
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100</span>
-         <span>ORDER BY<span class="highlight"> 7:30 </span>FOR NEXT DAY SHIPPING</span>
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100</span>
-         <span>ORDER BY<span class="highlight"> 7:30 </span>FOR NEXT DAY SHIPPING</span>
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100</span>
-         <span>ORDER BY<span class="highlight"> 7:30 </span>FOR NEXT DAY SHIPPING</span>
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100</span>
-         <span>ORDER BY<span class="highlight"> 7:30 </span>FOR NEXT DAY SHIPPING</span>
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100</span>
-         <span>ORDER BY<span class="highlight"> 7:30 </span>FOR NEXT DAY SHIPPING</span>
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100!</span>
-         <span>ORDER BY<span class="highlight"> 7:30 </span>FOR NEXT DAY SHIPPING</span>
-        <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
-         <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100!</span>
-        <span>ORDER BY<span class="highlight">7:30</span>FOR NEXT DAY SHIPPING</span>
-    </div>
- </div>
-    
-<br><br>
-<div class="content-wrapper">
-<div class="container">
-    <div class="bag-container">
-        <!-- Bag Items -->
-        <div class="bag-items">
-        <div class="bag-item" data-price="50">
-            <img src="{{asset('images/Football shirt white.webp')}}" alt="White T-Shirt">
-            <div class="bag-item-details">
-                <div class="item-name">Astonic FC</div>
-                <div class="bag-item-color-size">Color: White | Size: XL</div>
-                <BR>
-                <div class="bag-item-quantity">
-                <label for="quantity" class="highlight">Quantity:</label>
-                <br><br>
-                <div class="item-form">
-                    <select id="quantity" name="quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>             
-                </div>
-                </div>
-
-            <div class="bag-item-price">£<span class="item-price">50.00</span></div>
-            <button class="remove-item">REMOVE</button>
-        </div>
-    </div>
-
-    <div class="bag-item" data-price="120">
-        <img src="{{asset('images/vortex shoes.webp')}}" alt="Black T-Shirt">
-        <div class="bag-item-details">
-            <div class="item-name">Vortex shoes</div>
-            <div class="bag-item-color-size">Color: Black | Size: 10</div>
-            <BR>
-            <div class="bag-item-quantity">
-                <label for="quantity" class="highlight">Quantity:</label>
-                <br><br>
-                <div class="item-form">
-                <select id="quantity" name="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>             
-            </div>
-            </div>
-            <div class="bag-item-price">£<span class="item-price">120.00</span></div>
-            <button class="remove-item">REMOVE</button>
-        </div>
-    </div>
-        </div>
-
-        <!-- Bag Summary -->
-        <div class="bag-summary">
-            <div class="bag-summary-title">TOTAL</div>
-            <div class="bag-summary-item">
-                <span class="highlight">Subtotal - ‎ </span>
-                <span>£<span id="subtotal">0.00</span></span>
-            </div>
-            <div class="bag-summary-item">
-                <span class="highlight">Delivery - ‎ </span>
-                <span>£<span id="delivery">4.50</span></span>
-            </div>
-            <div class="bag-summary-item">
-                <span class="highlight">Total - ‎ </span>
-                <span>£<span id="total">0.00</span></span>
-            </div>
-
-            <a href="checkout.blade.php" class="checkout-button" id="checkout-button" style="pointer-events: none;">CHECKOUT</a>
-            <br>
-        </div>
+        @for ($i = 0; $i < 5; $i++)
+            <span>USE CODE <span class="highlight">ASTONIC24</span> FOR 5% DISCOUNT AT CHECKOUT</span>
+            <span><span class="highlight">FREE</span> NEXT DAY DELIVERY ON ALL ORDERS OVER £100</span>
+            <span>ORDER BY <span class="highlight">7:30</span> FOR NEXT DAY SHIPPING</span>
+        @endfor
     </div>
 </div>
-</div>
 
-<br>
-<br>
-    
+<main>
+    <div class="cart-container">
+        <h2>Cart</h2><br><br>
+
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+
+        @if (count($cartItems) > 0)
+            <div class="cart-items">
+                @foreach ($cartItems as $item)
+                    <div class="cart-item" data-price="{{ $item->price * $item->quantity }}">
+                        <img src="{{ asset($item->image_url) }}" alt="{{ $item->name }}">
+
+                        <div class="item-details">
+                            <p class="item-name">{{ $item->name }}</p>
+                            <span class="item-size">Size: N/A</span> ‎ ‎ 
+                            <span class="item-color">Color: N/A</span>
+                        </div>
+
+                        <div class="item-quantity">
+                            <form action="{{ route('cart.update') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="basket_item_id" value="{{ $item->basket_item_id }}">
+                                <select name="quantity" onchange="this.form.submit()">
+                                    @for ($i = 1; $i <= 10; $i++)
+                                        <option value="{{ $i }}" {{ $item->quantity == $i ? 'selected' : '' }}>
+                                            {{ $i }}
+                                        </option>
+                                    @endfor
+                                </select>
+                            </form>
+                        </div>
+
+                        <div class="bag-item-price">£<span class="item-price">{{ number_format($item->price * $item->quantity, 2) }}</span></div>
+
+                        <form action="{{ route('cart.remove') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="basket_item_id" value="{{ $item->basket_item_id }}">
+                            <button type="submit" class="remove-item">✖</button>
+                        </form>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="shipping-method">
+                <h3>Shipping Method</h3>
+                <div class="shipping-options">
+                    <label class="shipping-option">
+                        <input type="radio" name="shipping" value="4.50" checked> 
+                        <span>Standard 2-3 Day Delivery - <span class="shipping-cost">£4.50</span></span>
+                    </label>
+                    <label class="shipping-option">
+                        <input type="radio" name="shipping" value="10.00"> 
+                        <span>Express Next Day Delivery - <span class="shipping-cost">£10.00</span></span>
+                    </label>
+                </div>
+            </div>
+
+        
+            <div class="cart-summary">               
+                <div class="cart-prices">
+                    <p>Subtotal: <span class="highlight" id="subtotal">£{{ number_format($total, 2) }}</span></p>
+                    <p>Shipping: <span class="highlight" id="delivery">£4.50</span></p>
+                    <p class="Total">Total: <span class="highlight" id="total">£{{ number_format($total + 4.50, 2) }}</span></p><br>
+
+                    <div class="coupon-section">
+                        <input type="text" placeholder="Coupon Code">
+                        <button class="apply-btn">Apply Promo Code</button>
+                    </div>
+
+                    <div class="savings-meter">
+                        <h3>Your Savings</h3>
+                        <div class="savings-progress">
+                            <div class="savings-bar" id="savingsBar"></div>
+                        </div>
+                        <p><span id="savingsAmount">0.00</span></p>
+                        <p>Spend £<span id="nextTier">0.00</span> more to reach the next discount tier!</p>
+                    </div>
+
+                    <a href="{{ route('checkout') }}" class="checkout-btn">PROCEED TO CHECKOUT</a>
+                </div>
+            </div>
+        @else
+            <p>Your cart is empty.</p>
+            <a href="{{ url('/') }}" class="shop-btn">Continue Shopping</a>
+        @endif
+    </div>
+</main>
+
+
 <div class="faq-section">
-    <!-- FAQ Dropdown -->
     <div class="faq-dropdown">
         <input type="checkbox" id="faq-toggle">
         <label for="faq-toggle" class="faq-main">Frequently Asked Questions</label>
         
         <div class="faq-items">
-            <!-- Question 1 -->
             <div class="faq-item">
                 <input type="checkbox" id="faq1">
                 <label for="faq1" class="faq-question">What is your return policy?</label>
@@ -172,66 +122,27 @@
                 </div>
             </div>
 
-            <!-- Question 2 -->
             <div class="faq-item">
                 <input type="checkbox" id="faq2">
                 <label for="faq2" class="faq-question">Do you offer free shipping?</label>
                 <div class="faq-answer">
-                    Yes, we offer free shipping on orders over £100
+                    Yes, we offer free shipping on orders over £100.
                 </div>
             </div>
 
-            <!-- Question 3 -->
             <div class="faq-item">
                 <input type="checkbox" id="faq3">
                 <label for="faq3" class="faq-question">How can I contact customer support?</label>
                 <div class="faq-answer">
-                    You can contact us via social media or by email at contact@Astonic.com
+                    You can contact us via social media or by email at contact@Astonic.com.
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-    <footer>
-        <!-- Footer made by ibraheem -->
-        <div class="footer-container">
-            <!-- Social Media Links Section -->
-            <div class="socials">
-                <p>FOLLOW US ON SOCIALS</p>
-                <br>
-                <div class="social-links">
-                    <a href="#"aria-label="Follow us on Facebook"></a><img src="{{asset('images/facebook-logo.png')}}" alt="Facebook"></a>
-                    <a href="#"aria-label="Follow us on Twitter"></a><img src="{{asset('images/twitter-logo.png')}}" alt="Twitter"></a>
-                    <a href="#"aria-label="Follow us on Instagram"></a><img src="{{asset('images/instagram-logo.png')}}" alt="Instagram"></a>
-                </div>
-            </div>
-    
-            <!-- Newsletter Signup Section -->
-            <div class="newsletter">
-                <h4>SIGN UP TO OUR NEWSLETTER</h4>
-                <p>Sign up for the latest updates on product releases &amp; discounts!</p>
-                <form action="email">
-                    <input value="" name="EMAIL" class="email" id="footer-EMAIL" placeholder="Enter Email Address" required="" type="email">
-                   <br><br>
-                    <input value="Join" class="button" type="submit">
-                </form>
-                <p>&copy; 2024 Astonic Sports. All Rights Reserved.</p>
-            </div>
-    
-        <div class="footer-nav">
-            <ul>
-                <li><a href="Home.blade.php">Home</a></li>
-                <li><a href="about_us.blade.php">About Us</a></li>
-                <li><a href="contact_us.blade.php">Contact Us</a></li>
-                <li><a href="product_listing.blade.php">Shop</a></li>
-                <li><a href="login.blade.php">Account</a></li>
-                <li><a href="cart.blade.php">Cart</a></li>
-            </ul>
-        </div>
-        </div>
-    </footer>
+@endsection
 
-    <script src="{{asset('cartandcheckout.js')}}"></script>
-</body>
-</html>
+@section('page-specific-js')
+    <script src="{{ asset('js/cartandcheckout.js') }}"></script>
+@endsection

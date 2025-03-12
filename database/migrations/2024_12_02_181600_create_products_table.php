@@ -22,7 +22,7 @@ return new class extends Migration
             $table->boolean('discounted')->default(false); // If the product is discounted
             $table->timestamps(); // created_at and updated_at
 
-            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade'); // Foreign key from the categories table 
+            $table->foreign('category_id')->references('category_id')->on('category')->onDelete('cascade'); // Foreign key from the categories table 
         });
     }
 
