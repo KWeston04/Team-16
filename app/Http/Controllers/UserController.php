@@ -120,4 +120,29 @@ class UserController extends Controller
     {
         return view('add-card');
     }
+    /**
+     * this is the function for when a user wants to change their password if they already logged in
+     */
+    public function updatePassword(Request $request)
+    {
+        // password validaton
+        $validated = $request->validate([
+            'OldPassword' => 'required',
+            'NewPassword' => 'required|min:8|max:40',
+            'ConfirmPassword' => 'required|same:NewPassword'
+        ]);
+
+        $user = Auth::user();
+
+        // checking if their current password matches
+        if (!Hash::check($validated['OldPassword'], $user->password)) {
+            return back()->withErrors(['OldPassword' => 'The current password is incorrect.']);
+        }
+
+        // updating the password once checks are passed
+        $user->password = Hash::make($validated['NewPassword']);
+        $user->save();
+
+        return redirect()->route('profile')->with('success', 'Your password has been successfully changed.');
+    }
 }

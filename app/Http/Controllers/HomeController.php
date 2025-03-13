@@ -23,9 +23,4 @@ class HomeController extends Controller
         return view('cart');
     }
 
-    public function vortex_runner(){ // MVP demo
-        return view('vortex_runner');
-    }
-
-
 }

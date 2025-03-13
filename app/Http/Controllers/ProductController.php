@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -63,15 +67,17 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('products.index')->with('success', 'Product deleted successfully!');
     }
+   
+    public function vortex_runner(){ // Please change this when dynamic searching is added, as well as changing the vortex runner page to a generic "show" style page
+        // This function only currently exists to provide minimalist boilerplate code to aid the shopping experience, it is meant for a demo to show the price to users.
+        // Please see the vortex_runner.blade.php file for more info.
 
-    public function getShopData()
-    {
-        $products = Product::with(['category', 'inventory'])->get();
-        $categories = Category::all();
 
-        return response()->json([
-            'products' => $products,
-            'categories' => $categories
-        ]);
+        // Fetching the vortex runner product
+        $product = Product::findOrFail(1);
+
+        // Directly return it
+        return view('vortex_runner', compact('product'));
     }
+
 }
