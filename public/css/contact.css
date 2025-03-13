@@ -6,11 +6,12 @@
   }
   
   body {
-    background: #f6f6f8; /* Dark bluebackground /
-    color: #e0e1dd; / Light gray text */
-    line-height: 1.6;
-  }
-  
+    background-image: url('/images/backround-2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
   .navbar {
     position: sticky;
     top: 0;
