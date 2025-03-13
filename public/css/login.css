@@ -1,44 +1,52 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #1a1a2e;
+    background-color: white;
     margin: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
+.main {
+flex: 1;  
+display: flex;
+justify-content: center;
+align-items: center;
 
-.big-container {
-    display: flex;
+}
+.big-container{
+  display: flex;
     justify-content: center;
-    margin-top: 150px;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 60px;
+    min-height: 100vh;
+     
 }
-
-.login-container {
+.login-container{
     background-color: whitesmoke;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
     text-align: center;
     margin-left: 10px;
+    
+    
 }
-
-.Benefit-container {
+.Benefit-container{
     background-color: whitesmoke;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
     text-align: center;
     margin-right: 10px;
+    
 }
-
-h1 {
+h1{
+    text-align:center;
+}
+h2{
     text-align: center;
 }
-
-h2 {
-    text-align: center;
-}
-
 .rp {
     margin-top: 10px;
 }
