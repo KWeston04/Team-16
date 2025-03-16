@@ -41,6 +41,7 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
+                        
                         @auth
                             <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                         @else
