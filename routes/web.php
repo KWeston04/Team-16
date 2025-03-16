@@ -79,3 +79,15 @@ Route::get('/cart', [BasketController::class, 'showCart'])->name('cart.show');
 Route::post('/cart/update', [BasketController::class, 'updateCart'])->name('cart.update');
 Route::post('/cart/remove', [BasketController::class, 'removeItem'])->name('cart.remove');
 Route::post('/cart/add', [BasketController::class, 'addToCart'])->name('cart.add')->middleware('auth');
+
+// Used for the search bar (search products)
+Route::get('/search', [ProductController::class, 'search'])->name('product.search');
+
+// Display a single product by its product_id
+Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
+
+// Special case for the Vortex Runner product
+Route::get('vortex-runner', [ProductController::class, 'vortex_runner'])->name('vortex.runner');
+
+
+

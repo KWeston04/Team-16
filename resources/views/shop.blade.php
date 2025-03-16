@@ -40,11 +40,11 @@
         <button class="search-btn">Search</button>
     </section> -->
     <section class="search-section">
-        <form id="search-form" onsubmit="handleSearch(event)">
-            <input type="text" placeholder="Search" id="search-bar" class="search-bar">
-            <button type="submit" class="search-btn">Search</button>
+        <form action="{{ route('product.search') }}" method="GET">
+        <input type="text" name="query" placeholder="Search for products..." class="search-bar" required>
+        <button type="submit" class="search-btn">Search</button>
         </form>
-    </section>
+     </section>
     
     <section class="categories">
         <button class="category-btn" onclick="showSubcategories('sales')">sales</button>
