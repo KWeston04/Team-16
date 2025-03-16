@@ -8,7 +8,6 @@
 
 @section('content')
     <main>
-        <h1>Contact Us</h1>
         <div id="main">
             <h4 class="uppercase">Get in touch with us regarding any inquiries</h4>
 

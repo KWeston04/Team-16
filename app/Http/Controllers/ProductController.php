@@ -67,6 +67,7 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('products.index')->with('success', 'Product deleted successfully!');
     }
+<<<<<<< HEAD
 
     public function vortex_runner() {
         $product = Product::where('name', 'Vortex Runner')->first();
@@ -106,5 +107,19 @@ class ProductController extends Controller
     {
         return view('products.show', compact('product'));
     }
+=======
+   
+    public function vortex_runner(){ // Please change this when dynamic searching is added, as well as changing the vortex runner page to a generic "show" style page
+        // This function only currently exists to provide minimalist boilerplate code to aid the shopping experience, it is meant for a demo to show the price to users.
+        // Please see the vortex_runner.blade.php file for more info.
+
+
+        // Fetching the vortex runner product
+        $product = Product::findOrFail(1);
+
+        // Directly return it
+        return view('vortex_runner', compact('product'));
+    }
+>>>>>>> b582825e03307bb5cc974c7f743ae214e9118e74
 
 }
