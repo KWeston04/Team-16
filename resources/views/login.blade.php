@@ -17,15 +17,15 @@
 
                 <br> <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required><br>
-                
+
                 <br> <button type="submit">Login</button>
             </form>
 
             <div class="rp">
-                <a href="#">Forgot Password?</a><br>
+                <a href="{{ route('password.request') }}">Forgot Password?</a><br>
                 <h2> ----create an account---- </h2>
                 <div>
-                    <button> <a href="/register">Create an account</a> </button> 
+                    <button> <a href="/register">Create an account</a> </button>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="Benefit-container">
             <form id="Benefits">
                 <h3> Benefits of registering with Astonic Sports </h3>
-                <p> 
+                <p>
                     <br>1. Receive special offers <br>
                     <br>2. Manage your orders and preferences<br>
                     <br>3. Access your saved items<br>
@@ -45,5 +45,5 @@
     </div>
 @endsection
 @section('page-specific-js')
-<script src="{{asset('js/login.js')}}"></script>
+    <script src="{{ asset('js/login.js') }}"></script>
 @endsection
