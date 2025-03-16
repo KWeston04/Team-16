@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\PasswordResetController;
 
 
 
@@ -79,3 +80,9 @@ Route::get('/cart', [BasketController::class, 'showCart'])->name('cart.show');
 Route::post('/cart/update', [BasketController::class, 'updateCart'])->name('cart.update');
 Route::post('/cart/remove', [BasketController::class, 'removeItem'])->name('cart.remove');
 Route::post('/cart/add', [BasketController::class, 'addToCart'])->name('cart.add')->middleware('auth');
+
+// reset password routes
+Route::get('/forgot-password', [PasswordResetController::class, 'showResetForm'])->name('password.request');
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetPasswordForm'])->name('password.reset');
+Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.update');
