@@ -11,7 +11,9 @@ use App\Models\BasketItems;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Inventory;
-
+use App\Models\User;
+use App\Mail\OrderConfirmation;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -39,7 +41,7 @@ class CheckoutController extends Controller
             'address' => 'required|string', 
             'city' => 'required|string',
             'zip' => 'required|string',
-        
+            'shipping_cost' => 'required|numeric',
         ]);
 
         $user_id = $request->input('user_id'); // Getting the user id 
@@ -47,6 +49,8 @@ class CheckoutController extends Controller
         // Combine fields to make the address
         $delivery_address = $request->input('address') . ', ' . $request->input('city') . ', ' . $request->input('zip');
 
+
+        $shippingCost = $request->input('shipping_cost');
 
         // Fetch the items from the user's cart
         $basket = Basket::where('user_id', $user_id)->first();
@@ -66,6 +70,28 @@ class CheckoutController extends Controller
             $product = $item->product;
             $totalAmount += $product->price * $item->quantity;
         }
+
+
+        // Apply discount if the coupon code is valid
+        $discountCode = $request->input('discount');
+        $discount = 0;
+        if ($discountCode === 'ASTONIC24') {
+            $discount = $totalAmount * 0.05; // 5% discount for ASTONIC24
+            $totalAmount -= $discount;
+        }
+
+
+        $user = User::find($user_id);
+        $creditsUsed = 0;
+
+        if ($user->credits > 0){
+            $creditsUsed = min($user->credits, $totalAmount);
+            $totalAmount -= $creditsUsed;
+            $user->credits -= $creditsUsed;
+            $user->save();
+        }
+
+        
 
         //Creating the new order
         $order = Order::create([
@@ -95,8 +121,20 @@ class CheckoutController extends Controller
             }
         }
 
+        // Adding credits to the user based on 1/10 of the final order value
+        // (using integer typecast)
+
+        $creditsEarned = (int)($totalAmount / 10);
+        $user->credits += $creditsEarned;
+        $user->save();
+
         // Clearing the basket
         BasketItems::where('basket_id', $basket->basket_id)->delete();
+
+
+        $user = Auth::user(); // Switchover to the auth, to get the object
+        //Sending the order confirmation email
+        Mail::to($user->email)->send(new OrderConfirmation($order, $user, $discount, $shippingCost));
 
         // Returning the success back to the user
         return redirect()->back()->with('success', 'Your order has been placed successfully!');

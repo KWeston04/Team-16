@@ -22,23 +22,32 @@
 
     <div class="content-container">
         <h1>Orders</h1>
-        <div class="order1">
-            <div class="clothing">
-                <img src="{{ asset('images/wind_breaker.png') }}" alt="Wind Breaker">
-            </div>
 
-            <b><p>Order Date:</p></b>
-            <p>19/11/2029</p>
+        @if ($orders->isEmpty())
+            <p>You have no orders yet.</p>
+        @else
+            @foreach ($orders as $order)
+                <div class="order1">
+                    <div class="clothing">
+                        @foreach ($order->orderItems as $item)
+                            <img src="{{ asset($item->product->image_url) }}" alt="{{ $item->product->name }}">
+                        @endforeach
+                    </div>
 
-            <b><p>Order Total:</p></b>
-            <p>£100</p>
+                    <b><p>Order Date:</p></b>
+                    <p>{{ $order->order_date->format('d/m/Y') }}</p>
 
-            <b><p>Dispatched Date:</p></b>
-            <p>20/11/2029</p>
+                    <b><p>Order Total:</p></b>
+                    <p>£{{ number_format($order->total_amount, 2) }}</p>
 
-            <b><p>Delivered Date:</p></b>
-            <p>21/11/2029</p>
-        </div>
+                    <b><p>Status:</p></b>
+                    <p>{{ $order->status }}</p>
+
+                    <b><p>Delivery Address:</p></b>
+                    <p>{{ $order->delivery_address }}</p>
+                </div>
+            @endforeach
+        @endif
     </div>
 </div>
 @endsection

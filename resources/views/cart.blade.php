@@ -28,7 +28,7 @@
         @if (count($cartItems) > 0)
             <div class="cart-items">
                 @foreach ($cartItems as $item)
-                    <div class="cart-item" data-price="{{ $item->price * $item->quantity }}">
+                    <div class="cart-item" data-price="{{ $item->price }}"> 
                         <img src="{{ asset($item->image_url) }}" alt="{{ $item->name }}">
 
                         <div class="item-details">
@@ -76,7 +76,6 @@
                 </div>
             </div>
 
-        
             <div class="cart-summary">               
                 <div class="cart-prices">
                     <p>Subtotal: <span class="highlight" id="subtotal">£{{ number_format($total, 2) }}</span></p>
@@ -106,7 +105,6 @@
         @endif
     </div>
 </main>
-
 
 <div class="faq-section">
     <div class="faq-dropdown">
