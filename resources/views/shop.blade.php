@@ -4,7 +4,7 @@
 @section('title', 'Shop - Astonic Sports')
 
 @section('page-specific-css')
-    <link rel="stylesheet" href="{{asset('css/shopping.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/shopping.css') }}">
 @endsection
 
 @section('content')
@@ -13,10 +13,8 @@
         <div class="logo">Astonic Sports</div>
     </header>
 
-
-    <!-- Ibraheem's--***************-->
-   <!-- Discount Banner -->
-   <header>
+    <!-- Discount Banner -->
+    <header>
         <div class="discount">
             <div class="text-container">
                 @for ($i = 0; $i < 20; $i++)
@@ -33,8 +31,8 @@
             <button type="submit" class="search-btn">Search</button>
             <p id="error-message" class="error-message hidden">Please enter a search term.</p>
         </form>
-     </section>
-    
+    </section>
+
     <!-- Categories Section -->
     <section class="categories">
         <div class="dropdown">
@@ -67,24 +65,31 @@
         <h2 class="section-title">Best Sellers</h2>
         <p class="section-subtitle">Discover our best products loved by our customers</p>
         <div class="best-sellers-grid">
+            <!-- Vortex Runner -->
             <div class="product-card">
                 <img src="{{ asset('images/shoes-Vortex_Runner_main.webp') }}" alt="Vortex Runner">
                 <h3>Vortex Runner</h3>
                 <p class="price">£120.00</p>
                 <button class="buy-btn" onclick="location.href='{{ url('vortex_runner') }}'">View</button>
             </div>
+
+            <!-- Sweat Hoodie Mens -->
             <div class="product-card">
                 <img src="{{ asset('images/shirts-Hoodie(main).webp') }}" alt="Sweat Hoodie Mens">
                 <h3>Sweat Hoodie Mens</h3>
                 <p class="price">£29.99</p>
                 <button class="buy-btn" onclick="location.href='{{ url('sweat_hoodie_mens') }}'">View</button>
             </div>
+
+            <!-- Away Football Shirt -->
             <div class="product-card">
                 <img src="{{ asset('images/shirt-Awayfootball(main).webp') }}" alt="Away Football Shirt">
                 <h3>Away Football Shirt</h3>
                 <p class="price">£39.99</p>
                 <button class="buy-btn" onclick="location.href='{{ url('away_football_shirt') }}'">View</button>
             </div>
+
+            <!-- Away Football Shorts -->
             <div class="product-card">
                 <img src="{{ asset('images/shorts-awayfootball(main).webp') }}" alt="Away Football Shorts">
                 <h3>Away Football Shorts</h3>
@@ -96,7 +101,6 @@
 @endsection
 
 @section('page-specific-js')
-    <!--******************-->
-    <script src="{{asset('js/shopping.js')}}"></script>
-    <script src="{{asset('js/search.js')}}"></script>
+    <script src="{{ asset('js/shopping.js') }}"></script>
+    <script src="{{ asset('js/search.js') }}"></script>
 @endsection

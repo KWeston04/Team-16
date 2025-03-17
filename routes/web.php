@@ -10,17 +10,12 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\BasketController;
 
-
-
-
+// Home & General Pages
 Route::get('/', [HomeController::class, 'home']);
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/shop', [HomeController::class, 'shop']);
-Route::get('/vortex_runner', [ProductController::class, 'vortex_runner']);
 
-
-
-
+// Authentication Routes
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
@@ -28,17 +23,15 @@ Route::get('/register', [UserController::class, 'showRegisterForm']);
 Route::post('/register', [UserController::class, 'register']);
 Route::get('/password/reset', [UserController::class, 'resetPasswordForm']);
 
-
-//used specifically for when we do a contact request.
+// Contact Request
 Route::get('/contact', [ContactRequestController::class, 'contact']);
 Route::post('/contact', [ContactRequestController::class, 'store'])->name('contact.store');
 
-
-//used for when we do a checkout.
+// Checkout Process
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 Route::post('/checkout', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder')->middleware('auth');
 
-//routes for profile dashboard and its connected pages
+// User Profile & Dashboard Routes (Requires Authentication)
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [UserController::class, 'showProfile'])->name('profile');
     Route::get('/profile/personal-details', [UserController::class, 'personalDetails'])->name('profile.personal.details');
@@ -51,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/contact-us', [UserController::class, 'contactUs'])->name('profile.contact.us');
     Route::get('/profile/wishlist', [UserController::class, 'wishlist'])->name('profile.wishlist');
 });
+
+// API Route for Sales Data
 Route::get('/api/sales-data', function () {
     return response()->json([
         ['month' => 'January', 'sales' => 180],
@@ -61,33 +56,38 @@ Route::get('/api/sales-data', function () {
     ]);
 });
 
-// Admin Dashboard route
+// Admin Dashboard Route
 Route::get('/admin_dashboard', function () {
     return view('admin_dashboard');
 })->name('admin_dashboard');
 
-// Routes for products, categories, and inventory
+// Resource Routes for Products, Categories, and Inventory
 Route::resource('products', ProductController::class);
 Route::resource('categories', CategoryController::class);
 Route::resource('inventory', InventoryController::class);
 Route::get('/shop-data', [ProductController::class, 'getShopData']);
 
-
-
-// Used for the cart (adding, removing, updating and showing the contents)
+// Cart (Basket) Routes
 Route::get('/cart', [BasketController::class, 'showCart'])->name('cart.show');
 Route::post('/cart/update', [BasketController::class, 'updateCart'])->name('cart.update');
 Route::post('/cart/remove', [BasketController::class, 'removeItem'])->name('cart.remove');
 Route::post('/cart/add', [BasketController::class, 'addToCart'])->name('cart.add')->middleware('auth');
 
-// Used for the search bar (search products)
+// Product Search Route
 Route::get('/search', [ProductController::class, 'search'])->name('product.search');
 
-// Display a single product by its product_id
+// Display a Single Product by its ID
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 
-// Special case for the Vortex Runner product
-Route::get('vortex-runner', [ProductController::class, 'vortex_runner'])->name('vortex.runner');
+// Special Case Routes for Specific Products
+Route::get('/vortex_runner', [ProductController::class, 'showVortexRunner'])->name('vortex_runner');
+Route::get('/away-football-shirt', [ProductController::class, 'showAwayFootballShirt'])->name('away_football_shirt');
+Route::get('/away-football-shorts', [ProductController::class, 'showAwayFootballShorts'])->name('away_football_shorts');
+Route::get('/sweat-hoodies-mens', [ProductController::class, 'showSweatHoodiesMens'])->name('sweat_hoodies_mens');
+
+
+Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
+
 
 
 
