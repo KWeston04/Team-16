@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\PasswordResetController;
 
 
 
@@ -80,6 +81,7 @@ Route::post('/cart/update', [BasketController::class, 'updateCart'])->name('cart
 Route::post('/cart/remove', [BasketController::class, 'removeItem'])->name('cart.remove');
 Route::post('/cart/add', [BasketController::class, 'addToCart'])->name('cart.add')->middleware('auth');
 
+
 Route::get('/shirts', function () { return view('Shirts'); });
 Route::get('/pants', function () { return view('Pants'); });
 Route::get('/shorts', function () { return view('Shorts'); });
@@ -88,3 +90,10 @@ Route::get('/accessories', function () { return view('Accessories'); });
 Route::get('/sweat_hoodie_mens', function () { return view('sweat_hoodie_mens'); });
 Route::get('/Away_Football_Shirt', function () { return view('Away_Football_Shirt'); });
 Route::get('/Away_football_Shorts', function () { return view('Away_football_Shorts'); });
+
+// reset password routes
+Route::get('/forgot-password', [PasswordResetController::class, 'showResetForm'])->name('password.request');
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetPasswordForm'])->name('password.reset');
+Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.update');
+
