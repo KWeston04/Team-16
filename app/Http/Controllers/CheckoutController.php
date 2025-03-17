@@ -35,7 +35,6 @@ class CheckoutController extends Controller
 
     public function placeOrder(Request $request) // Place order
     {
-        
         $request->validate([
             'user_id' => 'required|exists:users,user_id', // Making sure the user who is passed exists 
             'address' => 'required|string', 

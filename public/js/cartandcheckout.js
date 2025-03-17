@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const shippingSection = document.querySelector(".shipping-method");
     const shippingOptions = document.querySelectorAll('input[name="shipping"]');
     let discount = 0;
+ 
+
+    const defaultShippingOption = document.querySelector('input[name="shipping"]:checked');
+    if (defaultShippingOption) {
+        const defaultShippingCost = defaultShippingOption.value;
+        sessionStorage.setItem('shippingCost', defaultShippingCost);
+    }
 
     // Discount Tiers
     const discountTiers = [
@@ -157,6 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize the shipping options event listeners
     shippingOptions.forEach(option => {
         option.addEventListener('change', () => {
+            let shippingCost = option.value;
+            sessionStorage.setItem('shippingCost', shippingCost); 
             updateTotals();
         });
     });
@@ -342,4 +351,5 @@ document.getElementById('checkout-form').addEventListener('submit', function() {
     if (shippingCost) {
         document.getElementById('shippingCostInput').value = shippingCost;
     }
+
 });
