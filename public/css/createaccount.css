@@ -8,7 +8,7 @@ h1{
     text-align: center;
 }
 .hero-section {
-        background: url('store.jpg');
+        background: url('../images/store.jpg');
         background-size: cover;
         background-position: center;
         height: 100vh;
