@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweat Hoodie - Astonic Sports</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+@section('title', 'Hoodie - Astonic Sports')
+
+@section('page-specific-css')
+    <link rel="stylesheet" href="{{asset('css/shopping.css')}}">
+@endsection
+
+@section('content')
     <style>
         .product-gallery {
             display: flex;
@@ -31,26 +32,7 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
-</head>
 
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="{{ url('home') }}">
-                    <img src="{{ asset('images/Astonic_Sports.webp') }}" alt="Astonic Sports Logo">
-                </a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="{{ url('home') }}">Home</a></li>
-                <li><a href="{{ url('about_us') }}">About Us</a></li>
-                <li><a href="{{ url('contact_us') }}">Contact Us</a></li>
-                <li><a href="{{ url('shop') }}">Shop</a></li>
-                <li><a href="{{ url('login') }}">Account</a></li>
-                <li><a href="{{ url('cart') }}">Cart</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <main>
         <section class="product-detail">
@@ -127,6 +109,4 @@
             document.getElementById('mainImage').src = element.src;
         }
     </script>
-</body>
-
-</html>
+@endsection

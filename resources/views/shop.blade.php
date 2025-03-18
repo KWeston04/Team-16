@@ -83,7 +83,7 @@
 
             <!-- Away Football Shirt -->
             <div class="product-card">
-                <img src="{{ asset('images/shirt-Awayfootball(main).webp') }}" alt="Away Football Shirt">
+                <img src="{{ asset('images/shirt-Awayfoortball(main).webp') }}" alt="Away Football Shirt">
                 <h3>Away Football Shirt</h3>
                 <p class="price">£39.99</p>
                 <button class="buy-btn" onclick="location.href='{{ url('away_football_shirt') }}'">View</button>

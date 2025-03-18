@@ -1,32 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shirts - Astonic Sports</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-</head>
+@section('title', 'Shirts - Astonic Sports')
 
-<body>
-    <!-- Header -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="{{ url('about_us') }}">
-                    <img src="{{ asset('images/Astonic_Sports.webp') }}" alt="Astonic Sports Logo">
-                </a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="{{ url('home') }}">Home</a></li>
-                <li><a href="{{ url('about_us') }}">About Us</a></li>
-                <li><a href="{{ url('contact_us') }}">Contact Us</a></li>
-                <li><a href="{{ url('shop') }}">Shop</a></li>
-                <li><a href="{{ url('login') }}">Account</a></li>
-                <li><a href="{{ url('cart') }}">Cart</a></li>
-            </ul>
-        </nav>
-    </header>
+@section('page-specific-css')
+    <link rel="stylesheet" href="{{asset('css/shopping.css')}}">
+@endsection
+
+@section('content')
 
     <!-- Search Bar -->
     <section class="search-section">
@@ -170,6 +150,4 @@
             border-radius: 5px;
         }
     </style>
-</body>
-
-</html>
+@endsection
