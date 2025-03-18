@@ -35,14 +35,14 @@ class StatsOverview extends BaseWidget
 
         // Retrieve current values
         $currentRevenue = OrderItem::whereDate('created_at', '>=', Carbon::now()->startOfMonth())->sum('price_at_purchase');
-        $currentCustomers = User::where('account_type', 'customer')->whereDate('created_at', '>=', Carbon::now()->startOfMonth())->count();
+        $currentCustomers = User::where('user_type', 'customer')->whereDate('created_at', '>=', Carbon::now()->startOfMonth())->count();
         $currentOrders = Order::whereDate('created_at', '>=', Carbon::now()->startOfMonth())->count();
 
         // Retrieve previous period values (e.g., previous month)
         $previousRevenue = OrderItem::whereDate('created_at', '>=', Carbon::now()->subMonth()->startOfMonth())
             ->whereDate('created_at', '<', Carbon::now()->startOfMonth())
             ->sum('price_at_purchase');
-        $previousCustomers = User::where('account_type', 'customer')->whereDate('created_at', '>=', Carbon::now()->subMonth()->startOfMonth())
+        $previousCustomers = User::where('user_type', 'customer')->whereDate('created_at', '>=', Carbon::now()->subMonth()->startOfMonth())
             ->whereDate('created_at', '<', Carbon::now()->startOfMonth())
             ->count();
         $previousOrders = Order::whereDate('created_at', '>=', Carbon::now()->subMonth()->startOfMonth())

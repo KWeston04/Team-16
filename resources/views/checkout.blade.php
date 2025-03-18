@@ -58,6 +58,10 @@
            
             <form id="checkout-form" action="{{ route('checkout.placeOrder') }}" method="POST">
                 @csrf
+
+                <input type="hidden" name="discount" id="discountCodeInput"> 
+                <input type="hidden" name="shipping_cost" id="shippingCostInput">
+                
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" value="{{ $user->first_name . ' ' . $user->last_name }}" required>

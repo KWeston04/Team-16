@@ -7,7 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const shippingSection = document.querySelector(".shipping-method");
     const shippingOptions = document.querySelectorAll('input[name="shipping"]');
     let discount = 0;
-    
+ 
+
+    const defaultShippingOption = document.querySelector('input[name="shipping"]:checked');
+    if (defaultShippingOption) {
+        const defaultShippingCost = defaultShippingOption.value;
+        sessionStorage.setItem('shippingCost', defaultShippingCost);
+    }
+
     // Discount Tiers
     const discountTiers = [
         { threshold: 50, discount: 0.05 },
@@ -19,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     applyBtn.addEventListener("click", () => {
         const promoCode = promoInput.value.trim().toUpperCase();
         discount = promoCode === "ASTONIC24" ? 0.05 : 0;
+        sessionStorage.setItem('discount', discount);
         alert(discount ? "Promo code applied! You get 5% off." : "Invalid promo code.");
         updateTotals();
         promoInput.value = '';
@@ -28,30 +36,30 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateTotals() {
         let subtotal = 0;
         document.querySelectorAll(".cart-item").forEach(item => {
-            const priceElement = item.querySelector(".item-price");
-            const price = parseFloat(item.getAttribute("data-price"));
-            const quantity = parseInt(item.querySelector("select[name='quantity']").value);
-            const itemTotal = price * quantity;
-            
+            const unitPrice = parseFloat(item.getAttribute("data-price")); // Get unit price
+            const quantity = parseInt(item.querySelector("select[name='quantity']").value); // Get selected quantity
+            const itemTotal = unitPrice * quantity; // Calculate total for this item
+
             // Update displayed item price
+            const priceElement = item.querySelector(".item-price");
             if (priceElement) {
                 priceElement.textContent = itemTotal.toFixed(2);
             }
-            
-            subtotal += itemTotal;
+
+            subtotal += itemTotal; // Add to subtotal
         });
 
         // Get selected shipping option value
         const shippingOption = document.querySelector('input[name="shipping"]:checked');
         const delivery = shippingOption ? parseFloat(shippingOption.value) : 4.50;
-        
+
         // Calculate discount based on tiers or promo code
         let currentDiscount = discount;
         const tierDiscount = getTierDiscount(subtotal);
         if (tierDiscount > currentDiscount) {
             currentDiscount = tierDiscount;
         }
-        
+
         const discountAmount = subtotal * currentDiscount;
         const total = subtotal - discountAmount + delivery;
 
@@ -59,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("subtotal").textContent = "£" + subtotal.toFixed(2);
         document.getElementById("delivery").textContent = "£" + delivery.toFixed(2);
         document.getElementById("total").textContent = "£" + total.toFixed(2);
-        
+
         // Display discount amount if applicable
         if (discountAmount > 0) {
             let discountElement = document.getElementById("discount");
@@ -101,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Calculate the next tier
         let nextTierMessage = "";
-        
+
         // Find the current tier index
         let currentTierIndex = -1;
         for (let i = 0; i < discountTiers.length; i++) {
@@ -111,13 +119,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
             }
         }
-        
+
         // Determine the next tier and amount needed
         if (currentTierIndex < discountTiers.length - 1) {
             // There is a next tier
             const nextTier = discountTiers[currentTierIndex + 1];
             const amountToNextTier = nextTier.threshold - subtotal;
-            
+
             // Only show the positive amounts
             if (amountToNextTier > 0) {
                 nextTierElement.textContent = amountToNextTier.toFixed(2);
@@ -156,6 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize the shipping options event listeners
     shippingOptions.forEach(option => {
         option.addEventListener('change', () => {
+            let shippingCost = option.value;
+            sessionStorage.setItem('shippingCost', shippingCost); 
             updateTotals();
         });
     });
@@ -329,4 +339,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+});
+
+document.getElementById('checkout-form').addEventListener('submit', function() {
+    const discountCode = sessionStorage.getItem('discount');
+    const shippingCost = sessionStorage.getItem('shippingCost');
+
+    if (discountCode) {
+        document.getElementById('discountCodeInput').value = discountCode;
+    }
+    if (shippingCost) {
+        document.getElementById('shippingCostInput').value = shippingCost;
+    }
+
 });
