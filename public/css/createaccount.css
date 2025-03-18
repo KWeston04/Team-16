@@ -1,14 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color:  #1a1a2e;
+    background-color:  white;
     margin: 0;
 }
 h1{
-    color: #e0e1dd;
+    color: black;
     text-align: center;
 }
 .hero-section {
-        background: url('main_image.webp');
+        background: url('store.jpg');
         background-size: cover;
         background-position: center;
         height: 100vh;
