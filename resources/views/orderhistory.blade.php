@@ -22,32 +22,37 @@
 
     <div class="content-container">
         <h1>Orders</h1>
+        <div class="buttons">
+    <button class="button active" onclick="showSection('current-orders')">Current Orders</button>
+    <button class="button" onclick="showSection('previous-orders')">Previous Orders</button>
+    </div>
 
-        @if ($orders->isEmpty())
-            <p>You have no orders yet.</p>
-        @else
-            @foreach ($orders as $order)
-                <div class="order1">
-                    <div class="clothing">
-                        @foreach ($order->orderItems as $item)
-                            <img src="{{ asset($item->product->image_url) }}" alt="{{ $item->product->name }}">
-                        @endforeach
-                    </div>
+    <div id="current-orders" class=" active-order active">
+      <div class="clothing-order">
+        <img src="{{ asset('images/wind_breaker.png') }}" alt="Astonic Sports Logo">
+      <div class="order-details">
+        <p><strong>Order Date:</strong> 19/03/2025</p>
+        <p><strong>Order Total:</strong> £59.99</p>
+        <p><strong>Status:</strong>Processing</p>
+      </div>
+      </div>
+      </div>
 
-                    <b><p>Order Date:</p></b>
-                    <p>{{ $order->order_date->format('d/m/Y') }}</p>
-
-                    <b><p>Order Total:</p></b>
-                    <p>£{{ number_format($order->total_amount, 2) }}</p>
-
-                    <b><p>Status:</p></b>
-                    <p>{{ $order->status }}</p>
-
-                    <b><p>Delivery Address:</p></b>
-                    <p>{{ $order->delivery_address }}</p>
-                </div>
+    <div id="previous-orders" class=" active-order">
+    <div class="clothing-order">
+      <img src="wind_breaker.png" alt="wind breaker">
+    <div class="order-details">
+      <p><strong>Order Date:</strong> 19/11/2024</p>
+      <p><strong>Order Total:</strong> £59.99</p>
+      <p><strong>Delivered Date:</strong> 21/11/2024</p>
+    </div>
+    </div>
+    </div>
+       
             @endforeach
         @endif
     </div>
 </div>
+@section('page-specific-js')
+<script src="{{asset('js/Order_History.js')}}"></script>
 @endsection
