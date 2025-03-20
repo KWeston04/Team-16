@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;  
+use App\Models\Product; 
 
 class CategoryController extends Controller
 {
@@ -53,4 +55,14 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->route('categories.index')->with('success', 'Category deleted successfully!');
     }
+
+    public function show($id)
+    {
+        $category = Category::findOrFail($id);
+        $products = Product::where('category_id', $category->category_id)->get();
+    
+        return view('categories.show', compact('category', 'products')); 
+    }
+      
+
 }

@@ -8,7 +8,6 @@
 @endsection
 
 @section('content')
-    <!--*****************-->
     <header class="header">
         <div class="logo">Astonic Sports</div>
     </header>
@@ -24,25 +23,28 @@
         </div>
     </header>
 
+    @if(session('error'))
+        <p class="error-message">{{ session('error') }}</p>
+    @endif
+
     <!-- Search Section -->
     <section class="search-section">
-        <form id="search-form" onsubmit="handleSearch(event)">
-            <input type="text" placeholder="Search" id="search-bar" class="search-bar">
-            <button type="submit" class="search-btn">Search</button>
-            <p id="error-message" class="error-message hidden">Please enter a search term.</p>
-        </form>
+        <form action="{{ route('product.search') }}" method="GET">
+            <input type="text" name="query" placeholder="Search for products or categories..." id="search-bar" class="search-bar" value="{{ request('query') }}">
+              <button type="submit" class="search-btn">Search</button>
+            </form>
+
     </section>
+
 
     <!-- Categories Section -->
     <section class="categories">
         <div class="dropdown">
-            <button class="category-btn dropdown-btn">New and Featured</button>
-            <div id="mens-subcategories" class="dropdown-menu">
-                <a href="{{ url('shirts') }}">Shirts</a>
-                <a href="{{ url('pants') }}">Pants</a>
-                <a href="{{ url('shorts') }}">Shorts</a>
-                <a href="{{ url('shoes') }}">Shoes</a>
-                <a href="{{ url('accessories') }}">Accessories</a>
+            <button class="category-btn dropdown-btn">Browse Categories</button>
+            <div id="category-menu" class="dropdown-menu">
+                @foreach($categories as $category)
+                    <a href="{{ route('category.show', ['id' => $category->category_id]) }}">{{ $category->name }}</a>
+                @endforeach
             </div>
         </div>
     </section>
@@ -56,7 +58,7 @@
         <div class="banner-content">
             <h2>Our Biggest Sales</h2>
             <p>End of Year Sales are On Now!</p>
-            <button class="Check-it-out">Shop Now</button>
+            <button class="Check-it-out" onclick="location.href='{{ route('shop.index') }}'">Shop Now</button>
         </div>
     </section>
 
@@ -65,37 +67,16 @@
         <h2 class="section-title">Best Sellers</h2>
         <p class="section-subtitle">Discover our best products loved by our customers</p>
         <div class="best-sellers-grid">
-            <!-- Vortex Runner -->
-            <div class="product-card">
-                <img src="{{ asset('images/shoes-Vortex_Runner_main.webp') }}" alt="Vortex Runner">
-                <h3>Vortex Runner</h3>
-                <p class="price">£120.00</p>
-                <button class="buy-btn" onclick="location.href='{{ url('vortex_runner') }}'">View</button>
-            </div>
+            @foreach ($bestSellers as $product)
+                <div class="product-card">
+                    <img src="{{ asset($product->image_url) }}" alt="{{ $product->name }}">
+                    <h3>{{ $product->name }}</h3>
+                    <p class="price">£{{ number_format($product->price, 2) }}</p>
 
-            <!-- Sweat Hoodie Mens -->
-            <div class="product-card">
-                <img src="{{ asset('images/shirts-Hoodie(main).webp') }}" alt="Sweat Hoodie Mens">
-                <h3>Sweat Hoodie Mens</h3>
-                <p class="price">£29.99</p>
-                <button class="buy-btn" onclick="location.href='{{ url('sweat_hoodie_mens') }}'">View</button>
-            </div>
-
-            <!-- Away Football Shirt -->
-            <div class="product-card">
-                <img src="{{ asset('images/shirt-Awayfoortball(main).webp') }}" alt="Away Football Shirt">
-                <h3>Away Football Shirt</h3>
-                <p class="price">£39.99</p>
-                <button class="buy-btn" onclick="location.href='{{ url('away_football_shirt') }}'">View</button>
-            </div>
-
-            <!-- Away Football Shorts -->
-            <div class="product-card">
-                <img src="{{ asset('images/shorts-awayfootball(main).webp') }}" alt="Away Football Shorts">
-                <h3>Away Football Shorts</h3>
-                <p class="price">£19.99</p>
-                <button class="buy-btn" onclick="location.href='{{ url('away_football_shorts') }}'">View</button>
-            </div>
+                    <!-- Dynamically route to the product page using its ID -->
+                    <button class="buy-btn" onclick="location.href='{{ route('product.show', ['id' => $product->product_id]) }}'">View</button>
+                </div>
+            @endforeach
         </div>
     </section>
 @endsection
