@@ -17,17 +17,18 @@ class Product extends Model
         'name',
         'description',
         'price',
-        'image_url',
+        'image_url', // Main image
+        'additional_images', // Stores multiple images as JSON
         'category_id',
         'stock_status',
         'discounted',
         'quantity',
-        'low_stock_threshold'
     ];
 
     protected $casts = [
         'price' => 'decimal:2',
         'discounted' => 'boolean',
+        'additional_images' => 'array', // Converts JSON to array automatically
     ];
 
     public function category()
@@ -51,11 +52,6 @@ class Product extends Model
     {
         return $this->hasMany(AdminAction::class);
     }
-    
-    public function isLowStock(): bool
-    {
-        return $this->quantity <= $this->low_stock_threshold;
-    }
 
     public function isOutOfStock(): bool
     {
@@ -67,4 +63,3 @@ class Product extends Model
         return $this->stock_status === 'in_stock';
     }
 }
-
