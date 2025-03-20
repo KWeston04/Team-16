@@ -23,36 +23,56 @@
     <div class="content-container">
         <h1>Orders</h1>
         <div class="buttons">
-    <button class="button active" onclick="showSection('current-orders')">Current Orders</button>
-    <button class="button" onclick="showSection('previous-orders')">Previous Orders</button>
-    </div>
+            <button class="button active" onclick="showSection('current-orders')">Current Orders</button>
+            <button class="button" onclick="showSection('previous-orders')">Previous Orders</button>
+        </div>
 
-    <div id="current-orders" class=" active-order active">
-      <div class="clothing-order">
-        <img src="{{ asset('images/wind_breaker.png') }}" alt="Astonic Sports Logo">
-      <div class="order-details">
-        <p><strong>Order Date:</strong> 19/03/2025</p>
-        <p><strong>Order Total:</strong> £59.99</p>
-        <p><strong>Status:</strong>Processing</p>
-      </div>
-      </div>
-      </div>
+        @if ($orders->isEmpty())
+            <p>You have no orders yet.</p>
+        @else
+            <div id="current-orders" class="active-order active">
+                @foreach ($orders as $order)
+                    @if ($order->status === 'ordered' || $order->status === 'dispatched')
+                        <div class="clothing-order">
+                            <div class="clothing">
+                                @foreach ($order->orderItems as $item)
+                                    <img src="{{ asset($item->product->image_url) }}" alt="{{ $item->product->name }}">
+                                @endforeach
+                            </div>
+                            <div class="order-details">
+                                <p><strong>Order Date:</strong> {{ \Carbon\Carbon::parse($order->order_date)->format('d/m/Y') }}</p>
+                                <p><strong>Order Total:</strong> £{{ number_format($order->total_amount, 2) }}</p>
+                                <p><strong>Status:</strong> {{ $order->status }}</p>
+                                <p><strong>Delivery Address:</strong> {{ $order->delivery_address }}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
 
-    <div id="previous-orders" class=" active-order">
-    <div class="clothing-order">
-      <img src="wind_breaker.png" alt="wind breaker">
-    <div class="order-details">
-      <p><strong>Order Date:</strong> 19/11/2024</p>
-      <p><strong>Order Total:</strong> £59.99</p>
-      <p><strong>Delivered Date:</strong> 21/11/2024</p>
-    </div>
-    </div>
-    </div>
-       
-            @endforeach
+            <div id="previous-orders" class="active-order">
+                @foreach ($orders as $order)
+                    @if ($order->status === 'delivered')
+                        <div class="clothing-order">
+                            <div class="clothing">
+                                @foreach ($order->orderItems as $item)
+                                    <img src="{{ asset($item->product->image_url) }}" alt="{{ $item->product->name }}">
+                                @endforeach
+                            </div>
+                            <div class="order-details">
+                                <p><strong>Order Date:</strong> {{ \Carbon\Carbon::parse($order->order_date)->format('d/m/Y') }}</p>
+                                <p><strong>Order Total:</strong> £{{ number_format($order->total_amount, 2) }}</p>
+                                <p><strong>Delivered Date:</strong> {{ \Carbon\Carbon::parse($order->order_date)->format('d/m/Y') }}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
         @endif
     </div>
 </div>
+@endsection
+
 @section('page-specific-js')
-<script src="{{asset('js/Order_History.js')}}"></script>
+<script src="{{ asset('js/Order_History.js') }}"></script>
 @endsection
