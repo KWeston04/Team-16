@@ -3,7 +3,8 @@ document.getElementById("NewCDSection").addEventListener("submit", function(even
 
     const cardNumber = document.getElementById('cardNumber').value;
     const cardName = document.getElementById('cardName').value;
-    const ExpiryDate = document.getElementById('ExpiryDate').value;
+    const expiryMonth = document.getElementById('expiryMonth').value;
+    const expiryYear = document.getElementById('expiryYear').value;
     const cvc = document.getElementById('cvc').value;
 
     if (cardNumber.length < 16) {
@@ -15,16 +16,23 @@ document.getElementById("NewCDSection").addEventListener("submit", function(even
         alert("Please enter the name on the card.");
         return;
     }
+    if (!expiryMonth || !expiryYear) {
+        alert("Please select a valid expiry date.");
+        return;
+      }
 
     if (cvc.length !== 3) {
         alert("CVC must be exactly 3 digits.");
         return;
     }
+    
+    localStorage.setItem("cardNumber", cardNumber);
+    localStorage.setItem("cardName", cardName);
+    localStorage.setItem("expiryDate", expiryMonth + "/" + expiryYear);
 
-    if (!cardNumber || !cardName || !ExpiryDate || !cvc) {
-        alert('Please fill in all fields!');
-        return;
-    }
+    window.location.href = "payment method.html";
+  });
 
-    this.submit();
-});
+  function goBack() {
+    window.location.href = "payment method.html";
+  }

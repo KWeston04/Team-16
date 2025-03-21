@@ -23,16 +23,6 @@
     <div class="content-container">
         <h1>Personal Details</h1>
         <form id="PDSection">
-            <label for="Title">Title</label>
-            <select id="Title" name="Title" required>
-                <option value="" disabled selected>Select your title</option>
-                <option value="Mr">Mr</option>
-                <option value="Ms">Ms</option>
-                <option value="Mrs">Mrs</option>
-                <option value="Miss">Miss</option>
-            </select> 
-            <br>
-
             <br> <label for="FirstName">First Name</label>
             <input type="text" id="FirstName" name="FirstName" required><br>
 

@@ -2,17 +2,10 @@ document
     .getElementById("PDSection")
     .addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent form submission
-
-        const title = document.getElementById("Title").value;
         const firstName = document.getElementById("FirstName").value;
         const lastName = document.getElementById("LastName").value;
         const address = document.getElementById("Address").value;
         const country = document.getElementById("country").value;
-
-        if (title === "") {
-            alert("Please select a title.");
-            return;
-        }
 
         if (firstName.length === "") {
             alert("Please enter a First Name");

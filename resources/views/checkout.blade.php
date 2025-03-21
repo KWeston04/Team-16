@@ -55,21 +55,26 @@
                     {{ session('success') }}
                 </div>
             @endif
+           
             <form id="checkout-form" action="{{ route('checkout.placeOrder') }}" method="POST">
                 @csrf
+
+                <input type="hidden" name="discount" id="discountCodeInput"> 
+                <input type="hidden" name="shipping_cost" id="shippingCostInput">
+                
                 <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" value="{{ $user->first_name . ' ' . $user->last_name }}" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" value="{{ $user->email }}" required>
                 </div>
 
                 <div class="form-group">
                     <label for="address">Shipping Address</label>
-                    <input type="text" id="address" name="address" required>
+                    <input type="text" id="address" name="address" value="{{ $user->address }}" required>
                 </div>
 
                 <div class="form-group">
@@ -90,6 +95,24 @@
                     </select>
                 </div>
 
+                
+                <div id="credit-card-fields" style="">
+                    <div class="form-group">
+                        <label for="card_number">Card Number</label>
+                        <input type="text" id="card_number" name="card_number" maxlength="19" placeholder="1234 5678 9012 3456">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expiry_date">Expiry Date (MM/YY)</label>
+                        <input type="text" id="expiry_date" name="expiry_date" maxlength="5" placeholder="MM/YY">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cvc">CVC</label>
+                        <input type="text" id="cvc" name="cvc" maxlength="3" placeholder="123">
+                    </div>
+                </div>
+
                 @if (auth()->check())
                     <input type="hidden" name="user_id" value="{{ auth()->user()->user_id }}">
                 @else
@@ -101,8 +124,11 @@
 
                 <br><br><br>
                 <div class="form-group">
-                    <button type="submit" class="place-order-button">PLACE ORDER</button>
+                <button type="submit" class="place-order-button">PLACE ORDER</button>
                 </div>
+
+                
+                
     </div>
     </form>
     </main>

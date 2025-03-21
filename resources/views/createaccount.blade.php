@@ -24,9 +24,8 @@
             <input type="email" id="email" name="email" required><br>
             
             <br> <label for="phone_number">Mobile Number:</label>
-            <input type="text" id="phone_number" name="phone_number" required><br>
+            <input type="tel" id="phone_number" name="phone_number" required><br>
             
-            <br><p>Please enter at least 8 characters which should include at least one capital letter, one lowercase letter, one number, and one symbol (!"£$%^&*").</p>
             <br> <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br>
             
