@@ -22,23 +22,57 @@
 
     <div class="content-container">
         <h1>Orders</h1>
-        <div class="order1">
-            <div class="clothing">
-                <img src="{{ asset('images/wind_breaker.png') }}" alt="Wind Breaker">
+        <div class="buttons">
+            <button class="button active" onclick="showSection('current-orders')">Current Orders</button>
+            <button class="button" onclick="showSection('previous-orders')">Previous Orders</button>
+        </div>
+
+        @if ($orders->isEmpty())
+            <p>You have no orders yet.</p>
+        @else
+            <div id="current-orders" class="active-order active">
+                @foreach ($orders as $order)
+                    @if ($order->status === 'ordered' || $order->status === 'dispatched')
+                        <div class="clothing-order">
+                            <div class="clothing">
+                                @foreach ($order->orderItems as $item)
+                                    <img src="{{ asset($item->product->image_url) }}" alt="{{ $item->product->name }}">
+                                @endforeach
+                            </div>
+                            <div class="order-details">
+                                <p><strong>Order Date:</strong> {{ \Carbon\Carbon::parse($order->order_date)->format('d/m/Y') }}</p>
+                                <p><strong>Order Total:</strong> £{{ number_format($order->total_amount, 2) }}</p>
+                                <p><strong>Status:</strong> {{ $order->status }}</p>
+                                <p><strong>Delivery Address:</strong> {{ $order->delivery_address }}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
 
-            <b><p>Order Date:</p></b>
-            <p>19/11/2029</p>
-
-            <b><p>Order Total:</p></b>
-            <p>£100</p>
-
-            <b><p>Dispatched Date:</p></b>
-            <p>20/11/2029</p>
-
-            <b><p>Delivered Date:</p></b>
-            <p>21/11/2029</p>
-        </div>
+            <div id="previous-orders" class="active-order">
+                @foreach ($orders as $order)
+                    @if ($order->status === 'delivered')
+                        <div class="clothing-order">
+                            <div class="clothing">
+                                @foreach ($order->orderItems as $item)
+                                    <img src="{{ asset($item->product->image_url) }}" alt="{{ $item->product->name }}">
+                                @endforeach
+                            </div>
+                            <div class="order-details">
+                                <p><strong>Order Date:</strong> {{ \Carbon\Carbon::parse($order->order_date)->format('d/m/Y') }}</p>
+                                <p><strong>Order Total:</strong> £{{ number_format($order->total_amount, 2) }}</p>
+                                <p><strong>Delivered Date:</strong> {{ \Carbon\Carbon::parse($order->order_date)->format('d/m/Y') }}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        @endif
     </div>
 </div>
+@endsection
+
+@section('page-specific-js')
+<script src="{{ asset('js/Order_History.js') }}"></script>
 @endsection

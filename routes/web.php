@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\OrderHistoryController;
 
 // Home & General Pages
 Route::get('/', [HomeController::class, 'home']);
@@ -34,7 +35,8 @@ Route::post('/checkout', [CheckoutController::class, 'placeOrder'])->name('check
 // User Profile & Dashboard (Requires Authentication)
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [UserController::class, 'showProfile'])->name('profile');
-    Route::get('/profile/order-history', [UserController::class, 'orderHistory'])->name('profile.order.history');
+    Route::get('/profile/personal-details', [UserController::class, 'personalDetails'])->name('profile.personal.details');
+    Route::get('/profile/order-history', [OrderHistoryController::class, 'orderHistory'])->name('profile.order.history');
     Route::get('/profile/change-password', [UserController::class, 'changePassword'])->name('profile.change.password');
     Route::post('/profile/change-password', [UserController::class, 'updatePassword'])->name('profile.update.password');
     Route::get('/profile/wishlist', [UserController::class, 'wishlist'])->name('profile.wishlist');

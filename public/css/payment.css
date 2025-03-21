@@ -1,3 +1,4 @@
+
 .main-container {
     display: flex;
     justify-content: flex-start;
@@ -6,16 +7,48 @@
     padding: 20px;
 }
 
-.button-link {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #1a1a2e;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
+.content-container {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .content-container h1 {
+    color: #1a1a2e;
+    margin-bottom: 20px;
+  }
+
+  .content-container p {
+    color: #1a1a2e;
+    margin-bottom: 20px;
+  }
+  .card-details {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
-.button-link:hover {
-    background-color: #142850;
+.card-details p {
+    color: #333;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
 }

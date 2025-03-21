@@ -24,19 +24,13 @@
         <h1>Payment Method</h1>
         <form id="payment-method-form">
             <br> 
-            <a href="{{ route('profile.add.card') }}" class="button-link">Add New Card</a>  
-            <br><br>
-            
-            <b><p>Card Details:</p></b>
-            <b><p>Card Number (only last 4 digits shown):</p></b>
-            <p>**** **** **** 1234</p>
-
-            <b><p>Name on Card:</p></b>
-            <p>John Smith</p>
-
-            <b><p>Expiry Date:</p></b>
-            <p>12/25</p>
-        </form>
-    </div>
-</div>
+            <a href="{{ route('profile.add.card') }}" class="button-link">Add New Payment Method</a>  
+            <div class="card-details" id="cardDetails">
+      </div>
+    </div>    
+  </div>            
+          
+@endsection
+@section('page-specific-js')
+<script src="{{asset('js/payment_method.js')}}"></script>
 @endsection

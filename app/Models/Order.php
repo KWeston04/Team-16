@@ -13,6 +13,15 @@ class Order extends Model
 
     protected $guarded = [];
 
+    protected $fillable = [
+        'user_id',
+        'order_date',
+        'total_amount',
+        'status',
+        'delivery_address',
+    ];
+
+
     /**
      * Order belongs to a user.
     */
@@ -29,5 +38,10 @@ class Order extends Model
         return $this->belongsToMany(Product::class, 'order_product', 'order_id', 'product_id')
             ->withPivot('quantity', 'subtotal')
             ->withTimestamps();
+    }
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class, 'order_id');
     }
 }
