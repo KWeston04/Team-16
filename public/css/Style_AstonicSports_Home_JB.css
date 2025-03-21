@@ -2,241 +2,648 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+:root {
+  /* Colors */
+  --primary: #990012;
+  --primary-hover: #990012;
+  --primary-light: #e6f2ff;
+  --accent: #990012; /* Wine red accent color */
+  --accent-hover: #990012; /* Darker wine red for hover states */
+  --success: #28a745;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #777;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --border-color: #e0e0e0;
+  --transition-speed: 0.3s;
+  --border-radius: 8px;
 }
 
 body {
-  background: linear-gradient(to bottom, #ffffff, #e6f2ff); /* White to light blue gradient */
-  color: #000;
+  background: linear-gradient(to bottom, var(--bg-primary) 60%, var(--primary-light) 100%);
+  color: var(--text-primary);
   line-height: 1.6;
 }
-/* Navbar Styles */
-.navbar {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1a1a2e; /* dark blue */
-  padding: 15px 50px;
-  z-index: 1000;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Modern Shadow */
-  border-bottom: 2px solid #dceeff; /* Lighter border for modern design */
+
+/* Notification styles */
+.notification-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
 }
 
-
-.logo img {
-  height: 50px;
-  width: auto;
+.notification {
+  background-color: var(--accent);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+  font-weight: 500;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  color: #e0e1dd;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  color: #007bff; /* Bright blue for hover */
-}
-
-/* Placeholder Styles */
-.image-placeholder {
-  width: 100%;
-  height: 300px;
-  background: #e0e0e0;
-  color: #999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed #ccc;
-  font-size: 16px;
-  font-style: italic;
-}
-
-/* Hero Section */
-.hero-section {
+.hero {
+  height: 90vh;
   position: relative;
-  text-align: center;
+  display: flex;
+  align-items: flex-end; 
+  justify-content: flex-start; 
+  text-align: left;
+  overflow: hidden;
+  padding-bottom: 8%; 
+  padding-left: 8%; 
+  background-color: transparent; 
+}
+
+.hero .image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  filter: contrast(1.1);
+}
+
+
+.hero .image-placeholder::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: 1;
+}
+.hero-content {
+  color: white;
+  z-index: 2;
+  transition: all 0.3s ease;
+  max-width: 700px;
+  animation: fadeIn 1s ease;
+  text-align: left;
   padding: 0;
-  margin: 0;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-content h1 {
-  font-size: 48px;
-  font-weight: bold;
-  color: #333333;
-  margin-bottom: 10px;
+  font-size: 7.5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 0.85;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-family: 'Anton', var(--heading-font);
+  margin-bottom: 1.5rem;
+  transform: scaleY(1.1);
+  color: white;
+  display: block;
+  max-width: 12ch;
 }
 
-.hero-content p {
-  font-size: 18px;
-  margin-bottom: 20px;
+.slogan {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--heading-font);
 }
 
-.cta-button {
-  background-color: #007bff; /* Bright blue */
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  bottom :20%;
-  left:50%;
-  transform: translateY(-50%);
-  position: absolute;
+.just-in-tag {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  font-family: var(--heading-font);
+  letter-spacing: 1px;
 }
 
-.cta-button:hover {
-  background-color: #0056b3; 
-}
-
-/* Collections Section */
-.collections-section {
-  padding: 40px 20px;
-  text-align: center;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.collections-section h2 {
-  font-size: 30px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.collections-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.collection-card {
-  text-align: center;
-  background: #ffffff;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.collection-card h3 a {
+.shop-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: white;
+  color: black;
   text-decoration: none;
-  color: #333333;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--heading-font);
+  margin-top: 1rem;
 }
 
-.collection-card h3 a:hover {
-  color: #007bff; /* Bright blue */
-}
-
-/* Seasonal Offers Section */
-.offers-section {
-  background: #138d7f;
-  padding: 40px 20px;
-  text-align: center;
-  margin: 30px 0;
-  border-radius: 8px;
-}
-
-.offers-section h2 {
-  font-size: 28px;
-  color: #333;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.offers-section p {
-  font-size: 16px;
-  margin-bottom: 15px;
-}
-
-.offers-section .cta-button {
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 4px;
-  font-weight: bold;
-  padding: 10px 20px;
-}
-
-.offers-section .cta-button:hover {
-  background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-  .collections-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* discount by ibraheem*/
-.highlight {
-  color: #FF5733; 
-  font-weight: bold; 
-}
-
-
-.discount {
+.shop-btn:after {
+  content: '';
+  position: absolute;
   width: 100%;
-  overflow: hidden; 
-  background-color: #dedfdf; 
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
 }
 
-
-.text-container {
-  display: flex;
-  gap: 100px; 
-  animation: scroll 30s linear infinite; 
+.shop-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(114, 47, 55, 0.4);
 }
 
-.text-container span {
-  font-size: 18px;
-  white-space: nowrap; 
-  color: #000;
+.shop-btn:hover:after {
+  left: 100%;
+}
+
+/* Shipping Banner */
+.shipping-banner {
+  background: var(--accent);
+  padding: 0.9rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.banner-scroll {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+}
+
+.shipping-banner:hover .banner-scroll {
+  animation-play-state: paused;
 }
 
 @keyframes scroll {
-  from {
-      transform: translateX(100%);
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* New Releases Section */
+.new-releases {
+  padding: 5rem 2rem;
+  max-width: 1800px;
+  margin: 3rem auto;
+  background: var(--bg-primary);
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.new-releases::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--accent);
+}
+
+.new-releases h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+  position: relative;
+  padding-bottom: 15px;
+  text-align: center;
+  font-family: 'Anton', var(--heading-font);
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
+.new-releases h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.product-card {
+  text-align: left;
+  transition: all 0.3s ease;
+  background: var(--bg-primary);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.product-card .image-placeholder {
+  width: 100%;
+  padding-bottom: 125%;
+  position: relative;
+  transition: transform 0.3s ease;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.product-card:hover .image-placeholder {
+  transform: scale(1.05);
+}
+
+/* Add "New" badge to products */
+.product-card::before {
+  content: 'NEW';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--accent);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  z-index: 2;
+  letter-spacing: 1px;
+  font-family: var(--heading-font);
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-info h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  font-family: var(--heading-font);
+  letter-spacing: 0.5px;
+}
+
+.product-info p {
+  font-size: 1.1rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.color-options {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: inline-block;
+}
+
+/* Add to cart button */
+.add-to-cart-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.8rem 0;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1.2px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--heading-font);
+  text-transform: uppercase;
+}
+
+.product-card:hover .add-to-cart-btn {
+  transform: translateY(0);
+}
+
+.add-to-cart-btn:hover {
+  background: var(--accent);
+}
+
+/* Added to cart state */
+.add-to-cart-btn.added {
+  background-color: var(--success);
+}
+
+.add-to-cart-btn.added::before {
+  content: "✓ ";
+}
+
+/* Collection Grid - General Enhancements */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  padding: 2rem;
+  max-width: 1800px;
+  margin: 0 auto 4rem;
+}
+
+.grid-item {
+  position: relative;
+  padding-bottom: 75%;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Performance Section (First Grid Item) with Mbappé Background */
+.collection-grid .grid-item:first-child .image-placeholder {
+  background-image: url('../images/mbappe.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: transform 0.6s ease;
+}
+
+/* Enhanced overlay for Mbappé image */
+.collection-grid .grid-item:first-child .image-placeholder::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    rgba(153, 0, 18, 0.5), /* Wine Red with 50% opacity */
+    rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+/* Football Section (Second Grid Item) with Neymar Background */
+.collection-grid .grid-item:last-child .image-placeholder {
+  background-image: url('../images/neymar.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: transform 0.6s ease;
+}
+
+/* Enhanced overlay for Neymar image */
+.collection-grid .grid-item:last-child .image-placeholder::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    rgba(255, 87, 34, 0.5), /* Orange with 50% opacity */
+    rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.grid-item:hover .image-placeholder {
+  transform: scale(1.1);
+}
+
+.grid-item .content {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover .content {
+  transform: translateY(-10px);
+}
+
+
+.grid-item h2 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  font-family: 'Anton', var(--heading-font);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.grid-item h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: white;
+  border-radius: 2px;
+}
+
+
+.collection-grid .grid-item:first-child h2::after {
+  background: var(--primary);
+}
+
+
+.collection-grid .grid-item:last-child h2::after {
+  background: #FF5722; 
+}
+
+.explore-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-family: var(--heading-font);
+  transform: skewX(-15deg);
+}
+
+
+.collection-grid .grid-item:first-child .explore-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: skewX(-15deg) translateY(-5px);
+  box-shadow: 0 8px 20px rgba(153, 0, 18, 0.4);
+}
+
+.collection-grid .grid-item:last-child .explore-btn:hover {
+  background: #FF5722;
+  color: white;
+  transform: skewX(-15deg) translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 87, 34, 0.4);
+}
+
+
+@media (max-width: 768px) {
+  .collection-grid {
+    grid-template-columns: 1fr;
   }
-  to {
-      transform: translateX(-100%);
+  
+  .grid-item h2 {
+    font-size: 2rem;
+  }
+  
+  .grid-item .content {
+    bottom: 2rem;
+    left: 2rem;
   }
 }
 
-.notice{
-  display: flex;
-  justify-content: center;   
-  height: 5vh; 
-  background-color: #ffe5e5;
-  box-sizing: border-box;
-
+@media (max-width: 480px) {
+  .grid-item h2 {
+    font-size: 1.8rem;
+  }
+  
+  .grid-item .content {
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+  
+  .explore-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.8rem;
+  }
 }
 
-.notice p {
-  margin: 0; 
-  color: #574747;
-  font-size: 1.5vw; 
+.explore-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(114, 47, 55, 0.4);
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .product-card {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .product-card:hover {
+  border-color: var(--accent);
+}
+
+body.dark-mode .new-releases {
+  background: var(--bg-primary);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero {
+    padding-bottom: 15%;
+    padding-left: 5%;
+  }
+  
+  .hero-content h1 {
+    font-size: 4.5rem;
+  }
+  
+  .slogan {
+    font-size: 1.2rem;
+  }
+  
+  .shop-btn,
+  .explore-btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .grid-item h2 {
+    font-size: 1.8rem;
+  }
+  
+  .new-releases {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .slogan {
+    font-size: 1rem;
+  }
+  
+  .shop-btn,
+  .explore-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .new-releases h2 {
+    font-size: 2.2rem;
+  }
+}
+.elite-collection .image-placeholder {
+    background-image: url('/images/elitecollectionheroimage.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.football-gear .image-placeholder {
+    background-image: url('/images/FootballHeroimage.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
