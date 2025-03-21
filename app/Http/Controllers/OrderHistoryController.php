@@ -15,7 +15,7 @@ class OrderHistoryController extends Controller
 
         // Fetch the user's orders with their order items and products
         $orders = Order::where('user_id', $user->user_id)
-            ->with('orderItems.product') // Ensure this matches the relationship name
+            ->with('orderItems.product') 
             ->orderBy('order_date', 'desc')
             ->get();
 
