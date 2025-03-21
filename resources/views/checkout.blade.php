@@ -61,6 +61,8 @@
 
                 <input type="hidden" name="discount" id="discountCodeInput"> 
                 <input type="hidden" name="shipping_cost" id="shippingCostInput">
+                <input type="hidden" name="products[0][product_id]" value="1">
+                <input type="hidden" name="products[0][quantity]" value="2">
                 
                 <div class="form-group">
                     <label for="name">Full Name</label>

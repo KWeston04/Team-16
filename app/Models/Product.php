@@ -22,7 +22,7 @@ class Product extends Model
         'category_id',
         'stock_status',
         'discounted',
-        'quantity',
+        //'quantity',
     ];
 
     protected $casts = [
@@ -55,7 +55,7 @@ class Product extends Model
 
     public function isOutOfStock(): bool
     {
-        return $this->quantity <= 0;
+        return $this->inventory->quantity_in_stock <= 0;
     }
     
     public function getIsInStockAttribute()

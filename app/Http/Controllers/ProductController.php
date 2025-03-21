@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Inventory;
 
 class ProductController extends Controller
 {
@@ -27,6 +28,9 @@ class ProductController extends Controller
 {
     $product = Product::findOrFail($id);
 
+    $inventory = Inventory::where('product_id', $product->product_id)->first();
+
+
     // Extract the main image name without the extension
     $imageBase = pathinfo($product->image_url, PATHINFO_FILENAME);
     $imageDirectory = 'images/';
@@ -44,7 +48,7 @@ class ProductController extends Controller
         return file_exists(public_path($image));
     });
 
-    return view('products.product', compact('product', 'existingImages'));
+    return view('products.product', compact('product', 'existingImages', 'inventory'));
 }
 
     

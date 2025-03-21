@@ -35,9 +35,17 @@ class ProductResource extends Resource
                     ->prefix('$'),
                 Forms\Components\FileUpload::make('image_url')
                     ->image(),
-                Forms\Components\TextInput::make('category_id')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\Select::make('category_id')
+                    ->relationship('category', 'name')
+                    ->createOptionForm([
+                        Forms\Components\TextInput::make('name')
+                            ->required()
+                            ->unique('categories', 'name'),
+                    ])
+                    ->createOptionUsing(function (array $data) {
+                        return Category::create($data)->category_id;
+                    })
+                    ->required(),
                 Forms\Components\TextInput::make('stock_status')
                     ->required(),
                 Forms\Components\Toggle::make('discounted')
@@ -87,7 +95,7 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\InventoryRelationManager::class,
         ];
     }
 

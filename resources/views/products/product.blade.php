@@ -75,22 +75,34 @@
                 <li>Perfect for sports and casual wear</li>
             </ul>
             <div class="purchase-options">
-                <label for="size">Size:</label>
-                <select id="size">
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                </select>
-                <label for="quantity">Qty:</label>
-                <select id="quantity">
-                    @for ($i = 1; $i <= 10; $i++)
-                        <option value="{{ $i }}">{{ $i }}</option>
-                    @endfor
-                </select>
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <form action="{{ route('cart.add') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+                    <label for="size">Size:</label>
+                    <select id="size" name="size">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
+                    <label for="quantity">Qty:</label>
+                    <select id="quantity" name="quantity">
+                        @for ($i = 1; $i <= 10; $i++)
+                            <option value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                    </select>
+                    @auth
+                        @if ($inventory && $inventory->quantity_in_stock > 0)
+                            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+                        @else
+                            <button class="add-to-cart-btn" disabled>Out of Stock</button>
+                        @endif
+                    @else
+                        <a href="{{ route('login') }}" class="login-required-btn">Login to Add to Cart</a>
+                    @endauth
+                </form>
             </div>
 
             <!-- Reviews Section -->
