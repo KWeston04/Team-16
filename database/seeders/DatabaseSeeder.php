@@ -13,22 +13,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Use firstOrCreate to avoid duplicating the user
+        User::firstOrCreate(
+            ['username' => 'Astromic'], // Check if user with this username exists
+            [   // If not, create a new one
+                'email' => 'astromic@astromic.com',
+                'password' => bcrypt('123456789'), // Ensure the password is hashed
+                'user_type' => 'admin',
+                'first_name' => 'Astromic',
+                'last_name' => 'User',
+                'address' => 'address',
+                'phone_number' => '123456789',
+            ]
+        );
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-        User::create([
-            'username' => 'Astromic',
-            'email' => 'astromic@astromic.com',
-            'password' => '123456789',
-            'user_type' => 'admin',
-            'first_name' => 'Astromic',
-            'last_name' => 'User',
-            'address' => 'address',
-            'phone_number' => '123456789',
+        // Seed the best sellers
+        $this->call([
+            UpdateBestSellersSeeder::class,
         ]);
     }
 }
