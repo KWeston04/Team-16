@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
+use App\Models\Category;
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -25,23 +26,67 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required(),
-                Forms\Components\Textarea::make('description')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('price')
-                    ->required()
-                    ->numeric()
-                    ->prefix('$'),
-                Forms\Components\FileUpload::make('image_url')
-                    ->image(),
-                Forms\Components\TextInput::make('category_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('stock_status')
-                    ->required(),
-                Forms\Components\Toggle::make('discounted')
-                    ->required(),
+                Forms\Components\Section::make('Main Information')
+                ->collapsible()
+                ->columns(2)
+                ->schema([
+                    Forms\Components\TextInput::make('name')
+                        ->required(),
+                    Forms\Components\TextInput::make('price')
+                        ->required()
+                        ->numeric()
+                        ->prefix('$'),
+                    Forms\Components\Textarea::make('description')
+                        ->columnSpanFull(),
+                ]),
+                Forms\Components\Section::make('Sittings')
+                    ->columns(2)
+                    ->collapsible()
+                    ->schema([
+                        Forms\Components\Select::make('category_id')
+                            ->searchable(true)
+                            ->options(Category::pluck('name','category_id'))
+                            ->required(),
+                        Forms\Components\ToggleButtons::make('stock_status')
+                            ->inline()
+                            ->options([
+                                'in_stock' => 'In stock',
+                                'out_of_stock' => 'Out of stock',
+                                'pre_order' => 'Pre-order'
+                            ])
+                            ->colors([
+                                'in_stock' => 'info',
+                                'out_of_stock' => 'warning',
+                                'pre_order' => 'success',
+                            ])
+                            ->default('in_stock')
+                            ->required(),
+                        Forms\Components\Toggle::make('discounted')
+                            ->inline(false)
+                            ->required(),
+                    ]),
+                Forms\Components\Section::make('Images')
+                    ->collapsible()
+                    ->schema([
+                        Forms\Components\FileUpload::make('image_url')
+                            ->required()
+                            ->disk('public')
+                            ->directory('products')
+                            ->uploadingMessage('Uploading image...')
+                            ->maxSize(16384)
+                            ->image(),
+                        Forms\Components\FileUpload::make('additional_images')
+                            ->multiple()
+                            ->disk('public')
+                            ->panelLayout('grid')
+                            ->reorderable()
+                            ->directory('products')
+                            ->maxSize(16384)
+                            ->uploadingMessage('Uploading additional images...')
+                            ->maxFiles(10)
+                            ->image(),
+                    ]),
+
             ]);
     }
 
