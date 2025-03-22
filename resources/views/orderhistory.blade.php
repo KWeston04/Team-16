@@ -36,7 +36,7 @@
                         <div class="clothing-order">
                             <div class="clothing">
                                 @foreach ($order->orderItems as $item)
-                                    <img src="{{ asset($item->product->image_url) }}" alt="{{ $item->product->name }}">
+                                    <img src="{{ asset('storage/' . $item->product->image_url) }}" alt="{{ $item->product->name }}">
                                 @endforeach
                             </div>
                             <div class="order-details">
