@@ -20,12 +20,14 @@ class Product extends Model
         'image_url',
         'category_id',
         'stock_status',
-        'discounted'
+        'discounted',
+        'additional_images'
     ];
 
     protected $casts = [
         'price' => 'decimal:2',
         'discounted' => 'boolean',
+        'additional_images' => 'array',
     ];
 
     public function category()
