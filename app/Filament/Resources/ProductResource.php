@@ -70,11 +70,11 @@ class ProductResource extends Resource
                     ->schema([
                         Forms\Components\FileUpload::make('image_url')
                             ->required()
-                            ->disk('public')
-                            ->directory('products')
-                            ->uploadingMessage('Uploading image...')
-                            ->maxSize(16384)
-                            ->image(),
+                            ->image()
+                            ->disk('public') 
+                            ->directory('images') 
+                            ->visibility('public')
+                            ->preserveFilenames(), 
                         Forms\Components\FileUpload::make('additional_images')
                             ->multiple()
                             ->disk('public')
@@ -99,7 +99,10 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('price')
                     ->money()
                     ->sortable(),
-                Tables\Columns\ImageColumn::make('image_url'),
+                Tables\Columns\ImageColumn::make('image_url')
+                    ->getStateUsing(fn ($record) => asset('storage/' . $record->image_url))
+                    ->width(100)
+                    ->height(100),
                 Tables\Columns\TextColumn::make('category_id')
                     ->numeric()
                     ->sortable(),
@@ -132,7 +135,7 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\InventoryRelationManager::class,
         ];
     }
 

@@ -2,19 +2,24 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run()
     {
-        Category::create([
-            'name' => 'Category 1',
+        DB::table('categories')->insert([
+            ['category_id' => 1, 'parent_category_id' => null, 'name' => 'Shirts'],
+            ['category_id' => 2, 'parent_category_id' => null, 'name' => 'Pants'],
+            ['category_id' => 3, 'parent_category_id' => null, 'name' => 'Shorts'],
+            ['category_id' => 4, 'parent_category_id' => null, 'name' => 'Shoes'],
+            ['category_id' => 5, 'parent_category_id' => null, 'name' => 'Accessories'],
         ]);
     }
 }

@@ -17,7 +17,8 @@ class Product extends Model
         'name',
         'description',
         'price',
-        'image_url',
+        'image_url', // Main image
+        'additional_images', // Stores multiple images as JSON
         'category_id',
         'stock_status',
         'discounted',
@@ -39,7 +40,7 @@ class Product extends Model
     {
         return $this->hasOne(Inventory::class, 'product_id', 'product_id');
     }
-
+    
     public function orders()
     {
         return $this->belongsToMany(Order::class, 'order_product', 'product_id', 'order_id')
@@ -52,6 +53,11 @@ class Product extends Model
         return $this->hasMany(AdminAction::class);
     }
 
+    public function isOutOfStock(): bool
+    {
+        return $this->inventory->quantity_in_stock <= 0;
+    }
+    
     public function getIsInStockAttribute()
     {
         return $this->stock_status === 'in_stock';

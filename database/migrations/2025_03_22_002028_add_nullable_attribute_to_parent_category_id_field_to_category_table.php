@@ -6,23 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
-        Schema::table('category', function (Blueprint $table) {
-            $table->foreignId('parent_category_id')->nullable()->change();
+        Schema::table('categories', function (Blueprint $table) {
+            $table->unsignedBigInteger('parent_category_id')->nullable()->change();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    
+    public function down()
     {
-        Schema::table('category', function (Blueprint $table) {
-            $table->foreignId('parent_category_id')->nullable(false)->change();
+        Schema::table('categories', function (Blueprint $table) {
+            $table->unsignedBigInteger('parent_category_id')->nullable(false)->change();
         });
     }
 };
