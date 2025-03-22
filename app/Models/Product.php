@@ -22,13 +22,13 @@ class Product extends Model
         'category_id',
         'stock_status',
         'discounted',
-        //'quantity',
+        'additional_images'
     ];
 
     protected $casts = [
         'price' => 'decimal:2',
         'discounted' => 'boolean',
-        'additional_images' => 'array', // Converts JSON to array automatically
+        'additional_images' => 'array',
     ];
 
     public function category()
