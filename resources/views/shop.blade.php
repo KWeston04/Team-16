@@ -69,7 +69,7 @@
         <div class="best-sellers-grid">
             @foreach ($bestSellers as $product)
                 <div class="product-card">
-                    <img src="{{ asset($product->image_url) }}" alt="{{ $product->name }}">
+                    <img src="{{ asset('storage/' . $product->image_url) }}" alt="{{ $product->name }}">
                     <h3>{{ $product->name }}</h3>
                     <p class="price">£{{ number_format($product->price, 2) }}</p>
 

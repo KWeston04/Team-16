@@ -29,7 +29,7 @@
             <div class="cart-items">
                 @foreach ($cartItems as $item)
                     <div class="cart-item" data-price="{{ $item->price }}"> 
-                        <img src="{{ asset($item->image_url) }}" alt="{{ $item->name }}">
+                        <img src="{{ asset('storage/'. $item->image_url) }}" alt="{{ $item->name }}">
 
                         <div class="item-details">
                             <p class="item-name">{{ $item->name }}</p>

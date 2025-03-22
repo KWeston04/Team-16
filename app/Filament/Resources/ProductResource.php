@@ -34,7 +34,11 @@ class ProductResource extends Resource
                     ->numeric()
                     ->prefix('$'),
                 Forms\Components\FileUpload::make('image_url')
-                    ->image(),
+                    ->image()
+                    ->disk('public') 
+                    ->directory('images') 
+                    ->visibility('public')
+                    ->preserveFilenames(), 
                 Forms\Components\Select::make('category_id')
                     ->relationship('category', 'name')
                     ->createOptionForm([
@@ -62,7 +66,10 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('price')
                     ->money()
                     ->sortable(),
-                Tables\Columns\ImageColumn::make('image_url'),
+                Tables\Columns\ImageColumn::make('image_url')
+                    ->getStateUsing(fn ($record) => asset('storage/' . $record->image_url))
+                    ->width(100)
+                    ->height(100),
                 Tables\Columns\TextColumn::make('category_id')
                     ->numeric()
                     ->sortable(),

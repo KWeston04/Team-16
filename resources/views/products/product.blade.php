@@ -3,7 +3,7 @@
 @section('title', $product->name . ' - Astonic Sports')
 
 @section('page-specific-css')
-    <link rel="stylesheet" href="{{ asset('css/shopping.css') }}">
+<link rel="stylesheet" href="{{ asset('css/shopping.css') }}">
 @endsection
 
 @section('content')
@@ -14,11 +14,13 @@
         align-items: flex-start;
         gap: 20px;
     }
+
     .thumbnails {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
+
     .thumbnail {
         width: 80px;
         height: auto;
@@ -26,6 +28,7 @@
         border-radius: 5px;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     }
+
     .product-image img {
         width: 600px;
         height: auto;
@@ -40,14 +43,13 @@
             <!-- Thumbnail Images -->
             <div class="thumbnails">
                 @php
-                    // Decode additional_images correctly
-                    $images = is_string($product->additional_images) ? json_decode($product->additional_images, true) : $product->additional_images;
-                    $images = is_array($images) ? $images : []; // Ensure it's an array
+                // Decode additional_images correctly
+                $images = is_string($product->additional_images) ? json_decode($product->additional_images, true) : $product->additional_images;
+                $images = is_array($images) ? $images : []; // Ensure it's an array
 
-                    // Function to fix image paths
-                    function fixImagePath($image) {
-                        return str_starts_with($image, 'images/') ? asset($image) : asset('images/' . $image);
-                    }
+                function fixImagePath($image) { // added a fix so images now display properly, (public/images cannot be directly written to by the db)
+                return str_starts_with($image, 'storage/') ? asset($image) : asset('storage/' . $image);
+                }
                 @endphp
 
                 <!-- Main Product Image -->
@@ -55,7 +57,7 @@
 
                 <!-- Additional Images -->
                 @foreach ($images as $image)
-                    <img src="{{ fixImagePath($image) }}" class="thumbnail" onclick="changeImage(this)" alt="{{ $product->name }}">
+                <img src="{{ fixImagePath($image) }}" class="thumbnail" onclick="changeImage(this)" alt="{{ $product->name }}">
                 @endforeach
             </div>
 
@@ -91,16 +93,16 @@
                     <select id="quantity" name="quantity">
                         @for ($i = 1; $i <= 10; $i++)
                             <option value="{{ $i }}">{{ $i }}</option>
-                        @endfor
+                            @endfor
                     </select>
                     @auth
-                        @if ($inventory && $inventory->quantity_in_stock > 0)
-                            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
-                        @else
-                            <button class="add-to-cart-btn" disabled>Out of Stock</button>
-                        @endif
+                    @if ($inventory && $inventory->quantity_in_stock > 0)
+                    <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                     @else
-                        <a href="{{ route('login') }}" class="login-required-btn">Login to Add to Cart</a>
+                    <button class="add-to-cart-btn" disabled>Out of Stock</button>
+                    @endif
+                    @else
+                    <a href="{{ route('login') }}" class="login-required-btn">Login to Add to Cart</a>
                     @endauth
                 </form>
             </div>
@@ -109,16 +111,16 @@
             <div class="reviews">
                 <h2>Reviews</h2>
                 @php
-                    $reviews = $product->reviews ?? [
-                        ["name" => "Anonymous", "rating" => "★★★★☆", "comment" => "Great product, loved the quality!"],
-                        ["name" => "Customer", "rating" => "★★★★★", "comment" => "Definitely buying again!"]
-                    ];
+                $reviews = $product->reviews ?? [
+                ["name" => "Anonymous", "rating" => "★★★★☆", "comment" => "Great product, loved the quality!"],
+                ["name" => "Customer", "rating" => "★★★★★", "comment" => "Definitely buying again!"]
+                ];
                 @endphp
                 @foreach ($reviews as $review)
-                    <div class="review">
-                        <h4>{{ $review['name'] }}</h4>
-                        <p>{{ $review['rating'] }} - {{ $review['comment'] }}</p>
-                    </div>
+                <div class="review">
+                    <h4>{{ $review['name'] }}</h4>
+                    <p>{{ $review['rating'] }} - {{ $review['comment'] }}</p>
+                </div>
                 @endforeach
             </div>
         </div>
